@@ -4,7 +4,7 @@ A fast, offline-capable interactive map for Elden Ring (base game + *Shadow of t
 in the style of Map Genie: pan/zoom, category filters, search, marker popups with item stats,
 step-by-step questline tracking, and progress tracking that saves in your browser.
 
-**Live map:** _(link added after first deploy)_
+**Live map:** https://jw-ofs.github.io/elden-ring-map/
 
 ## Features
 
