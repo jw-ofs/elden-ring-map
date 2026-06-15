@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Elden Ring — Interactive Map</title>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+<link rel="stylesheet" href="vendor/leaflet/MarkerCluster.css" />
+<link rel="stylesheet" href="vendor/leaflet/MarkerCluster.Default.css" />
+<style>
+  :root{
+    --bg:#14171c; --panel:#1b1f27; --panel2:#232936; --line:#2c333f;
+    --text:#e7ecf3; --muted:#93a0b4; --accent:#d9a441; --good:#5fb878;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);overflow:hidden}
+  #app{display:flex;height:100%}
+
+  #sidebar{width:330px;min-width:330px;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;height:100%;transition:margin-left .25s}
+  #app.sb-collapsed #sidebar{margin-left:-330px}
+  .brand{padding:16px 18px 12px;border-bottom:1px solid var(--line)}
+  .brand h1{margin:0;font-size:18px;letter-spacing:.5px;color:var(--accent);font-weight:600}
+  .brand p{margin:3px 0 0;font-size:11px;color:var(--muted);letter-spacing:.3px}
+  .tools{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:9px}
+  .maptabs{display:flex;background:var(--panel2);border:1px solid var(--line);border-radius:7px;padding:3px;gap:3px}
+  .maptab{flex:1;text-align:center;padding:7px 4px;font-size:11px;white-space:nowrap;color:var(--muted);border-radius:5px;cursor:pointer;transition:.15s}
+  .maptab:hover{color:var(--text)}
+  .maptab.active{background:var(--accent);color:#1a1206;font-weight:600}
+  .search{display:flex;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:7px;padding:7px 10px}
+  .search input{flex:1;background:none;border:none;outline:none;color:var(--text);font-size:13px}
+  .search input::placeholder{color:var(--muted)}
+  .row{display:flex;gap:8px}
+  .btn{flex:1;background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:7px;padding:7px;font-size:11.5px;cursor:pointer;transition:.15s;text-align:center}
+  .btn:hover{border-color:var(--accent);color:var(--text)}
+  .btn.active{background:var(--accent);color:#1a1206;border-color:var(--accent);font-weight:600}
+  .cats{flex:1;overflow-y:auto;padding:8px 8px 24px}
+  .cats::-webkit-scrollbar{width:8px}
+  .cats::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  .group-h{font-size:10.5px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);padding:10px 8px 5px}
+  .cat{display:flex;align-items:center;gap:10px;padding:7px 9px;border-radius:7px;cursor:pointer;user-select:none}
+  .cat:hover{background:var(--panel2)}
+  .cat.off{opacity:.4}
+  .cat .ic{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+  .cat .nm{flex:1;font-size:13px}
+  .cat .ct{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .cat .ct b{color:var(--good)}
+
+  #map{flex:1;height:100%;background:#070809;cursor:grab}
+  #map:active{cursor:grabbing}
+  .leaflet-container{background:#070809}
+  #togglebar{position:absolute;top:12px;left:342px;z-index:1000;display:flex;gap:8px;transition:left .25s}
+  #app.sb-collapsed #togglebar{left:12px}
+  .iconbtn{background:rgba(27,31,39,.92);border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:8px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
+  .iconbtn:hover{border-color:var(--accent)}
+
+  .pin{display:flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid #0d0f13;box-shadow:0 1px 4px rgba(0,0,0,.6);font-size:13px;transition:transform .1s}
+  .pin:hover{transform:scale(1.25);z-index:9999}
+  .pin.done{filter:grayscale(1) brightness(.7);opacity:.7}
+  .qpin{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid #0d0f13;box-shadow:0 1px 4px rgba(0,0,0,.6)}
+  .qpin span{transform:rotate(45deg);color:#fff;font-size:11px;font-weight:700}
+  .qpin.start{box-shadow:0 0 0 3px rgba(229,72,77,.45),0 1px 6px rgba(0,0,0,.7);z-index:9999}
+  .qpin.start span{font-size:13px}
+  .region-label{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;color:#ecdfc2;font-size:13px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;text-shadow:0 1px 3px #000,0 0 7px #000,0 0 7px #000;pointer-events:none;opacity:var(--rl-op,.92);transition:opacity .25s}
+  .quest-row .dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+  .quest-row.off{opacity:.45}
+
+  .leaflet-popup-content-wrapper{background:var(--panel);color:var(--text);border-radius:10px;border:1px solid var(--line)}
+  .leaflet-popup-tip{background:var(--panel);border:1px solid var(--line)}
+  .leaflet-popup-content{margin:12px 14px;font-size:13px;line-height:1.5}
+  .pop-cat{font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);margin-bottom:3px}
+  .pop-t{font-size:15px;font-weight:600;margin-bottom:5px}
+  .pop-d{color:var(--muted);margin-bottom:9px}
+  .pop-found{display:flex;align-items:center;gap:8px;cursor:pointer;background:var(--panel2);border:1px solid var(--line);border-radius:7px;padding:7px 10px;font-size:12.5px}
+  .pop-found.on{border-color:var(--good);color:var(--good)}
+  .pop-head{display:flex;gap:9px;align-items:flex-start;margin-bottom:6px}
+  .pop-icon{width:44px;height:44px;border-radius:6px;background:var(--panel2);object-fit:contain;flex-shrink:0;image-rendering:auto}
+  .pop-head-t{flex:1;min-width:0}
+  .pop-stat{font-size:11.5px;color:#d7b471;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:5px 8px;margin:0 0 5px}
+  .pop-stat b{color:#f0e3c4;font-weight:700}
+  .pop-tag{color:var(--muted);font-size:10px;margin-left:4px}
+  .pop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin:0 0 5px}
+  .pop-grid div{display:flex;flex-direction:column;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:3px 2px;font-size:9.5px;color:var(--muted);line-height:1.3}
+  .pop-grid div b{color:#e7d9b8;font-size:11.5px;font-weight:700}
+  .pop-sum{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.45}
+  .pop-actions{display:flex;gap:8px;align-items:stretch}
+  .pop-actions .pop-found{flex:1}
+  .pop-wiki{display:flex;align-items:center;font-size:11.5px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:7px;padding:0 11px;white-space:nowrap}
+  .pop-wiki:hover{border-color:var(--accent);color:var(--accent)}
+  .leaflet-popup-close-button{color:var(--muted)!important}
+
+  #coord{position:absolute;bottom:10px;right:10px;z-index:1000;background:rgba(27,31,39,.9);border:1px solid var(--line);color:var(--muted);font-size:11px;padding:5px 9px;border-radius:6px;font-variant-numeric:tabular-nums;pointer-events:none}
+
+  /* Completion dashboard */
+  .dash{padding:10px 18px 12px;border-bottom:1px solid var(--line)}
+  .dash-top{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
+  .dash-top b{color:var(--good)}
+  .dash-bar{height:7px;background:var(--panel2);border-radius:4px;overflow:hidden}
+  .dash-bar>div{height:100%;background:linear-gradient(90deg,var(--accent),var(--good));width:0;transition:width .35s}
+  .dash-sub{font-size:10.5px;color:var(--muted);margin-top:4px;font-variant-numeric:tabular-nums}
+
+  /* Search results dropdown */
+  .search-wrap{position:relative}
+  .results{display:none;margin-top:4px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;max-height:280px;overflow-y:auto}
+  .results::-webkit-scrollbar{width:7px}.results::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  .res{display:flex;align-items:center;gap:9px;padding:7px 9px;cursor:pointer;font-size:12.5px;border-bottom:1px solid var(--line)}
+  .res:last-child{border-bottom:none}
+  .res:hover{background:var(--panel)}
+  .res-ic{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+  .res-nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .res-cat{font-size:10px;color:var(--muted);flex-shrink:0}
+  .res-empty{padding:9px;font-size:12px;color:var(--muted)}
+
+  /* Cluster bubbles themed to the app */
+  .marker-cluster{background:rgba(217,164,65,.25)}
+  .marker-cluster div{background:rgba(217,164,65,.85);color:#1a1206;font-weight:700;font-family:inherit}
+  @media(max-width:640px){#sidebar{position:absolute;z-index:1100;height:100%}}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div class="brand">
+      <h1>ELDEN RING</h1>
+      <p>Interactive Map · The Lands Between</p>
+    </div>
+    <div class="dash">
+      <div class="dash-top"><span>Completion</span><span><b id="dashPct">0%</b></span></div>
+      <div class="dash-bar"><div id="dashFill"></div></div>
+      <div class="dash-sub" id="dashSub">0 / 0 found</div>
+    </div>
+    <div class="tools">
+      <div class="maptabs" id="maptabs">
+        <div class="maptab active" data-base="M00">Overworld</div>
+        <div class="maptab" data-base="M01">Underground</div>
+        <div class="maptab" data-base="M10">Land of Shadow</div>
+      </div>
+      <div class="search-wrap">
+        <div class="search">
+          <span style="color:var(--muted);margin-right:7px">🔍</span>
+          <input id="search" placeholder="Search locations…" autocomplete="off">
+        </div>
+        <div id="results" class="results"></div>
+      </div>
+      <div class="row">
+        <div class="btn" id="allOn">Show all</div>
+        <div class="btn" id="allOff">Hide all</div>
+        <div class="btn" id="hideFound">Hide found</div>
+      </div>
+      <div class="row">
+        <div class="btn" id="exportBtn">Export</div>
+        <div class="btn" id="importBtn">Import</div>
+        <div class="btn" id="shareBtn">Share view</div>
+        <div class="btn" id="reset">Reset</div>
+      </div>
+      <input type="file" id="importFile" accept="application/json" style="display:none">
+    </div>
+    <div class="cats" id="cats"></div>
+  </aside>
+
+  <div id="map"></div>
+  <div id="togglebar">
+    <button class="iconbtn" id="sbToggle" title="Toggle sidebar">☰</button>
+  </div>
+  <div id="coord">px: 0, py: 0</div>
+</div>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="vendor/leaflet/leaflet.markercluster.js"></script>
+<script src="markers.js"></script>
+<script src="quests.js"></script>
+<script src="itemdata.js" defer></script>
+<script>
+/* ============================================================
+   Base map = datamined Elden Ring master tiles (10496x10496),
+   served locally from ./ctiles. Markers carry master-pixel (px,py)
+   coordinates that map EXACTLY onto these tiles (1px = 1 game unit).
+   ============================================================ */
+const CONFIG = {
+  tileUrl:  "ctiles/{map}/base/{z}/{y}/{x}.webp",  // note path order z/y/x
+  tileSize: 256,
+  nativeZoom: 6,        // ceil(log2(10496/256))
+  imgSize: 10496,
+};
+const NZ = CONFIG.nativeZoom, SCALE = Math.pow(2, NZ);   // 64
+// master-pixel (px,py) <-> CRS.Simple latlng (leaflet-rastercoords math)
+const xy = (px, py) => L.latLng(-py / SCALE, px / SCALE);
+const fromLatLng = ll => [ Math.round(ll.lng * SCALE), Math.round(-ll.lat * SCALE) ];
+
+const bounds = L.latLngBounds(xy(0, CONFIG.imgSize), xy(CONFIG.imgSize, 0));
+
+const map = L.map("map", {
+  crs: L.CRS.Simple,
+  minZoom: 1,
+  maxZoom: NZ + 1,
+  zoomControl: false,
+  attributionControl: false,
+  maxBounds: bounds.pad(0.2),
+  maxBoundsViscosity: 0.7,
+  zoomSnap: 0.25,
+  zoomDelta: 0.5,
+});
+L.control.zoom({ position: "bottomleft" }).addTo(map);
+
+const makeTiles = master => L.tileLayer(CONFIG.tileUrl.replace("{map}", master), {
+  tileSize: CONFIG.tileSize,
+  minNativeZoom: 0,
+  maxNativeZoom: NZ,
+  noWrap: true,
+  bounds: bounds,
+  updateWhenZooming: false,   // don't fetch tiles mid zoom-animation -> smoother zoom
+  keepBuffer: 3,              // keep a wider ring of tiles around the viewport
+});
+const baseLayers = { M00: makeTiles("M00"), M01: makeTiles("M01"), M10: makeTiles("M10") };
+let activeBase = "M00";
+baseLayers.M00.addTo(map);
+map.fitBounds(bounds);
+
+function switchBase(base){
+  if (base === activeBase || !baseLayers[base]) return;
+  map.removeLayer(baseLayers[activeBase]);
+  activeBase = base;
+  buildMasterMarkers(base);                 // lazily build this map's markers on first visit
+  baseLayers[base].addTo(map);
+  baseLayers[base].bringToBack();
+  document.querySelectorAll(".maptab").forEach(t => t.classList.toggle("active", t.dataset.base === base));
+  rebuildCluster();
+  refreshCounts();
+  if (typeof renderActiveQuests === "function") renderActiveQuests();
+}
+document.querySelectorAll(".maptab").forEach(t => t.onclick = () => switchBase(t.dataset.base));
+
+/* ---- Progress (localStorage) ---- */
+const SAVE_KEY = "er-map-found-v2";
+let found = JSON.parse(localStorage.getItem(SAVE_KEY) || "{}");
+const saveFound = () => localStorage.setItem(SAVE_KEY, JSON.stringify(found));
+
+/* ---- State ---- */
+const catState = {};
+const markerRefs = [];
+const catById = {};
+let hideFound = false;
+CATEGORIES.forEach(c => catById[c.id] = c);
+
+const PREFS_KEY = "er-map-prefs";
+const SAVED_PREFS = (function(){ try{ return JSON.parse(localStorage.getItem(PREFS_KEY) || "null"); }catch(e){ return null; } })();
+function savePrefs(){ try{ localStorage.setItem(PREFS_KEY, JSON.stringify({ cats:catState, base:activeBase, hf:hideFound })); }catch(e){} }
+
+/* ---- Build category list ---- */
+const catsEl = document.getElementById("cats");
+const groups = {};
+CATEGORIES.forEach(c => { (groups[c.group] ||= []).push(c); });
+
+function pinHtml(cat, isDone){
+  return `<div class="pin ${isDone?'done':''}" style="background:${cat.color};width:24px;height:24px">${cat.icon}</div>`;
+}
+function divIcon(cat, isDone){
+  return L.divIcon({ html: pinHtml(cat, isDone), className:"", iconSize:[24,24], iconAnchor:[12,12], popupAnchor:[0,-14] });
+}
+
+function regionIcon(name){
+  return L.divIcon({ html:`<div class="region-label">${name}</div>`, className:"", iconSize:[0,0], iconAnchor:[0,0] });
+}
+function makeMarker(d){
+  const cat = catById[d.cat];
+  const isRegion = d.cat === "region";
+  const m = isRegion
+    ? L.marker(xy(d.px, d.py), { icon: regionIcon(d.name), interactive:false, keyboard:false })
+    : L.marker(xy(d.px, d.py), { icon: divIcon(cat, !!found[d.id]), title: d.name });
+  if(!isRegion){
+    m.bindPopup(() => popupHtml(d, cat), { closeButton:true, minWidth: 220 });
+    m.on("popupopen", () => bindPopup(d, cat, m));
+  }
+  const ref = { marker:m, data:d, cat, master:d.master, isRegion };
+  markerRefs.push(ref);
+  return ref;
+}
+function itemMeta(d, catId){
+  const data = (window.ITEMDATA && window.ITEMDATA[catId]) ? window.ITEMDATA[catId][d.name] : null;
+  let iconHtml="", statHtml="", sumHtml="";
+  const wt = v => (Math.round(v*10)/10);
+  const stat = s => `<div class="pop-stat">${s}</div>`;
+  if(data){
+    if(data.icon) iconHtml = `<img class="pop-icon" src="icons/${data.icon}.webp" onerror="this.remove()">`;
+    if(catId==='weapon'){
+      const tags=[]; if(data.inf) tags.push('Infusable'); if(data.buf) tags.push('Buffable'); if(data.som) tags.push('Somber');
+      let l1 = [data.t, data.wt!=null?('Wt '+wt(data.wt)):null].filter(Boolean).join(' · ');
+      if(tags.length) l1 += ` <span class="pop-tag">${tags.join(' · ')}</span>`;
+      statHtml += stat(l1);
+      if(data.atk){ const L={physical:'Phys',magic:'Mag',fire:'Fire',lightning:'Ltn',holy:'Holy'}, a=[]; ['physical','magic','fire','lightning','holy'].forEach(k=>{ if(data.atk[k]) a.push(`${L[k]} <b>${data.atk[k]}</b>`); }); if(a.length) statHtml += stat('Attack: '+a.join(' · ')); }
+      if(data.scl){ const L={str:'Str',dex:'Dex',int:'Int',fai:'Fai',arc:'Arc'}, s=[]; ['str','dex','int','fai','arc'].forEach(k=>{ if(data.scl[k]) s.push(`${L[k]} <b>${data.scl[k]}</b>`); }); if(s.length) statHtml += stat('Scaling: '+s.join(' · ')); }
+      if(data.req) statHtml += stat('Req: '+data.req);
+    } else if(catId==='armor'){
+      statHtml += stat([data.wt!=null?('Wt '+wt(data.wt)):null, data.poise?('Poise '+data.poise):null].filter(Boolean).join(' · '));
+      if(data.neg){ const n=data.neg, cells=[['Phys',n.ph],['Strk',n.st],['Slsh',n.sl],['Prce',n.pi],['Mag',n.ma],['Fire',n.fi],['Ltn',n.li],['Holy',n.ho]].map(c=>`<div>${c[0]}<b>${c[1]}</b></div>`).join(''); statHtml += `<div class="pop-grid">${cells}</div>`; }
+      if(data.res){ const r=data.res; statHtml += stat(`Immunity <b>${r.im}</b> · Robust <b>${r.ro}</b> · Focus <b>${r.fo}</b> · Death <b>${r.de}</b>`); }
+    } else {
+      const r = [];
+      if(catId==='spell'){ if(data.t) r.push(data.t); if(data.fp!=null) r.push(data.fp+' FP'); if(data.slots) r.push(data.slots+' slot'+(data.slots>1?'s':'')); if(data.req) r.push(data.req); }
+      else if(catId==='spirit'){ if(data.fp!=null) r.push(data.fp+' FP'); if(data.hp) r.push(data.hp+' HP'); if(data.mat) r.push('Up: '+data.mat); }
+      else if(catId==='ash'){ if(data.aff) r.push('Affinity: '+data.aff); }
+      else if(catId==='talisman'){ if(data.wt!=null) r.push('Wt '+wt(data.wt)); }
+      else if(catId==='boss'){ if(data.runes) r.push(Number(data.runes).toLocaleString()+' runes'); }
+      else if(catId==='grace'){ if(data.region) r.push(data.region); }
+      const s = r.filter(Boolean).join(' · ');
+      if(s) statHtml += stat(s);
+    }
+    if(data.sum) sumHtml = `<div class="pop-sum">${data.sum}</div>`;
+  }
+  return { iconHtml, statHtml, sumHtml };
+}
+function popupHtml(d, cat){
+  const on = !!found[d.id];
+  const m = itemMeta(d, cat.id);
+  const wiki = `https://eldenring.wiki.fextralife.com/${encodeURIComponent(d.name).replace(/%20/g,'+')}`;
+  return `
+    <div class="pop-head">${m.iconHtml}
+      <div class="pop-head-t">
+        <div class="pop-cat">${cat.icon} ${cat.name}</div>
+        <div class="pop-t">${d.name}</div>
+      </div>
+    </div>
+    ${m.statHtml}${m.sumHtml}
+    ${d.desc ? `<div class="pop-d">${d.desc}</div>` : ""}
+    <div class="pop-actions">
+      <div class="pop-found ${on?'on':''}" data-id="${d.id}"><span>${on?'✓':'○'}</span><span>${on?'Found':'Mark as found'}</span></div>
+      <a class="pop-wiki" href="${wiki}" target="_blank" rel="noopener">Wiki ↗</a>
+    </div>`;
+}
+function bindPopup(d, cat, m){
+  const el = document.querySelector(`.pop-found[data-id="${d.id}"]`);
+  if(!el) return;
+  el.onclick = () => {
+    if(found[d.id]) delete found[d.id]; else found[d.id]=1;
+    saveFound();
+    const ref = markerRefs.find(r=>r.data.id===d.id);
+    ref.marker.setIcon(divIcon(cat, !!found[d.id]));
+    m.setPopupContent(popupHtml(d,cat));
+    bindPopup(d,cat,m);
+    refreshCounts();
+    if(hideFound) rebuildCluster();
+  };
+}
+
+// build all markers into a clustering group (declutters at low zoom)
+const cluster = L.markerClusterGroup({
+  maxClusterRadius: 46,
+  disableClusteringAtZoom: NZ,     // individual pins at full zoom
+  spiderfyOnMaxZoom: true,
+  showCoverageOnHover: false,
+  chunkedLoading: true,
+}).addTo(map);
+const regionLayer = L.layerGroup().addTo(map);   // permanent region-name text labels (not clustered)
+// Lazy per-base creation: only build the active map's markers now; others on first switch.
+const builtMasters = {};
+function buildMasterMarkers(master){
+  if(builtMasters[master]) return;
+  builtMasters[master] = true;
+  MARKERS.forEach(d => { if(d.master === master) makeMarker(d); });
+}
+buildMasterMarkers(activeBase);
+
+Object.keys(groups).forEach(gName => {
+  const gEl = document.createElement("div");
+  const h = document.createElement("div"); h.className="group-h"; h.textContent = gName;
+  gEl.appendChild(h);
+  groups[gName].forEach(cat => {
+    catState[cat.id] = true;
+    const row = document.createElement("div"); row.className="cat"; row.dataset.cat=cat.id;
+    row.innerHTML = `<div class="ic" style="background:${cat.color}">${cat.icon}</div>
+      <div class="nm">${cat.name}</div><div class="ct" id="ct-${cat.id}"></div>`;
+    row.onclick = () => toggleCat(cat.id);
+    gEl.appendChild(row);
+  });
+  catsEl.appendChild(gEl);
+});
+
+/* ---- Cluster membership = category on + master matches active base ---- */
+const searchEl = document.getElementById("search");
+function rebuildCluster(){
+  const vis = markerRefs.filter(r => !r.isRegion && catState[r.cat.id] && r.master === activeBase && !(hideFound && found[r.data.id])).map(r => r.marker);
+  cluster.clearLayers();
+  cluster.addLayers(vis);
+  rebuildRegions();
+  savePrefs();
+}
+function rebuildRegions(){
+  regionLayer.clearLayers();
+  if(!catState["region"]) return;
+  markerRefs.forEach(r => { if(r.isRegion && r.master === activeBase) regionLayer.addLayer(r.marker); });
+}
+// Region labels fade in as you zoom past the overview, keeping the wide view clean.
+function updateRegionOpacity(){
+  const z = map.getZoom();
+  const op = (Math.max(0, Math.min(1, (z - 2.4) / 1.0)) * 0.92).toFixed(2);
+  document.getElementById("map").style.setProperty("--rl-op", op);
+}
+map.on("zoomend", updateRegionOpacity);
+updateRegionOpacity();
+function toggleCat(id){
+  catState[id] = !catState[id];
+  document.querySelector(`.cat[data-cat="${id}"]`).classList.toggle("off", !catState[id]);
+  rebuildCluster();
+}
+function refreshCounts(){
+  CATEGORIES.forEach(cat => {
+    const inBase = MARKERS.filter(m => m.cat===cat.id && m.master===activeBase);
+    const total = inBase.length, done = inBase.filter(m => found[m.id]).length;
+    const el = document.getElementById("ct-"+cat.id);
+    if(el) el.innerHTML = total ? `<b>${done}</b>/${total}` : "";
+    const row = document.querySelector(`.cat[data-cat="${cat.id}"]`);
+    if(row) row.style.display = total ? "" : "none";
+  });
+  const coll = MARKERS.filter(m => m.master===activeBase && m.cat!=='region');  // collectibles only
+  const t = coll.length, d = coll.filter(m => found[m.id]).length, p = t ? Math.round(d/t*100) : 0;
+  document.getElementById("dashFill").style.width = p + "%";
+  document.getElementById("dashPct").textContent = p + "%";
+  document.getElementById("dashSub").textContent = `${d} / ${t} found`;
+}
+refreshCounts();
+rebuildCluster();
+
+/* ---- Controls ---- */
+function setAll(on){
+  CATEGORIES.forEach(c => {
+    catState[c.id] = on;
+    document.querySelector(`.cat[data-cat="${c.id}"]`).classList.toggle("off", !on);
+  });
+  rebuildCluster();
+}
+document.getElementById("allOn").onclick  = () => setAll(true);
+document.getElementById("allOff").onclick = () => setAll(false);
+document.getElementById("reset").onclick = () => {
+  if(!confirm("Clear all 'found' progress?")) return;
+  found = {}; saveFound();
+  markerRefs.forEach(r => r.marker.setIcon(divIcon(r.cat, false)));
+  refreshCounts();
+};
+document.getElementById("sbToggle").onclick = () => {
+  const collapsed = document.getElementById("app").classList.toggle("sb-collapsed");
+  document.getElementById("togglebar").style.left = collapsed ? "12px" : "342px";
+};
+
+/* ---- Hide found ---- */
+document.getElementById("hideFound").onclick = (e) => {
+  hideFound = !hideFound;
+  e.currentTarget.classList.toggle("active", hideFound);
+  rebuildCluster();
+};
+
+/* ---- Backup & sharing ---- */
+document.getElementById("exportBtn").onclick = () => {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(found)], { type:"application/json" }));
+  a.download = "elden-ring-progress.json"; a.click(); URL.revokeObjectURL(a.href);
+};
+document.getElementById("importBtn").onclick = () => document.getElementById("importFile").click();
+document.getElementById("importFile").onchange = (e) => {
+  const f = e.target.files[0]; if(!f) return;
+  const rd = new FileReader();
+  rd.onload = () => {
+    try{
+      const data = JSON.parse(rd.result);
+      if(data && typeof data === "object"){
+        Object.keys(data).forEach(k => found[k] = data[k]);
+        saveFound();
+        markerRefs.forEach(r => r.marker.setIcon(divIcon(r.cat, !!found[r.data.id])));
+        refreshCounts(); rebuildCluster();
+        alert("Progress imported — " + Object.keys(found).length + " markers found.");
+      }
+    }catch(err){ alert("Couldn't read that file."); }
+    e.target.value = "";
+  };
+  rd.readAsText(f);
+};
+document.getElementById("shareBtn").onclick = async () => {
+  const [px,py] = fromLatLng(map.getCenter());
+  location.hash = `${activeBase}/${px}/${py}/${map.getZoom().toFixed(2)}`;
+  const btn = document.getElementById("shareBtn");
+  try{ await navigator.clipboard.writeText(location.href); btn.textContent = "Copied!"; }
+  catch(e){ btn.textContent = "In URL"; }
+  setTimeout(() => btn.textContent = "Share view", 1400);
+};
+
+/* ---- Restore saved filters + shared view ---- */
+function restoreState(){
+  const p = SAVED_PREFS;   // captured before any savePrefs() overwrote it
+  if(p){
+    if(p.cats) CATEGORIES.forEach(c => { if(c.id in p.cats){ catState[c.id]=p.cats[c.id]; const row=document.querySelector(`.cat[data-cat="${c.id}"]`); if(row) row.classList.toggle("off", !catState[c.id]); } });
+    if(p.hf){ hideFound=true; document.getElementById("hideFound").classList.add("active"); }
+    if(p.base && p.base!==activeBase && baseLayers[p.base]) switchBase(p.base);
+  }
+  const h = location.hash.replace(/^#/,"").split("/");
+  if(h.length===4 && baseLayers[h[0]]){
+    if(h[0]!==activeBase) switchBase(h[0]);
+    const px=+h[1], py=+h[2], z=+h[3];
+    if(isFinite(px)&&isFinite(py)&&isFinite(z)) map.setView(xy(px,py), z, {animate:false});
+  }
+  refreshCounts(); rebuildCluster();
+}
+
+/* ---- Search: live results dropdown + fly-to ---- */
+const resultsEl = document.getElementById("results");
+function renderResults(){
+  const q = searchEl.value.trim().toLowerCase();
+  if(!q){ resultsEl.style.display="none"; resultsEl.innerHTML=""; return; }
+  const matches = markerRefs.filter(r => !r.isRegion && r.master===activeBase &&
+    (r.data.name.toLowerCase().includes(q) || (r.data.desc||"").toLowerCase().includes(q))).slice(0,15);
+  resultsEl.style.display="block";
+  if(!matches.length){ resultsEl.innerHTML='<div class="res-empty">No matches on this map</div>'; return; }
+  resultsEl.innerHTML="";
+  matches.forEach(r => {
+    const item = document.createElement("div"); item.className="res";
+    item.innerHTML = `<span class="res-ic" style="background:${r.cat.color}">${r.cat.icon}</span>`+
+      `<span class="res-nm">${r.data.name}</span><span class="res-cat">${r.cat.name}</span>`;
+    item.onmousedown = (e) => {            // mousedown fires before the input's blur
+      e.preventDefault();
+      if(!catState[r.cat.id]){ catState[r.cat.id]=true; document.querySelector(`.cat[data-cat="${r.cat.id}"]`).classList.remove("off"); rebuildCluster(); }
+      resultsEl.style.display="none"; searchEl.value=r.data.name;
+      cluster.zoomToShowLayer(r.marker, () => r.marker.openPopup());
+    };
+    resultsEl.appendChild(item);
+  });
+}
+searchEl.oninput = renderResults;
+searchEl.onfocus = renderResults;
+searchEl.onblur  = () => setTimeout(() => { resultsEl.style.display="none"; }, 150);
+
+/* ---- Coordinate readout (master pixels, for placing new pins) ---- */
+map.on("mousemove", e => {
+  const [px,py] = fromLatLng(e.latlng);
+  document.getElementById("coord").textContent = `px: ${px}, py: ${py}`;
+});
+map.on("click", e => {
+  const [px,py] = fromLatLng(e.latlng);
+  console.log(`{ id:"new", cat:"grace", name:"New", master:"${activeBase}", px:${px}, py:${py}, desc:"" },`);
+});
+
+/* ============================================================
+   QUESTLINES — ordered, numbered step pins + connecting path.
+   Each questline toggles independently; steps show on the layer
+   (overworld/underground) they belong to.
+   ============================================================ */
+const QL = window.QUESTLINES || [];
+const questState = {};
+const questLayers = {};
+
+function qIcon(color, n, isStart){
+  const bg = isStart ? "#e5484d" : color;     // first step (quest start) = red
+  const sz = isStart ? 28 : 22;
+  return L.divIcon({
+    html: `<div class="qpin${isStart?' start':''}" style="background:${bg};width:${sz}px;height:${sz}px"><span>${n}</span></div>`,
+    className:"", iconSize:[sz,sz], iconAnchor:[sz/2, sz-2], popupAnchor:[0,-(sz-4)],
+  });
+}
+function renderQuest(q){
+  if (questLayers[q.id]) { map.removeLayer(questLayers[q.id]); delete questLayers[q.id]; }
+  if (!questState[q.id]) return;
+  const steps = q.steps.filter(s => s.master === activeBase);
+  const lg = L.layerGroup();
+  if (steps.length > 1){
+    L.polyline(steps.map(s => xy(s.px, s.py)), { color:q.color, weight:2.5, opacity:.65, dashArray:"5,6" }).addTo(lg);
+  }
+  const kindLabel = { item:"📦 Item", boss:"💀 Boss", npc:"🧙 NPC", grace:"📍 Area" };
+  steps.forEach(s => {
+    const start = s.n === 1;
+    L.marker(xy(s.px, s.py), { icon: qIcon(q.color, s.n, start), title:`${s.n}. ${s.title}`, zIndexOffset: start?2000:1000 })
+     .bindPopup(`<div class="pop-cat" style="color:${start?'#e5484d':q.color}">${start?'▶ START · ':''}${q.name}</div>`+
+                `<div class="pop-t">Step ${s.n}: ${s.title}</div>`+
+                `<div class="pop-d">${s.desc}</div>`+
+                `<div style="font-size:11px;color:var(--muted);margin-top:6px">${kindLabel[s.kind]||""}</div>`, { minWidth:220 })
+     .addTo(lg);
+  });
+  lg.addTo(map);
+  questLayers[q.id] = lg;
+}
+function renderActiveQuests(){ QL.forEach(q => { if (questState[q.id]) renderQuest(q); }); }
+function toggleQuest(id){
+  questState[id] = !questState[id];
+  document.querySelector(`.quest-row[data-q="${id}"]`).classList.toggle("off", !questState[id]);
+  renderQuest(QL.find(q => q.id === id));
+}
+
+if (QL.length){
+  const gEl = document.createElement("div");
+  const h = document.createElement("div"); h.className="group-h"; h.textContent = "Questlines";
+  gEl.appendChild(h);
+  QL.forEach(q => {
+    questState[q.id] = false;
+    const row = document.createElement("div");
+    row.className = "cat quest-row off"; row.dataset.q = q.id;
+    row.innerHTML = `<div class="dot" style="background:${q.color}"></div>
+      <div class="nm">${q.name}</div><div class="ct">${q.steps.length}</div>`;
+    row.onclick = () => toggleQuest(q.id);
+    gEl.appendChild(row);
+  });
+  catsEl.appendChild(gEl);
+}
+
+/* Restore saved filters + shared view last, once everything (incl. quests) is initialized. */
+restoreState();
+</script>
+</body>
+</html>

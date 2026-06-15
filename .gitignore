@@ -1,0 +1,15 @@
+# datamined source cache (re-downloaded by the build scripts)
+_data/
+
+# internal review artifacts
+_review/
+
+# internal project notes (not for the public site)
+PROJECT_CONTEXT.md
+
+# unused DLC-underground tiles (no markers; not shown in the UI)
+ctiles/M11/
+
+*.log
+Thumbs.db
+desktop.ini
