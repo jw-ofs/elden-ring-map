@@ -378,7 +378,7 @@ function popupHtml(d, cat){
       </div>
     </div>
     ${m.statHtml}${m.sumHtml}${bossHtml}
-    ${d.desc ? `<div class="pop-d">${d.desc}</div>` : ""}
+    ${(d.desc && cat.id !== 'boss') ? `<div class="pop-d">${d.desc}</div>` : ""}
     <div class="pop-actions">
       <div class="pop-found ${on?'on':''}" data-id="${d.id}"><span>${on?'✓':'○'}</span><span>${on?'Found':'Mark as found'}</span></div>
       <a class="pop-wiki" href="${wiki}" target="_blank" rel="noopener">Wiki ↗</a>
