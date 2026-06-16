@@ -144,7 +144,13 @@
   .qs-warn{color:#e5a23a}
   .qs-warntext{font-size:11px;color:#e0a94a;margin-top:3px;line-height:1.35;background:rgba(229,162,58,.1);border-left:2px solid #e5a23a;padding:3px 6px;border-radius:0 4px 4px 0}
   .qs-layer{font-size:9px;color:var(--muted);background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:2px 5px;white-space:nowrap;align-self:center}
-  @media(max-width:640px){#sidebar{position:absolute;z-index:1100;height:100%}#questPanel{width:auto;left:12px;right:12px;max-height:55%}}
+  @media(max-width:640px){
+    #sidebar{position:absolute;z-index:1100;height:100%}
+    #questPanel{width:auto;left:12px;right:12px;max-height:60%}
+    #togglebar{left:auto;right:10px;z-index:1200}
+    #app.sb-collapsed #togglebar{left:10px;right:auto}
+    #coord{display:none}
+  }
 </style>
 </head>
 <body>
@@ -468,9 +474,10 @@ document.getElementById("reset").onclick = () => {
   refreshCounts();
 };
 document.getElementById("sbToggle").onclick = () => {
-  const collapsed = document.getElementById("app").classList.toggle("sb-collapsed");
-  document.getElementById("togglebar").style.left = collapsed ? "12px" : "342px";
+  document.getElementById("app").classList.toggle("sb-collapsed");   // position handled by CSS (desktop + mobile)
 };
+// On phones, start with the sidebar collapsed so the map is the first thing you see.
+if (window.matchMedia("(max-width:640px)").matches) document.getElementById("app").classList.add("sb-collapsed");
 
 /* ---- Hide found ---- */
 document.getElementById("hideFound").onclick = (e) => {
@@ -645,6 +652,7 @@ function openQuestPanel(q){
   panelQuest = q;
   if(!questState[q.id]){ questState[q.id]=true; qsave.shown[q.id]=1; saveQuests(); renderQuest(q); }
   updateQuestRow(q); fillPanel(q); qPanel.classList.add("open");
+  if (window.matchMedia("(max-width:640px)").matches) document.getElementById("app").classList.add("sb-collapsed");  // give the panel + map room on phones
 }
 function closeQuestPanel(){ qPanel.classList.remove("open"); panelQuest=null; }
 function fillPanel(q){
