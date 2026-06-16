@@ -253,7 +253,9 @@ const makeTiles = master => L.tileLayer(CONFIG.tileUrl.replace("{map}", master),
   noWrap: true,
   bounds: bounds,
   updateWhenZooming: false,   // don't fetch tiles mid zoom-animation -> smoother zoom
-  keepBuffer: 3,              // keep a wider ring of tiles around the viewport
+  updateWhenIdle: true,       // defer tile loading until the drag stops -> smoother panning
+  keepBuffer: 3,              // keep a wider ring of tiles so the deferred load isn't visible
+
 });
 const baseLayers = { M00: makeTiles("M00"), M01: makeTiles("M01"), M10: makeTiles("M10") };
 let activeBase = "M00";
