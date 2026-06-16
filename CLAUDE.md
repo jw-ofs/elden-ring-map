@@ -8,9 +8,10 @@ review → implement** gate.
 ## Project map
 
 - `index.html` — the entire web app (Leaflet, UI, quest tracker). Loads local data + vendored Leaflet.
-- `markers.js`, `quests.js`, `itemdata.js` — **generated** data. Do not hand-edit; regenerate via the build scripts.
+- `markers.js`, `quests.js`, `itemdata.js`, `bossdata.js` — **generated** data. Do not hand-edit; regenerate via the build scripts.
 - `questlines.json` — authored questline input consumed by `build-quests.ps1`.
-- `build-markers.ps1`, `build-quests.ps1`, `build-itemdata.ps1` — PowerShell builds that regenerate the data from the datamined source.
+- `bossdata.json` — authored boss combat data (damage dealt + weaknesses) consumed by `build-bossdata.ps1`. Not datamined — hand-edit this, then rebuild.
+- `build-markers.ps1`, `build-quests.ps1`, `build-itemdata.ps1` — PowerShell builds that regenerate the data from the datamined source. `build-bossdata.ps1` wraps `bossdata.json` into `bossdata.js`.
 - `server.ps1` — local static preview server.
 - `ctiles/`, `icons/`, `vendor/` — tiles, item icons, vendored Leaflet (offline assets).
 - `symbols/`, `scripts/align.py`, `.claude/`, `Agents/`, `docs/` — the governance harness described below.
@@ -23,12 +24,13 @@ Regenerate data (order matters — quests + itemdata read `markers.js`):
 powershell -File build-markers.ps1     # markers.js
 powershell -File build-quests.ps1      # quests.js   (reads questlines.json + markers.js)
 powershell -File build-itemdata.ps1    # itemdata.js (+ downloads icons)
+powershell -File build-bossdata.ps1    # bossdata.js  (wraps authored bossdata.json — independent of the others)
 ```
 
 Deploy: `git push origin main` → GitHub Pages rebuilds (~1–2 min) → https://jw-ofs.github.io/elden-ring-map/.
 
-**Never hand-edit `markers.js` / `quests.js` / `itemdata.js`** — they are build outputs. Edit the
-source (`questlines.json`, the build scripts) and regenerate.
+**Never hand-edit `markers.js` / `quests.js` / `itemdata.js` / `bossdata.js`** — they are build outputs. Edit the
+source (`questlines.json`, `bossdata.json`, the build scripts) and regenerate.
 
 ---
 

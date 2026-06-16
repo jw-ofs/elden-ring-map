@@ -1,0 +1,2192 @@
+﻿{
+    "Abductor Virgin (Swinging Sickle)":  {
+                                              "deals":  [
+                                                            "physical"
+                                                        ],
+                                              "weak":  [
+                                                           "lightning"
+                                                       ],
+                                              "note":  "Wear physical-negation armor; immune to status, so bait slow swings and punish with lightning."
+                                          },
+    "Adan, Thief of Fire":  {
+                                "deals":  [
+                                              "fire",
+                                              "strike",
+                                              "bleed"
+                                          ],
+                                "weak":  [
+                                             "lightning"
+                                         ],
+                                "resist":  [
+                                               "fire"
+                                           ],
+                                "note":  "Stack fire negation; lightning is his lowest defense; dodge Flame of the Fell God lobs."
+                            },
+    "Alecto, Black Knife Ringleader":  {
+                                           "deals":  [
+                                                         "physical",
+                                                         "death"
+                                                     ],
+                                           "weak":  [
+                                                        "slash",
+                                                        "strike",
+                                                        "frostbite"
+                                                    ],
+                                           "resist":  [
+                                                          "holy",
+                                                          "pierce"
+                                                      ],
+                                           "note":  "Her Black Knife drains max HP; stay aggressive and heal off the HP-drain DoT."
+                                       },
+    "Ancient Dragon Lansseax":  {
+                                    "deals":  [
+                                                  "lightning",
+                                                  "fire",
+                                                  "physical"
+                                              ],
+                                    "weak":  [
+                                                 "pierce"
+                                             ],
+                                    "resist":  [
+                                                   "lightning"
+                                               ],
+                                    "note":  "Wear lightning negation; roll her glaive lightning waves and pierce the head/legs."
+                                },
+    "Ancient Dragon Senessax":  {
+                                    "deals":  [
+                                                  "lightning",
+                                                  "fire",
+                                                  "physical"
+                                              ],
+                                    "weak":  [
+                                                 "pierce"
+                                             ],
+                                    "resist":  [
+                                                   "lightning"
+                                               ],
+                                    "note":  "Lightning negation gear; dodge red branching-lightning AoE and pierce between casts."
+                                },
+    "Ancient Dragon-Man":  {
+                               "deals":  [
+                                             "fire",
+                                             "physical"
+                                         ],
+                               "weak":  [
+                                            "physical",
+                                            "lightning"
+                                        ],
+                               "note":  "Stack fire negation; sidestep Dragonmaw lunge and magma pools, then trade in melee."
+                           },
+    "Ancient Hero of Zamor":  {
+                                  "deals":  [
+                                                "frostbite",
+                                                "magic",
+                                                "physical"
+                                            ],
+                                  "weak":  [
+                                               "fire",
+                                               "lightning"
+                                           ],
+                                  "note":  "Bring frost negation and a cure; fire/lightning take 2x damage, especially icy phase 2."
+                              },
+    "Astel, Naturalborn of the Void":  {
+                                           "deals":  [
+                                                         "magic"
+                                                     ],
+                                           "weak":  [
+                                                        "physical"
+                                                    ],
+                                           "resist":  [
+                                                          "magic",
+                                                          "fire",
+                                                          "lightning",
+                                                          "holy"
+                                                      ],
+                                           "note":  "Wear magic negation; favor physical weapons and dodge the gravity-grab teleport."
+                                       },
+    "Astel, Stars of Darkness":  {
+                                     "deals":  [
+                                                   "magic"
+                                               ],
+                                     "weak":  [
+                                                  "physical"
+                                              ],
+                                     "resist":  [
+                                                    "magic",
+                                                    "fire",
+                                                    "lightning",
+                                                    "holy"
+                                                ],
+                                     "note":  "Magic negation gear; favor physical melee and roll the dark gravity nebula sweeps."
+                                 },
+    "Base Serpent Messmer":  {
+                                 "deals":  [
+                                               "physical",
+                                               "fire"
+                                           ],
+                                 "weak":  [
+                                              "slash",
+                                              "frostbite"
+                                          ],
+                                 "resist":  [
+                                                "fire"
+                                            ],
+                                 "note":  "Heavy fire negation is essential; slash and frostbite work; holy opens up in phase 2."
+                             },
+    "Battlemage Hugues":  {
+                              "deals":  [
+                                            "magic",
+                                            "strike"
+                                        ],
+                              "weak":  [
+                                           "slash",
+                                           "pierce",
+                                           "holy"
+                                       ],
+                              "resist":  [
+                                             "magic"
+                                         ],
+                              "note":  "Wear magic negation; close the gap fast to deny his Cannon of Haima sorceries."
+                          },
+    "Bayle the Dread":  {
+                            "deals":  [
+                                          "fire",
+                                          "lightning"
+                                      ],
+                            "weak":  [
+                                         "pierce"
+                                     ],
+                            "resist":  [
+                                           "fire",
+                                           "lightning"
+                                       ],
+                            "note":  "Stack fire AND lightning negation; pierce weapons + dragon grease; dodge mixed breath."
+                        },
+    "Beastman of Farum Azula":  {
+                                    "deals":  [
+                                                  "physical"
+                                              ],
+                                    "weak":  [
+                                                 "fire",
+                                                 "strike"
+                                             ],
+                                    "resist":  [
+                                                   "lightning"
+                                               ],
+                                    "note":  "Boost fire/strike-heavy defense isn\u0027t key; dodge cleaver combos and punish after a parry."
+                                },
+    "Beastman of Farum Azula (Cleaver)":  {
+                                              "deals":  [
+                                                            "physical"
+                                                        ],
+                                              "weak":  [
+                                                           "fire",
+                                                           "strike"
+                                                       ],
+                                              "resist":  [
+                                                             "lightning"
+                                                         ],
+                                              "note":  "Slow heavy cleaver swings are parryable; sidestep then punish, fire grease helps."
+                                          },
+    "Bell Bearing Hunter":  {
+                                "deals":  [
+                                              "physical",
+                                              "magic"
+                                          ],
+                                "weak":  [
+                                             "pierce",
+                                             "lightning"
+                                         ],
+                                "resist":  [
+                                               "magic",
+                                               "fire",
+                                               "holy"
+                                           ],
+                                "note":  "Roll through his fast combos; keep distance from his ranged magic blade arcs."
+                            },
+    "Black Blade Kindred":  {
+                                "deals":  [
+                                              "physical",
+                                              "holy"
+                                          ],
+                                "weak":  [
+                                             "strike"
+                                         ],
+                                "resist":  [
+                                               "holy",
+                                               "fire",
+                                               "lightning"
+                                           ],
+                                "note":  "Black blade attacks cut max HP; heal fast and avoid the holy AoE shockwaves."
+                            },
+    "Black Knife Assassin":  {
+                                 "deals":  [
+                                               "physical",
+                                               "holy"
+                                           ],
+                                 "weak":  [
+                                              "frostbite"
+                                          ],
+                                 "resist":  [
+                                                "holy",
+                                                "pierce"
+                                            ],
+                                 "note":  "Blade of Death drains HP over time; stagger her with fast hits, she has low poise."
+                             },
+    "Black Knight Edredd":  {
+                                "deals":  [
+                                              "physical",
+                                              "holy",
+                                              "lightning"
+                                          ],
+                                "weak":  [
+                                             "lightning",
+                                             "pierce",
+                                             "poison",
+                                             "scarlet rot",
+                                             "sleep"
+                                         ],
+                                "resist":  [
+                                               "slash"
+                                           ],
+                                "note":  "Tank physical+holy+lightning with Dragoncrest/Golden Braid; lightning infusion shreds him."
+                            },
+    "Black Knight Garrew":  {
+                                "deals":  [
+                                              "physical",
+                                              "holy"
+                                          ],
+                                "weak":  [
+                                             "lightning",
+                                             "pierce",
+                                             "poison",
+                                             "scarlet rot",
+                                             "sleep"
+                                         ],
+                                "resist":  [
+                                               "slash"
+                                           ],
+                                "note":  "Boost holy/physical negation; punish his slow mace swings, lightning infusion shreds him."
+                            },
+    "Bloodhound Knight":  {
+                              "deals":  [
+                                            "physical",
+                                            "bleed"
+                                        ],
+                              "weak":  [
+                                           "lightning"
+                                       ],
+                              "note":  "He inflicts bleed and lunges far; carry Stanching Boluses and dodge into his evasive leaps."
+                          },
+    "Bloodhound Knight Darriwil":  {
+                                       "deals":  [
+                                                     "physical",
+                                                     "bleed"
+                                                 ],
+                                       "weak":  [
+                                                    "lightning"
+                                                ],
+                                       "note":  "His Bloodhound\u0027s Finesse teleport-slashes build bleed; bring Boluses, punish recovery."
+                                   },
+    "Bols, Carian Knight":  {
+                                "deals":  [
+                                              "physical",
+                                              "magic"
+                                          ],
+                                "weak":  [
+                                             "slash",
+                                             "sleep",
+                                             "bleed",
+                                             "scarlet rot",
+                                             "poison"
+                                         ],
+                                "resist":  [
+                                               "magic",
+                                               "frostbite"
+                                           ],
+                                "note":  "Dodge his slow greatblade and magic phalanx; very low sleep threshold makes sleep pots strong."
+                            },
+    "Cemetery Shade":  {
+                           "deals":  [
+                                         "physical",
+                                         "bleed"
+                                     ],
+                           "weak":  [
+                                        "holy"
+                                    ],
+                           "resist":  [
+                                          "pierce"
+                                      ],
+                           "note":  "Spirit teleports and dual-blade flurries inflict bleed; keep moving, holy damage melts it."
+                       },
+    "Chief Bloodfiend":  {
+                             "deals":  [
+                                           "physical",
+                                           "fire",
+                                           "bleed"
+                                       ],
+                             "weak":  [
+                                          "slash",
+                                          "frostbite",
+                                          "poison",
+                                          "scarlet rot"
+                                      ],
+                             "resist":  [
+                                            "fire",
+                                            "bleed"
+                                        ],
+                             "note":  "DLC: heavy blood attacks inflict hemorrhage on you; bring Boluses, frostbite slows it down."
+                         },
+    "Cleanrot Knight":  {
+                            "deals":  [
+                                          "physical",
+                                          "holy",
+                                          "scarlet rot"
+                                      ],
+                            "weak":  [
+                                         "fire",
+                                         "lightning",
+                                         "pierce"
+                                     ],
+                            "resist":  [
+                                           "holy",
+                                           "slash",
+                                           "scarlet rot"
+                                       ],
+                            "note":  "Wear rot-resist gear; dodge the impale grab. Pierce and fire melt it."
+                        },
+    "Cleanrot Knight (Spear)":  {
+                                    "deals":  [
+                                                  "physical",
+                                                  "holy",
+                                                  "scarlet rot"
+                                              ],
+                                    "weak":  [
+                                                 "fire",
+                                                 "lightning",
+                                                 "pierce"
+                                             ],
+                                    "resist":  [
+                                                   "holy",
+                                                   "slash",
+                                                   "scarlet rot"
+                                               ],
+                                    "note":  "Avoid the glowing spear charge-grab; it dumps massive scarlet rot."
+                                },
+    "Commander Gaius":  {
+                            "deals":  [
+                                          "physical",
+                                          "magic"
+                                      ],
+                            "weak":  [
+                                         "holy",
+                                         "frostbite"
+                                     ],
+                            "resist":  [
+                                           "slash"
+                                       ],
+                            "note":  "Strafe the boar charge; brace for gravity magic in phase 2."
+                        },
+    "Commander Niall":  {
+                            "deals":  [
+                                          "physical",
+                                          "lightning",
+                                          "frostbite"
+                                      ],
+                            "weak":  [
+                                         "pierce"
+                                     ],
+                            "resist":  [
+                                           "slash"
+                                       ],
+                            "note":  "Kill the two summoned knights first; watch lightning leg sweeps."
+                        },
+    "Commander O\u0027Neil":  {
+                                  "deals":  [
+                                                "physical",
+                                                "scarlet rot"
+                                            ],
+                                  "weak":  [
+                                               "pierce"
+                                           ],
+                                  "resist":  [
+                                                 "slash",
+                                                 "scarlet rot"
+                                             ],
+                                  "note":  "Stay out of the rot whirlwind; bring rot-cure and high immunity."
+                              },
+    "Crucible Knight":  {
+                            "deals":  [
+                                          "physical",
+                                          "holy"
+                                      ],
+                            "weak":  [
+                                         "fire",
+                                         "lightning"
+                                     ],
+                            "resist":  [
+                                           "magic",
+                                           "holy"
+                                       ],
+                            "note":  "Block with high-stability shield; punish the tail-sweep and shield-bash."
+                        },
+    "Crucible Knight Ordovis":  {
+                                    "deals":  [
+                                                  "physical",
+                                                  "holy"
+                                              ],
+                                    "weak":  [
+                                                 "fire",
+                                                 "lightning"
+                                             ],
+                                    "resist":  [
+                                                   "magic",
+                                                   "holy"
+                                               ],
+                                    "note":  "Dodge the spinning Ordovis Vortex AoE; punish after its big leaps."
+                                },
+    "Crystalian":  {
+                       "deals":  [
+                                     "physical"
+                                 ],
+                       "weak":  [
+                                    "strike"
+                                ],
+                       "resist":  [
+                                      "slash",
+                                      "pierce",
+                                      "magic",
+                                      "fire",
+                                      "lightning",
+                                      "holy"
+                                  ],
+                       "note":  "Use blunt/strike weapons to break stance fast; it negates all else heavily."
+                   },
+    "Crystalian (Ringblade)":  {
+                                   "deals":  [
+                                                 "physical"
+                                             ],
+                                   "weak":  [
+                                                "strike"
+                                            ],
+                                   "resist":  [
+                                                  "slash",
+                                                  "pierce",
+                                                  "magic",
+                                                  "fire",
+                                                  "lightning",
+                                                  "holy"
+                                              ],
+                                   "note":  "Strike weapons only; dodge the long ringblade slashes and break its stance."
+                               },
+    "Crystalian (Staff)":  {
+                               "deals":  [
+                                             "physical",
+                                             "magic"
+                                         ],
+                               "weak":  [
+                                            "strike"
+                                        ],
+                               "resist":  [
+                                              "slash",
+                                              "pierce",
+                                              "magic",
+                                              "fire",
+                                              "lightning",
+                                              "holy"
+                                          ],
+                               "note":  "Strike to break stance; watch the staff\u0027s magic-infused slams and pillars."
+                           },
+    "Curseblade Labirith":  {
+                                "deals":  [
+                                              "physical"
+                                          ],
+                                "weak":  [
+                                             "slash",
+                                             "sleep"
+                                         ],
+                                "note":  "Roll through its rapid backhand combos; slash weapons and sleep work best."
+                            },
+    "Dancer of Ranah":  {
+                            "deals":  [
+                                          "physical",
+                                          "fire"
+                                      ],
+                            "weak":  [
+                                         "strike",
+                                         "pierce",
+                                         "lightning"
+                                     ],
+                            "resist":  [
+                                           "fire",
+                                           "magic"
+                                       ],
+                            "note":  "Roll through her dual-blade flurries and fireball claps; fire damage is wasted."
+                        },
+    "Death Knight":  {
+                         "deals":  [
+                                       "physical",
+                                       "lightning"
+                                   ],
+                         "weak":  [
+                                      "holy"
+                                  ],
+                         "resist":  [
+                                        "magic",
+                                        "lightning",
+                                        "bleed",
+                                        "madness"
+                                    ],
+                         "note":  "Wear high holy-free armor with lightning negation; punish its spinning halberd combo ends."
+                     },
+    "Death Rite Bird":  {
+                            "deals":  [
+                                          "physical",
+                                          "magic",
+                                          "death",
+                                          "frostbite"
+                                      ],
+                            "weak":  [
+                                         "strike",
+                                         "holy"
+                                     ],
+                            "resist":  [
+                                           "pierce",
+                                           "lightning",
+                                           "bleed",
+                                           "poison",
+                                           "scarlet rot",
+                                           "frostbite",
+                                           "sleep",
+                                           "madness"
+                                       ],
+                            "note":  "Holy water pots melt it; dodge flaming-talon swoops and watch death blight buildup."
+                        },
+    "Deathbird":  {
+                      "deals":  [
+                                    "physical",
+                                    "magic",
+                                    "death"
+                                ],
+                      "weak":  [
+                                   "strike",
+                                   "holy"
+                               ],
+                      "resist":  [
+                                     "pierce",
+                                     "lightning",
+                                     "bleed",
+                                     "poison",
+                                     "scarlet rot",
+                                     "frostbite",
+                                     "sleep",
+                                     "madness"
+                                 ],
+                      "note":  "Strike and holy weapons plus holy pots shred it; circle behind to dodge its cleaver AoE."
+                  },
+    "Decaying Ekzykes":  {
+                             "deals":  [
+                                           "physical",
+                                           "scarlet rot"
+                                       ],
+                             "weak":  [
+                                          "fire",
+                                          "bleed",
+                                          "frostbite"
+                                      ],
+                             "resist":  [
+                                            "poison",
+                                            "scarlet rot",
+                                            "sleep",
+                                            "madness"
+                                        ],
+                             "note":  "Bring rot-cure boluses; sprint perpendicular to its rot breath and strike the legs."
+                         },
+    "Demi-Human Chief":  {
+                             "deals":  [
+                                           "physical"
+                                       ],
+                             "weak":  [
+                                          "slash",
+                                          "fire",
+                                          "magic",
+                                          "lightning",
+                                          "holy",
+                                          "sleep"
+                                      ],
+                             "resist":  [
+                                            "bleed",
+                                            "madness"
+                                        ],
+                             "note":  "Frail and weak to everything; dodge its twin-dagger flurry and trade freely."
+                         },
+    "Demi-Human Queen Gilika":  {
+                                    "deals":  [
+                                                  "physical",
+                                                  "magic"
+                                              ],
+                                    "weak":  [
+                                                 "fire",
+                                                 "slash",
+                                                 "poison",
+                                                 "scarlet rot"
+                                             ],
+                                    "resist":  [
+                                                   "madness"
+                                               ],
+                                    "note":  "Squishy caster; close the gap, dodge crystal bursts, and slash/fire her down fast."
+                                },
+    "Demi-Human Queen Maggie":  {
+                                    "deals":  [
+                                                  "physical",
+                                                  "magic"
+                                              ],
+                                    "weak":  [
+                                                 "fire",
+                                                 "slash",
+                                                 "poison",
+                                                 "scarlet rot"
+                                             ],
+                                    "resist":  [
+                                                   "madness"
+                                               ],
+                                    "note":  "Rush her to interrupt Crystal Burst; fire and slash end the fight quickly."
+                                },
+    "Demi-Human Queen Margot":  {
+                                    "deals":  [
+                                                  "physical",
+                                                  "magic"
+                                              ],
+                                    "weak":  [
+                                                 "fire",
+                                                 "slash",
+                                                 "poison",
+                                                 "scarlet rot"
+                                             ],
+                                    "resist":  [
+                                                   "madness"
+                                               ],
+                                    "note":  "Stay close to bait melee over spells; sidestep her grab and staff throw in phase 2."
+                                },
+    "Demi-Human Queen Marigga":  {
+                                     "deals":  [
+                                                   "physical",
+                                                   "magic"
+                                               ],
+                                     "weak":  [
+                                                  "fire",
+                                                  "slash",
+                                                  "poison",
+                                                  "scarlet rot"
+                                              ],
+                                     "resist":  [
+                                                    "madness"
+                                                ],
+                                     "note":  "Close distance to stop her glintstone volleys; fire and slash drop her fast."
+                                 },
+    "Demi-Human Swordmaster Onze":  {
+                                        "deals":  [
+                                                      "physical",
+                                                      "magic",
+                                                      "frostbite"
+                                                  ],
+                                        "weak":  [
+                                                     "slash",
+                                                     "fire",
+                                                     "poison",
+                                                     "scarlet rot"
+                                                 ],
+                                        "resist":  [
+                                                       "sleep",
+                                                       "madness"
+                                                   ],
+                                        "note":  "Keep frost resist up; his fast Mist Cutter builds frostbite, so don\u0027t get greedy."
+                                    },
+    "Divine Beast Dancing Lion":  {
+                                      "deals":  [
+                                                    "physical",
+                                                    "lightning",
+                                                    "frostbite"
+                                                ],
+                                      "weak":  [
+                                                   "pierce",
+                                                   "fire",
+                                                   "bleed",
+                                                   "scarlet rot"
+                                               ],
+                                      "resist":  [
+                                                     "magic",
+                                                     "lightning",
+                                                     "holy",
+                                                     "frostbite",
+                                                     "sleep",
+                                                     "madness"
+                                                 ],
+                                      "note":  "Layer lightning/frost resist; phase 2 cycles storm/frost/lightning AoEs, keep distance."
+                                  },
+    "Draconic Tree Sentinel":  {
+                                   "deals":  [
+                                                 "physical",
+                                                 "lightning",
+                                                 "fire"
+                                             ],
+                                   "weak":  [
+                                                "pierce",
+                                                "strike"
+                                            ],
+                                   "resist":  [
+                                                  "slash",
+                                                  "fire",
+                                                  "lightning",
+                                                  "frostbite"
+                                              ],
+                                   "note":  "Stack lightning/fire negation; bait its slow mace and avoid the red-lightning AoE in phase 2."
+                               },
+    "Dragonkin Soldier":  {
+                              "deals":  [
+                                            "physical"
+                                        ],
+                              "weak":  [
+                                           "slash",
+                                           "bleed",
+                                           "frostbite",
+                                           "poison"
+                                       ],
+                              "resist":  [
+                                             "lightning"
+                                         ],
+                              "note":  "Strafe its lunge combos; bring slash weapons. No status armor needed, it only deals physical."
+                          },
+    "Dragonkin Soldier of Nokstella":  {
+                                           "deals":  [
+                                                         "physical",
+                                                         "lightning",
+                                                         "frostbite"
+                                                     ],
+                                           "weak":  [
+                                                        "slash",
+                                                        "bleed",
+                                                        "poison"
+                                                    ],
+                                           "resist":  [
+                                                          "lightning"
+                                                      ],
+                                           "note":  "Phase 2 adds lightning and frost; wear lightning/frost negation and dodge ranged bolts."
+                                       },
+    "Dragonlord Placidusax":  {
+                                  "deals":  [
+                                                "physical",
+                                                "fire",
+                                                "lightning"
+                                            ],
+                                  "weak":  [
+                                               "pierce",
+                                               "bleed",
+                                               "frostbite",
+                                               "poison"
+                                           ],
+                                  "resist":  [
+                                                 "magic",
+                                                 "fire",
+                                                 "lightning",
+                                                 "holy"
+                                             ],
+                                  "note":  "Fire/lightning AoEs hit hard; stack fire+lightning negation and heal between breath waves."
+                              },
+    "Elemer of the Briar":  {
+                                "deals":  [
+                                              "physical",
+                                              "magic"
+                                          ],
+                                "weak":  [
+                                             "pierce",
+                                             "lightning",
+                                             "bleed",
+                                             "frostbite"
+                                         ],
+                                "resist":  [
+                                               "magic",
+                                               "fire",
+                                               "holy"
+                                           ],
+                                "note":  "Aggressive ranged sword teleports; dodge into him and punish, low poise lets you stagger."
+                            },
+    "Erdtree Avatar":  {
+                           "deals":  [
+                                         "physical",
+                                         "holy"
+                                     ],
+                           "weak":  [
+                                        "fire",
+                                        "strike",
+                                        "poison",
+                                        "scarlet rot",
+                                        "frostbite"
+                                    ],
+                           "resist":  [
+                                          "holy"
+                                      ],
+                           "note":  "Takes ~2x fire damage and 0% strike negation; burn it down, avoid holy weapons."
+                       },
+    "Erdtree Burial Watchdog":  {
+                                    "deals":  [
+                                                  "physical",
+                                                  "magic"
+                                              ],
+                                    "weak":  [
+                                                 "strike"
+                                             ],
+                                    "resist":  [
+                                                   "magic",
+                                                   "fire",
+                                                   "lightning",
+                                                   "holy"
+                                               ],
+                                    "note":  "Stone statue: use blunt/strike weapons; immune to all status, so skip bleed/rot builds."
+                                },
+    "Erdtree Burial Watchdog (Sword)":  {
+                                            "deals":  [
+                                                          "physical",
+                                                          "fire"
+                                                      ],
+                                            "weak":  [
+                                                         "strike"
+                                                     ],
+                                            "resist":  [
+                                                           "magic",
+                                                           "fire",
+                                                           "lightning",
+                                                           "holy"
+                                                       ],
+                                            "note":  "Greatsword variant adds fire tail sweeps; wear fire negation and hit with strike weapons."
+                                        },
+    "Esgar, Priest of Blood":  {
+                                   "deals":  [
+                                                 "physical",
+                                                 "magic",
+                                                 "fire",
+                                                 "bleed"
+                                             ],
+                                   "weak":  [
+                                                "physical",
+                                                "bleed",
+                                                "frostbite"
+                                            ],
+                                   "resist":  [
+                                                  "holy",
+                                                  "magic",
+                                                  "lightning"
+                                              ],
+                                   "note":  "His blood attacks build bleed on you; keep moving, wear physical negation and immunize bleed."
+                               },
+    "Fallingstar Beast":  {
+                              "deals":  [
+                                            "physical",
+                                            "magic",
+                                            "bleed"
+                                        ],
+                              "weak":  [
+                                           "magic",
+                                           "lightning",
+                                           "fire",
+                                           "holy"
+                                       ],
+                              "resist":  [
+                                             "physical"
+                                         ],
+                              "note":  "Charges and gravity slams; sidestep charges and use magic/elemental damage over physical."
+                          },
+    "Fell Twin":  {
+                      "deals":  [
+                                    "physical",
+                                    "fire",
+                                    "holy",
+                                    "bleed"
+                                ],
+                      "weak":  [
+                                   "slash",
+                                   "bleed",
+                                   "scarlet rot",
+                                   "frostbite",
+                                   "poison",
+                                   "sleep"
+                               ],
+                      "resist":  [
+                                     "holy"
+                                 ],
+                      "note":  "Two omens at once; isolate one, wear holy negation and immunize the bloodflame bleed."
+                  },
+    "Fia\u0027s Champion":  {
+                                "deals":  [
+                                              "physical",
+                                              "magic",
+                                              "death"
+                                          ],
+                                "weak":  [
+                                             "lightning",
+                                             "holy"
+                                         ],
+                                "resist":  [
+                                               "fire"
+                                           ],
+                                "note":  "Lionel\u0027s Death Blight mist is lethal; cleanse it fast and avoid standing in the cloud."
+                            },
+    "Fire Giant":  {
+                       "deals":  [
+                                     "physical",
+                                     "fire"
+                                 ],
+                       "weak":  [
+                                    "slash",
+                                    "bleed",
+                                    "poison"
+                                ],
+                       "resist":  [
+                                      "fire"
+                                  ],
+                       "note":  "Phase 2 is heavy fire; max fire negation and target the foot/eye. Frost barely sticks, skip it."
+                   },
+    "Flying Dragon Agheel":  {
+                                 "deals":  [
+                                               "fire",
+                                               "physical"
+                                           ],
+                                 "weak":  [
+                                              "pierce"
+                                          ],
+                                 "resist":  [
+                                                "magic",
+                                                "fire",
+                                                "lightning",
+                                                "holy"
+                                            ],
+                                 "note":  "Tuck under its chest during fire breath; stab the head, pierce is its only soft spot."
+                             },
+    "Flying Dragon Greyll":  {
+                                 "deals":  [
+                                               "fire",
+                                               "physical"
+                                           ],
+                                 "weak":  [
+                                              "pierce"
+                                          ],
+                                 "resist":  [
+                                                "magic",
+                                                "fire",
+                                                "lightning",
+                                                "holy"
+                                            ],
+                                 "note":  "Roll into its body during breath sweeps; hammer the head with pierce, elements all resisted."
+                             },
+    "Frenzied Duelist":  {
+                             "deals":  [
+                                           "physical"
+                                       ],
+                             "weak":  [
+                                          "slash",
+                                          "bleed"
+                                      ],
+                             "note":  "Sidestep its 3-4 hit mace combos and the grab; slash and bleed melt it, punish after swings."
+                         },
+    "Full-Grown Fallingstar Beast":  {
+                                         "deals":  [
+                                                       "physical",
+                                                       "magic"
+                                                   ],
+                                         "weak":  [
+                                                      "magic",
+                                                      "fire",
+                                                      "lightning",
+                                                      "holy"
+                                                  ],
+                                         "resist":  [
+                                                        "physical"
+                                                    ],
+                                         "note":  "Hug under its head to avoid charges and gravity beams; any element beats melee here."
+                                     },
+    "Ghostflame Dragon":  {
+                              "deals":  [
+                                            "frostbite",
+                                            "magic"
+                                        ],
+                              "weak":  [
+                                           "holy",
+                                           "strike",
+                                           "scarlet rot"
+                                       ],
+                              "resist":  [
+                                             "magic",
+                                             "fire",
+                                             "lightning"
+                                         ],
+                              "note":  "Build frost resist; tuck under the body during ghostflame breath, batter the legs with strike."
+                          },
+    "Glintstone Dragon Adula":  {
+                                    "deals":  [
+                                                  "magic",
+                                                  "frostbite"
+                                              ],
+                                    "weak":  [
+                                                 "pierce"
+                                             ],
+                                    "resist":  [
+                                                   "magic",
+                                                   "fire",
+                                                   "lightning",
+                                                   "holy"
+                                               ],
+                                    "note":  "Bait Adula\u0027s Moonblade then roll laterally; carry frost resist, pierce the body, magic is useless."
+                                },
+    "Glintstone Dragon Smarag":  {
+                                     "deals":  [
+                                                   "magic",
+                                                   "physical"
+                                               ],
+                                     "weak":  [
+                                                  "pierce"
+                                              ],
+                                     "resist":  [
+                                                    "magic",
+                                                    "fire",
+                                                    "lightning",
+                                                    "holy"
+                                                ],
+                                     "note":  "Hug its flank to dodge magic breath; pierce the head, magic is heavily resisted."
+                                 },
+    "Godefroy the Grafted":  {
+                                 "deals":  [
+                                               "physical"
+                                           ],
+                                 "weak":  [
+                                              "physical",
+                                              "bleed"
+                                          ],
+                                 "resist":  [
+                                                "holy"
+                                            ],
+                                 "note":  "Dodge his grafted-arm slams and wide spins; physical and bleed are reliable, no element needed."
+                             },
+    "Godfrey, First Elden Lord":  {
+                                      "deals":  [
+                                                    "physical"
+                                                ],
+                                      "weak":  [
+                                                   "slash",
+                                                   "pierce",
+                                                   "lightning"
+                                               ],
+                                      "resist":  [
+                                                     "holy"
+                                                 ],
+                                      "note":  "Avoid Hoarah Loux\u0027s grab and stomp shockwaves; pierce/lightning in P1, slash shreds P2."
+                                  },
+    "Godrick the Grafted":  {
+                                "deals":  [
+                                              "physical",
+                                              "fire"
+                                          ],
+                                "weak":  [
+                                             "physical",
+                                             "bleed"
+                                         ],
+                                "resist":  [
+                                               "holy"
+                                           ],
+                                "note":  "In phase 2 dodge the grafted dragon-arm fire breath; bring fire resist, exploit physical and bleed."
+                            },
+    "Godskin Apostle":  {
+                            "deals":  [
+                                          "fire",
+                                          "physical"
+                                      ],
+                            "weak":  [
+                                         "slash",
+                                         "bleed",
+                                         "sleep"
+                                     ],
+                            "resist":  [
+                                           "fire",
+                                           "holy"
+                                       ],
+                            "note":  "Build fire resist for black flame; sleep and bleed stagger him, slash to finish."
+                        },
+    "Godskin Duo":  {
+                        "deals":  [
+                                      "fire",
+                                      "physical"
+                                  ],
+                        "weak":  [
+                                     "slash",
+                                     "bleed",
+                                     "sleep"
+                                 ],
+                        "resist":  [
+                                       "fire",
+                                       "holy"
+                                   ],
+                        "note":  "Use Sleep Pots to drop one twin; they share an HP bar, so spread damage and dodge black flame."
+                    },
+    "Godskin Noble":  {
+                          "deals":  [
+                                        "physical",
+                                        "pierce",
+                                        "fire"
+                                    ],
+                          "weak":  [
+                                       "slash",
+                                       "bleed",
+                                       "sleep"
+                                   ],
+                          "resist":  [
+                                         "strike",
+                                         "fire",
+                                         "holy"
+                                     ],
+                          "note":  "Slash it; dodge the rolling belly slam and black-flame DoT, then heal off the flame."
+                      },
+    "Golden Hippopotamus":  {
+                                "deals":  [
+                                              "physical",
+                                              "holy"
+                                          ],
+                                "weak":  [
+                                             "fire",
+                                             "lightning",
+                                             "slash",
+                                             "bleed",
+                                             "frostbite"
+                                         ],
+                                "note":  "Stay under its chin during stomps; fire and lightning take double, bleed/frost build fast."
+                            },
+    "Grave Warden Duelist":  {
+                                 "deals":  [
+                                               "physical",
+                                               "strike"
+                                           ],
+                                 "weak":  [
+                                              "slash",
+                                              "bleed"
+                                          ],
+                                 "note":  "Roll through its chained-hammer combos; slash and bleed melt it, wear solid physical armor."
+                             },
+    "Great Wyrm Theodorix":  {
+                                 "deals":  [
+                                               "physical",
+                                               "slash",
+                                               "fire"
+                                           ],
+                                 "weak":  [
+                                              "strike",
+                                              "pierce",
+                                              "sleep",
+                                              "frostbite"
+                                          ],
+                                 "resist":  [
+                                                "fire",
+                                                "slash",
+                                                "magic",
+                                                "lightning",
+                                                "holy"
+                                            ],
+                                 "note":  "Wear fire-resist gear and avoid magma pools; sleep and frost pots stagger it, hit the head."
+                             },
+    "Guardian Golem":  {
+                           "deals":  [
+                                         "physical",
+                                         "fire"
+                                     ],
+                           "weak":  [
+                                        "strike"
+                                    ],
+                           "resist":  [
+                                          "fire",
+                                          "lightning",
+                                          "holy",
+                                          "magic"
+                                      ],
+                           "note":  "Strike damage cracks the stone (strike 0% negation); dodge its fire breath, immune to all status."
+                       },
+    "Jagged Peak Drake":  {
+                              "deals":  [
+                                            "physical",
+                                            "fire",
+                                            "lightning"
+                                        ],
+                              "weak":  [
+                                           "pierce",
+                                           "bleed"
+                                       ],
+                              "resist":  [
+                                             "fire",
+                                             "lightning",
+                                             "magic",
+                                             "holy"
+                                         ],
+                              "note":  "Pierce its legs and crit the head; dodge fire-lightning breath, skip fire/lightning weapons."
+                          },
+    "Jori, Elder Inquisitor":  {
+                                   "deals":  [
+                                                 "physical",
+                                                 "magic",
+                                                 "fire",
+                                                 "holy"
+                                             ],
+                                   "weak":  [
+                                                "slash",
+                                                "fire"
+                                            ],
+                                   "note":  "Slash and fire deal double damage; dodge the spiral and golden-arc holy projectile bursts."
+                               },
+    "Kindred of Rot":  {
+                           "deals":  [
+                                         "physical",
+                                         "pierce"
+                                     ],
+                           "weak":  [
+                                        "fire",
+                                        "bleed",
+                                        "frostbite"
+                                    ],
+                           "resist":  [
+                                          "scarlet rot",
+                                          "poison"
+                                      ],
+                           "note":  "Burn it down (fire -20% negation); dodge the tracking pest-thread projectiles, immune to madness."
+                       },
+    "Knight of the Solitary Gaol":  {
+                                        "deals":  [
+                                                      "physical",
+                                                      "fire"
+                                                  ],
+                                        "weak":  [
+                                                     "lightning",
+                                                     "madness"
+                                                 ],
+                                        "note":  "Lightning is its softest element; greatsword combos two-shot, so keep distance and watch fire bolts."
+                                    },
+    "Lamenter":  {
+                     "deals":  [
+                                   "physical"
+                               ],
+                     "weak":  [
+                                  "physical",
+                                  "magic",
+                                  "fire",
+                                  "lightning",
+                                  "holy"
+                              ],
+                     "note":  "Kill every clone before each phase ends; 7 debuff stacks instakill, immune to all status."
+                 },
+    "Leonine Misbegotten":  {
+                                "deals":  [
+                                              "physical"
+                                          ],
+                                "weak":  [
+                                             "slash",
+                                             "fire",
+                                             "bleed"
+                                         ],
+                                "resist":  [
+                                               "magic",
+                                               "lightning",
+                                               "holy"
+                                           ],
+                                "note":  "Pure physical; bait its leaping overhead slash then punish, slash and fire take 0% negation."
+                            },
+    "Lichdragon Fortissax":  {
+                                 "deals":  [
+                                               "physical",
+                                               "lightning",
+                                               "fire",
+                                               "death"
+                                           ],
+                                 "weak":  [
+                                              "pierce"
+                                          ],
+                                 "resist":  [
+                                                "lightning",
+                                                "holy",
+                                                "magic",
+                                                "fire"
+                                            ],
+                                 "note":  "Death Blight builds fast, so keep moving and heal; wear lightning-resist, pierce its head."
+                             },
+    "Loretta, Knight of the Haligtree":  {
+                                             "deals":  [
+                                                           "physical",
+                                                           "magic"
+                                                       ],
+                                             "weak":  [
+                                                          "lightning",
+                                                          "bleed",
+                                                          "frostbite",
+                                                          "scarlet rot",
+                                                          "poison"
+                                                      ],
+                                             "resist":  [
+                                                            "magic",
+                                                            "fire"
+                                                        ],
+                                             "note":  "Stack magic defense vs her glintstone volleys; bleed/frost build fast and stagger her."
+                                         },
+    "Mad Pumpkin Head":  {
+                             "deals":  [
+                                           "physical",
+                                           "bleed"
+                                       ],
+                             "weak":  [
+                                          "slash",
+                                          "lightning"
+                                      ],
+                             "resist":  [
+                                            "strike"
+                                        ],
+                             "note":  "Avoid the armored head (only 20% dmg); hit body/legs. Flail variant inflicts bleed."
+                         },
+    "Mad Pumpkin Head (Hammer)":  {
+                                      "deals":  [
+                                                    "physical"
+                                                ],
+                                      "weak":  [
+                                                   "slash",
+                                                   "lightning"
+                                               ],
+                                      "resist":  [
+                                                     "strike"
+                                                 ],
+                                      "note":  "Hit body/legs, not the armored head (20% dmg); hammer hits hard but inflicts no bleed."
+                                  },
+    "Magma Wyrm":  {
+                       "deals":  [
+                                     "physical",
+                                     "fire"
+                                 ],
+                       "weak":  [
+                                    "strike",
+                                    "pierce",
+                                    "sleep"
+                                ],
+                       "resist":  [
+                                      "fire",
+                                      "magic",
+                                      "lightning",
+                                      "holy",
+                                      "slash"
+                                  ],
+                       "note":  "Stack fire defense and fireproof grease; sleep pots stagger it. Dodge magma pools."
+                   },
+    "Magma Wyrm Makar":  {
+                             "deals":  [
+                                           "physical",
+                                           "fire"
+                                       ],
+                             "weak":  [
+                                          "strike",
+                                          "pierce",
+                                          "sleep"
+                                      ],
+                             "resist":  [
+                                            "fire",
+                                            "magic",
+                                            "lightning",
+                                            "holy",
+                                            "slash"
+                                        ],
+                             "note":  "Fireproof grease + fire defense; sleep staggers it. Stay clear of lava breath sweeps."
+                         },
+    "Malenia, Blade of Miquella":  {
+                                       "deals":  [
+                                                     "physical",
+                                                     "scarlet rot"
+                                                 ],
+                                       "weak":  [
+                                                    "frostbite",
+                                                    "bleed"
+                                                ],
+                                       "resist":  [
+                                                      "holy",
+                                                      "scarlet rot",
+                                                      "poison"
+                                                  ],
+                                       "note":  "Rot-proof gear is vital; her Phase 2 Scarlet Aeonia inflicts rot. Frost/bleed stagger her."
+                                   },
+    "Maliketh, the Black Blade":  {
+                                      "deals":  [
+                                                    "physical",
+                                                    "holy"
+                                                ],
+                                      "weak":  [
+                                                   "slash",
+                                                   "strike",
+                                                   "pierce"
+                                               ],
+                                      "resist":  [
+                                                     "holy",
+                                                     "magic",
+                                                     "fire",
+                                                     "lightning"
+                                                 ],
+                                      "note":  "Black Blade hits cut your max HP (Destined Death); heal fast. Use physical, never holy."
+                                  },
+    "Margit, the Fell Omen":  {
+                                  "deals":  [
+                                                "physical",
+                                                "holy"
+                                            ],
+                                  "weak":  [
+                                               "slash",
+                                               "bleed",
+                                               "frostbite",
+                                               "poison",
+                                               "scarlet rot"
+                                           ],
+                                  "resist":  [
+                                                 "holy"
+                                             ],
+                                  "note":  "Use slash weapons; bleed/frost build fast. Summon Rogier or a Spirit Ash early."
+                              },
+    "Metyr, Mother of Fingers":  {
+                                     "deals":  [
+                                                   "physical",
+                                                   "magic",
+                                                   "holy"
+                                               ],
+                                     "weak":  [
+                                                  "slash",
+                                                  "bleed"
+                                              ],
+                                     "resist":  [
+                                                    "magic",
+                                                    "fire",
+                                                    "lightning",
+                                                    "holy"
+                                                ],
+                                     "note":  "Stack magic/holy defense vs her laser barrages; slash and bleed melt her."
+                                 },
+    "Midra, Lord of Frenzied Flame":  {
+                                          "deals":  [
+                                                        "physical",
+                                                        "fire",
+                                                        "madness"
+                                                    ],
+                                          "weak":  [
+                                                       "slash",
+                                                       "bleed",
+                                                       "frostbite"
+                                                   ],
+                                          "resist":  [
+                                                         "fire"
+                                                     ],
+                                          "note":  "Madness-resist gear (Mottled Necklace/flame-protect); cleanse frenzy buildup fast."
+                                      },
+    "Mimic Tear":  {
+                       "deals":  [
+                                     "physical"
+                                 ],
+                       "weak":  [
+                                    "death"
+                                ],
+                       "note":  "It copies your loadout; unequip gear before the fog to weaken its clone. Deathblight works."
+                   },
+    "Miranda Blossom":  {
+                            "deals":  [
+                                          "physical",
+                                          "poison"
+                                      ],
+                            "weak":  [
+                                         "fire",
+                                         "slash",
+                                         "frostbite"
+                                     ],
+                            "resist":  [
+                                           "strike",
+                                           "lightning",
+                                           "holy"
+                                       ],
+                            "note":  "Burn it with fire to interrupt its poison pollen; wear poison-resist and slash it."
+                        },
+    "Miranda the Blighted Bloom":  {
+                                       "deals":  [
+                                                     "strike",
+                                                     "holy",
+                                                     "poison"
+                                                 ],
+                                       "weak":  [
+                                                    "slash",
+                                                    "fire",
+                                                    "frostbite"
+                                                ],
+                                       "resist":  [
+                                                      "lightning",
+                                                      "holy",
+                                                      "poison",
+                                                      "scarlet rot",
+                                                      "bleed"
+                                                  ],
+                                       "note":  "Bring poison cures; fire interrupts her poison-cloud spew. Stay mobile."
+                                   },
+    "Misbegotten Crusader":  {
+                                 "deals":  [
+                                               "holy",
+                                               "pierce",
+                                               "physical"
+                                           ],
+                                 "weak":  [
+                                              "slash",
+                                              "fire",
+                                              "bleed",
+                                              "frostbite"
+                                          ],
+                                 "resist":  [
+                                                "holy"
+                                            ],
+                                 "note":  "Wear holy-negation gear; dodge its Establish Order holy blast, then punish."
+                             },
+    "Misbegotten Warrior":  {
+                                "deals":  [
+                                              "physical"
+                                          ],
+                                "weak":  [
+                                             "slash",
+                                             "fire"
+                                         ],
+                                "resist":  [
+                                               "bleed",
+                                               "frostbite",
+                                               "poison",
+                                               "scarlet rot",
+                                               "sleep"
+                                           ],
+                                "note":  "Pure physical greatsword; raise phys negation and stagger it with fire during its roar."
+                            },
+    "Mohg, Lord of Blood":  {
+                                "deals":  [
+                                              "fire",
+                                              "physical",
+                                              "bleed"
+                                          ],
+                                "weak":  [
+                                             "physical",
+                                             "bleed"
+                                         ],
+                                "resist":  [
+                                               "fire",
+                                               "magic",
+                                               "lightning",
+                                               "holy"
+                                           ],
+                                "note":  "Use Purifying Crystal Tear to block Nihil HP-drain; pack Stanching Boluses."
+                            },
+    "Mohg, the Omen":  {
+                           "deals":  [
+                                         "fire",
+                                         "physical",
+                                         "bleed"
+                                     ],
+                           "weak":  [
+                                        "physical"
+                                    ],
+                           "resist":  [
+                                          "fire",
+                                          "magic",
+                                          "lightning",
+                                          "holy"
+                                      ],
+                           "note":  "Status-immune; carry Stanching Boluses for his bloodflame bleed bursts."
+                       },
+    "Morgott, the Omen King":  {
+                                   "deals":  [
+                                                 "physical",
+                                                 "holy",
+                                                 "fire",
+                                                 "bleed"
+                                             ],
+                                   "weak":  [
+                                                "slash",
+                                                "bleed",
+                                                "frostbite"
+                                            ],
+                                   "resist":  [
+                                                  "holy"
+                                              ],
+                                   "note":  "Watch the cursed-sword grab and Phase 2 holy-fire rain; slash punishes him best."
+                               },
+    "Necromancer Garris":  {
+                               "deals":  [
+                                             "strike",
+                                             "magic"
+                                         ],
+                               "weak":  [
+                                            "pierce",
+                                            "bleed",
+                                            "frostbite",
+                                            "poison"
+                                        ],
+                               "resist":  [
+                                              "magic",
+                                              "holy"
+                                          ],
+                               "note":  "Kill summoned skeletal snails fast; dodge his flail combos and skull magic."
+                           },
+    "Needle Knight Leda":  {
+                               "deals":  [
+                                             "holy",
+                                             "slash",
+                                             "pierce"
+                                         ],
+                               "weak":  [
+                                            "physical",
+                                            "lightning",
+                                            "frostbite",
+                                            "bleed"
+                                        ],
+                               "resist":  [
+                                              "holy",
+                                              "magic",
+                                              "scarlet rot"
+                                          ],
+                               "note":  "NPC duel; her Needle Piercer cancels buffs. Lightning/physical land best; she heals, so burst her."
+                           },
+    "Night\u0027s Cavalry":  {
+                                 "deals":  [
+                                               "strike",
+                                               "bleed"
+                                           ],
+                                 "weak":  [
+                                              "pierce",
+                                              "lightning",
+                                              "bleed",
+                                              "frostbite"
+                                          ],
+                                 "resist":  [
+                                                "magic",
+                                                "fire",
+                                                "holy",
+                                                "physical"
+                                            ],
+                                 "note":  "Flail version builds bleed; bait the mount\u0027s charge, then hit pierce/lightning."
+                             },
+    "Night\u0027s Cavalry (Glaive)":  {
+                                          "deals":  [
+                                                        "physical",
+                                                        "pierce"
+                                                    ],
+                                          "weak":  [
+                                                       "pierce",
+                                                       "lightning",
+                                                       "bleed",
+                                                       "frostbite"
+                                                   ],
+                                          "resist":  [
+                                                         "magic",
+                                                         "fire",
+                                                         "holy",
+                                                         "physical"
+                                                     ],
+                                          "note":  "Glaive sweeps are parryable; dodge in, parry, then riposte for big damage."
+                                      },
+    "Nox Monk":  {
+                     "deals":  [
+                                   "strike",
+                                   "physical"
+                               ],
+                     "weak":  [
+                                  "holy",
+                                  "sleep"
+                              ],
+                     "resist":  [
+                                    "magic"
+                                ],
+                     "note":  "Eternal City foe weak to holy; close in fast since it dodges ranged attacks."
+                 },
+    "Omenkiller":  {
+                       "deals":  [
+                                     "physical",
+                                     "fire",
+                                     "bleed"
+                                 ],
+                       "weak":  [
+                                    "physical",
+                                    "bleed",
+                                    "frostbite",
+                                    "sleep"
+                                ],
+                       "resist":  [
+                                      "fire"
+                                  ],
+                       "note":  "Bring Stanching Boluses; dodge its flaming cleaver combos and roll through fire."
+                   },
+    "Onyx Lord":  {
+                      "deals":  [
+                                    "magic",
+                                    "physical"
+                                ],
+                      "weak":  [
+                                   "physical"
+                               ],
+                      "resist":  [
+                                     "magic",
+                                     "fire",
+                                     "lightning",
+                                     "holy"
+                                 ],
+                      "note":  "Wear magic negation; roll sideways through his gravity-meteor wave. Hits hardest with physical weapons."
+                  },
+    "Patches":  {
+                    "deals":  [
+                                  "physical"
+                              ],
+                    "weak":  [
+                                 "slash"
+                             ],
+                    "resist":  [
+                                   "lightning",
+                                   "holy"
+                               ],
+                    "note":  "Pure physical spear/towershield foe; block and punish. Standard/slash hurt most, lightning is his best defense."
+                },
+    "Putrescent Knight":  {
+                              "deals":  [
+                                            "magic",
+                                            "frostbite",
+                                            "physical"
+                                        ],
+                              "weak":  [
+                                           "holy",
+                                           "strike"
+                                       ],
+                              "resist":  [
+                                             "slash",
+                                             "pierce",
+                                             "magic"
+                                         ],
+                              "note":  "Roll forward through ghostflame waves; raise frost resist; holy weapons shred it (Holy -20)."
+                          },
+    "Putrid Avatar":  {
+                          "deals":  [
+                                        "holy",
+                                        "physical",
+                                        "scarlet rot"
+                                    ],
+                          "weak":  [
+                                       "fire"
+                                   ],
+                          "resist":  [
+                                         "holy",
+                                         "magic",
+                                         "lightning"
+                                     ],
+                          "note":  "Bring rot cure and spacing; extremely weak to fire (Fire -100), use fire/Godslayer incants."
+                      },
+    "Putrid Crystalian (Spear)":  {
+                                      "deals":  [
+                                                    "pierce",
+                                                    "scarlet rot"
+                                                ],
+                                      "weak":  [
+                                                   "strike"
+                                               ],
+                                      "resist":  [
+                                                     "magic",
+                                                     "fire",
+                                                     "lightning",
+                                                     "holy",
+                                                     "slash",
+                                                     "pierce"
+                                                 ],
+                                      "note":  "Use strike weapons to stance-break fast; carry rot cure for its thrust pokes."
+                                  },
+    "Putrid Grave Warden Duelist":  {
+                                        "deals":  [
+                                                      "physical",
+                                                      "scarlet rot"
+                                                  ],
+                                        "weak":  [
+                                                     "fire",
+                                                     "slash"
+                                                 ],
+                                        "note":  "Dodge the grab/spew to avoid rot; bring rot cure; fire and slashing weapons hit hardest."
+                                    },
+    "Putrid Tree Spirit":  {
+                               "deals":  [
+                                             "physical",
+                                             "holy",
+                                             "scarlet rot"
+                                         ],
+                               "weak":  [
+                                            "fire"
+                                        ],
+                               "resist":  [
+                                              "holy",
+                                              "magic",
+                                              "lightning"
+                                          ],
+                               "note":  "Stay near its head and avoid the rot pool; fire works best (Fire -20), holy is wasted on it."
+                           },
+    "Radahn, Consort of Miquella":  {
+                                        "deals":  [
+                                                      "physical",
+                                                      "holy",
+                                                      "fire"
+                                                  ],
+                                        "weak":  [
+                                                     "pierce"
+                                                 ],
+                                        "resist":  [
+                                                       "physical",
+                                                       "magic",
+                                                       "fire",
+                                                       "lightning"
+                                                   ],
+                                        "note":  "Stack holy negation (Pearldrake/Crucible); his light-flood combos kill, pierce hits his softest spot."
+                                    },
+    "Rakshasa":  {
+                     "deals":  [
+                                   "physical",
+                                   "bleed"
+                               ],
+                     "weak":  [
+                                  "lightning"
+                              ],
+                     "resist":  [
+                                    "fire"
+                                ],
+                     "note":  "Her great-katana combos bleed and can chunk you; keep distance, heal often, hit with lightning."
+                 },
+    "Ralva the Great Red Bear":  {
+                                     "deals":  [
+                                                   "physical"
+                                               ],
+                                     "weak":  [
+                                                  "fire",
+                                                  "sleep"
+                                              ],
+                                     "note":  "Avoid the AoE roar (can one-shot); sleep pots stagger it and fire melts it (Fire -20)."
+                                 },
+    "Red Bear":  {
+                     "deals":  [
+                                   "physical",
+                                   "bleed"
+                               ],
+                     "weak":  [
+                                  "fire"
+                              ],
+                     "note":  "Don\u0027t stand in the wide roar AoE (can one-shot); fire melts it, and watch for its bleed."
+                 },
+    "Red Wolf of Radagon":  {
+                                "deals":  [
+                                              "magic",
+                                              "physical"
+                                          ],
+                                "weak":  [
+                                             "slash"
+                                         ],
+                                "resist":  [
+                                               "magic",
+                                               "fire",
+                                               "lightning",
+                                               "holy"
+                                           ],
+                                "note":  "Wear magic negation for the glintblade volleys; close the gap and use slashing weapons (Slash -10)."
+                            },
+    "Red Wolf of the Champion":  {
+                                     "deals":  [
+                                                   "magic",
+                                                   "physical"
+                                               ],
+                                     "weak":  [
+                                                  "slash"
+                                              ],
+                                     "resist":  [
+                                                    "magic"
+                                                ],
+                                     "note":  "Roll its magic projectiles and AoE slashes; stack magic negation, hit with slash."
+                                 },
+    "Rellana, Twin Moon Knight":  {
+                                      "deals":  [
+                                                    "physical",
+                                                    "magic",
+                                                    "fire"
+                                                ],
+                                      "weak":  [
+                                                   "pierce",
+                                                   "lightning",
+                                                   "sleep"
+                                               ],
+                                      "resist":  [
+                                                     "slash",
+                                                     "magic"
+                                                 ],
+                                      "note":  "Wear fire+magic negation; phase 2 dual moon/flame combos hit hard, keep distance."
+                                  },
+    "Rennala, Queen of the Full Moon":  {
+                                            "deals":  [
+                                                          "magic",
+                                                          "physical"
+                                                      ],
+                                            "weak":  [
+                                                         "physical",
+                                                         "pierce",
+                                                         "slash"
+                                                     ],
+                                            "resist":  [
+                                                           "magic"
+                                                       ],
+                                            "note":  "Phase 1 break the conjurers to knock her down; bring heavy magic negation."
+                                        },
+    "Romina, Saint of the Bud":  {
+                                     "deals":  [
+                                                   "physical",
+                                                   "scarlet rot"
+                                               ],
+                                     "weak":  [
+                                                  "fire",
+                                                  "frostbite"
+                                              ],
+                                     "resist":  [
+                                                    "slash"
+                                                ],
+                                     "note":  "Wear rot-resist armor and bring Preserving Boluses; punish with fire weapons."
+                                 },
+    "Roundtable Knight Vyke":  {
+                                   "deals":  [
+                                                 "lightning",
+                                                 "pierce",
+                                                 "madness"
+                                             ],
+                                   "weak":  [
+                                                "lightning"
+                                            ],
+                                   "resist":  [
+                                                  "physical",
+                                                  "fire",
+                                                  "magic",
+                                                  "holy"
+                                              ],
+                                   "note":  "Stack lightning negation and madness resist; his howl and thrusts build frenzy."
+                               },
+    "Royal Knight Loretta":  {
+                                 "deals":  [
+                                               "magic",
+                                               "physical"
+                                           ],
+                                 "weak":  [
+                                              "lightning"
+                                          ],
+                                 "resist":  [
+                                                "magic",
+                                                "fire"
+                                            ],
+                                 "note":  "Close the gap on her ranged glintblade/greatbow volleys; lightning melts her."
+                             },
+    "Royal Revenant":  {
+                           "deals":  [
+                                         "physical",
+                                         "poison"
+                                     ],
+                           "weak":  [
+                                        "slash",
+                                        "holy"
+                                    ],
+                           "note":  "Heal incantations deal ~50% HP and stagger it; sidestep its poison spray puddles."
+                       },
+    "Rugalea the Great Red Bear":  {
+                                       "deals":  [
+                                                     "physical"
+                                                 ],
+                                       "weak":  [
+                                                    "fire",
+                                                    "slash",
+                                                    "sleep"
+                                                ],
+                                       "note":  "Use fire and sleep; keep moving to avoid its frantic slams and ground bursts."
+                                   },
+    "Runebear":  {
+                     "deals":  [
+                                   "physical"
+                               ],
+                     "weak":  [
+                                  "fire",
+                                  "slash",
+                                  "sleep"
+                              ],
+                     "resist":  [
+                                    "magic"
+                                ],
+                     "note":  "Sleep pots stun it; stay under it to dodge wild swipes and lunges."
+                 },
+    "Rykard, Lord of Blasphemy":  {
+                                      "deals":  [
+                                                    "fire",
+                                                    "poison",
+                                                    "physical"
+                                                ],
+                                      "weak":  [
+                                                   "physical",
+                                                   "slash",
+                                                   "pierce",
+                                                   "frostbite"
+                                               ],
+                                      "resist":  [
+                                                     "fire",
+                                                     "magic",
+                                                     "holy"
+                                                 ],
+                                      "note":  "Use the Serpent-Hunter spear and wear fire negation; frostbite works well."
+                                  },
+    "Sanguine Noble":  {
+                           "deals":  [
+                                         "physical",
+                                         "bleed"
+                                     ],
+                           "weak":  [
+                                        "slash",
+                                        "bleed"
+                                    ],
+                           "resist":  [
+                                          "fire",
+                                          "magic",
+                                          "lightning",
+                                          "holy"
+                                      ],
+                           "note":  "Avoid its blood puddles; bleed builds fast on you, so cleanse and don\u0027t linger."
+                       },
+    "Scaly Misbegotten":  {
+                              "deals":  [
+                                            "physical"
+                                        ],
+                              "weak":  [
+                                           "fire",
+                                           "pierce"
+                                       ],
+                              "note":  "Its big axe swings are fully parryable; thrust and fire builds carve it up."
+                          },
+    "Sir Gideon Ofnir, the All-Knowing":  {
+                                              "deals":  [
+                                                            "physical",
+                                                            "magic",
+                                                            "fire",
+                                                            "holy"
+                                                        ],
+                                              "weak":  [
+                                                           "lightning",
+                                                           "madness"
+                                                       ],
+                                              "note":  "Stay mobile to dodge sorceries; close distance and pressure him in melee."
+                                          },
+    "Soldier of Godrick":  {
+                               "deals":  [
+                                             "physical"
+                                         ],
+                               "weak":  [
+                                            "lightning",
+                                            "pierce"
+                                        ],
+                               "note":  "Tutorial boss; roll through his slow greatsword swings and punish openings."
+                           },
+    "Spiritcaller Snail":  {
+                               "deals":  [
+                                             "physical"
+                                         ],
+                               "weak":  [
+                                            "slash"
+                                        ],
+                               "resist":  [
+                                              "magic"
+                                          ],
+                               "note":  "Rush the snail body, not the spirits; kill it fast to dispel its summons."
+                           },
+    "Stonedigger Troll":  {
+                              "deals":  [
+                                            "physical"
+                                        ],
+                              "weak":  [
+                                           "strike",
+                                           "magic",
+                                           "holy",
+                                           "sleep"
+                                       ],
+                              "resist":  [
+                                             "slash",
+                                             "pierce"
+                                         ],
+                              "note":  "Stay under it to dodge slams; sleep procs fast for a free opening."
+                          },
+    "Tibia Mariner":  {
+                          "deals":  [
+                                        "physical",
+                                        "magic"
+                                    ],
+                          "weak":  [
+                                       "strike",
+                                       "holy"
+                                   ],
+                          "resist":  [
+                                         "lightning",
+                                         "pierce"
+                                     ],
+                          "note":  "Holy and strike shred it; clear summoned skeletons fast before they swarm."
+                      },
+    "Tree Sentinel":  {
+                          "deals":  [
+                                        "physical",
+                                        "holy"
+                                    ],
+                          "weak":  [
+                                       "lightning"
+                                   ],
+                          "resist":  [
+                                         "fire",
+                                         "holy",
+                                         "slash"
+                                     ],
+                          "note":  "Bait the horse charge, dodge the shield-slam shockwave; lightning melts him."
+                      },
+    "Ulcerated Tree Spirit":  {
+                                  "deals":  [
+                                                "physical",
+                                                "holy"
+                                            ],
+                                  "weak":  [
+                                               "fire"
+                                           ],
+                                  "resist":  [
+                                                 "holy",
+                                                 "magic",
+                                                 "lightning"
+                                             ],
+                                  "note":  "Hug a leg to avoid its thrashing slams; fire damage tears it down."
+                              },
+    "Valiant Gargoyle":  {
+                             "deals":  [
+                                           "physical",
+                                           "poison",
+                                           "holy"
+                                       ],
+                             "weak":  [
+                                          "strike"
+                                      ],
+                             "resist":  [
+                                            "fire",
+                                            "lightning",
+                                            "holy",
+                                            "slash",
+                                            "pierce",
+                                            "magic"
+                                        ],
+                             "note":  "Bring antidotes for the poison mist; focus one gargoyle before the second joins."
+                         },
+    "Wormface":  {
+                     "deals":  [
+                                   "physical",
+                                   "death"
+                               ],
+                     "weak":  [
+                                  "slash"
+                              ],
+                     "resist":  [
+                                    "holy"
+                                ],
+                     "note":  "Dodge the Death Blight spray; keep moving so the blight gauge can decay."
+                 }
+}

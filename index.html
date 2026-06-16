@@ -77,6 +77,12 @@
   .pop-head-t{flex:1;min-width:0}
   .pop-stat{font-size:11.5px;color:#d7b471;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:5px 8px;margin:0 0 5px}
   .pop-stat b{color:#f0e3c4;font-weight:700}
+  .pop-deals{color:#eaa99e;border-color:#5a302b;background:#2a1a17}
+  .pop-deals b{color:#ffb4a6}
+  .pop-weak{color:#a9d9a6;border-color:#2f5a32;background:#172a18}
+  .pop-weak b{color:#b9f0b0}
+  .pop-resist{color:#9aa3ad;border-color:#363b43;background:#1b1e23}
+  .pop-resist b{color:#c4ccd6}
   .pop-tag{color:var(--muted);font-size:10px;margin-left:4px}
   .pop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin:0 0 5px}
   .pop-grid div{display:flex;flex-direction:column;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:3px 2px;font-size:9.5px;color:var(--muted);line-height:1.3}
@@ -205,6 +211,7 @@
 <script src="vendor/leaflet/leaflet.js"></script>
 <script src="vendor/leaflet/leaflet.markercluster.js"></script>
 <script src="markers.js"></script>
+<script src="bossdata.js"></script>
 <script src="quests.js"></script>
 <script src="itemdata.js" defer></script>
 <script>
@@ -312,6 +319,10 @@ function makeMarker(d){
   markerRefs.push(ref);
   return ref;
 }
+const DMG_ICON = { physical:"🗡️", strike:"🔨", slash:"🪓", pierce:"🏹", magic:"🔮", fire:"🔥", lightning:"⚡", holy:"✨", bleed:"🩸", frostbite:"❄️", poison:"🟣", "scarlet rot":"🦠", madness:"🌀", sleep:"💤", death:"💀" };
+const DMG_LABEL = { physical:"Physical", strike:"Strike", slash:"Slash", pierce:"Pierce", magic:"Magic", fire:"Fire", lightning:"Lightning", holy:"Holy", bleed:"Bleed", frostbite:"Frostbite", poison:"Poison", "scarlet rot":"Scarlet Rot", madness:"Madness", sleep:"Sleep", death:"Death" };
+function dmgChips(arr){ return (arr||[]).map(k => `${DMG_ICON[k]||"•"} ${DMG_LABEL[k]||k}`).join(" · "); }
+function bossInfo(name){ if(!window.BOSS_INFO) return null; return BOSS_INFO[name] || BOSS_INFO[name.replace(/\s*\(.*\)$/, "")] || null; }
 function itemMeta(d, catId){
   const data = (window.ITEMDATA && window.ITEMDATA[catId]) ? window.ITEMDATA[catId][d.name] : null;
   let iconHtml="", statHtml="", sumHtml="";
@@ -350,6 +361,13 @@ function popupHtml(d, cat){
   const on = !!found[d.id];
   const m = itemMeta(d, cat.id);
   const wiki = `https://eldenring.wiki.fextralife.com/${encodeURIComponent(d.name).replace(/%20/g,'+')}`;
+  let bossHtml = "";
+  if(cat.id==='boss'){ const bi = bossInfo(d.name); if(bi){
+    if(bi.deals && bi.deals.length) bossHtml += `<div class="pop-stat pop-deals"><b>Deals</b> ${dmgChips(bi.deals)}</div>`;
+    if(bi.weak && bi.weak.length) bossHtml += `<div class="pop-stat pop-weak"><b>Weak to</b> ${dmgChips(bi.weak)}</div>`;
+    if(bi.resist && bi.resist.length) bossHtml += `<div class="pop-stat pop-resist"><b>Resists</b> ${dmgChips(bi.resist)}</div>`;
+    if(bi.note) bossHtml += `<div class="pop-sum">🛡 ${bi.note}</div>`;
+  } }
   return `
     <div class="pop-head">${m.iconHtml}
       <div class="pop-head-t">
@@ -357,7 +375,7 @@ function popupHtml(d, cat){
         <div class="pop-t">${d.name}</div>
       </div>
     </div>
-    ${m.statHtml}${m.sumHtml}
+    ${m.statHtml}${m.sumHtml}${bossHtml}
     ${d.desc ? `<div class="pop-d">${d.desc}</div>` : ""}
     <div class="pop-actions">
       <div class="pop-found ${on?'on':''}" data-id="${d.id}"><span>${on?'✓':'○'}</span><span>${on?'Found':'Mark as found'}</span></div>
