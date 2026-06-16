@@ -784,7 +784,8 @@
                           "title":  "Find Seluvis\u0027s hidden basement at Three Sisters",
                           "desc":  "Go to the ruins on the right of the approach up to Ranni\u0027s Rise in the Three Sisters and strike the illusory floor between the pillars to reveal Seluvis\u0027s hidden cellar.",
                           "anchor":  "Three Sisters",
-                          "type":  "grace"
+                          "type":  "grace",
+                          "near":  "Ranni\u0027s Rise"
                       },
                       {
                           "title":  "Transplant Sellen into the new puppet body",
@@ -1598,7 +1599,8 @@
                           "title":  "Reach the Three Sisters",
                           "desc":  "Defeat Royal Knight Loretta in Caria Manor and proceed into the Three Sisters area of northwest Liurnia.",
                           "anchor":  "Three Sisters",
-                          "type":  "grace"
+                          "type":  "grace",
+                          "near":  "Ranni\u0027s Rise"
                       },
                       {
                           "title":  "Begin Ranni\u0027s quest",
@@ -1757,9 +1759,9 @@
                       {
                           "title":  "Break Miquella\u0027s Great Rune",
                           "desc":  "Defeat Messmer and Romina and approach Shadow Keep until the message \"Somewhere, a great rune has broken\" appears, advancing Thiollier\u0027s quest.",
-                          "anchor":  "Messmer the Impaler",
+                          "anchor":  "Messmer\u0027s Dark Chamber",
                           "near":  "Shadow Keep Main Gate",
-                          "type":  "boss"
+                          "type":  "grace"
                       },
                       {
                           "title":  "Speak to Thiollier after the rune breaks",
@@ -2295,8 +2297,8 @@
                           "desc":  "Return to the Grand Altar of Dragon Communion and speak with the Priestess, who rewards you with the Dragonbolt of Florissax incantation in place of her usual rewards.",
                           "anchor":  "Dragonbolt of Florissax",
                           "type":  "item",
-                          "near":  "Grand Altar of Dragon Communion",
-                          "warn":  "Only granted if you drugged the Priestess before Bayle. Otherwise she\u0027s dead and you get Flowerstone Gavel + Priestess Heart instead."
+                          "warn":  "Only granted if you drugged the Priestess before Bayle. Otherwise she\u0027s dead and you get Flowerstone Gavel + Priestess Heart instead.",
+                          "near":  "Grand Altar of Dragon Communion"
                       },
                       {
                           "title":  "Collect Igon\u0027s gear at the foot of the peak",
@@ -2373,9 +2375,9 @@
                       {
                           "title":  "Summon Hornsent against Messmer",
                           "desc":  "Use Hornsent\u0027s gold summon sign inside the boss arena to fight Messmer the Impaler together.",
-                          "anchor":  "Messmer, the Omen King",
+                          "anchor":  "Messmer\u0027s Dark Chamber",
                           "near":  "Messmer\u0027s Dark Chamber",
-                          "type":  "boss",
+                          "type":  "grace",
                           "warn":  "Summon Hornsent\u0027s gold sign on your FIRST entry to Messmer\u0027s arena; entering without him erases the sign and forfeits this co-op step."
                       },
                       {
@@ -2766,6 +2768,69 @@
                           "type":  "grace",
                           "near":  "",
                           "warn":  "Only available if you gave her the Concoction before killing Bayle. If you skipped the Concoction, you instead receive the Priestess Heart and Flowerstone Gavel here."
+                      }
+                  ]
+    },
+    {
+        "id":  "gurranq",
+        "name":  "Gurranq, Beast Clergyman",
+        "color":  "#7a6b3a",
+        "steps":  [
+                      {
+                          "title":  "Get your first Deathroot",
+                          "desc":  "Defeat the Tibia Mariner at Summonwater Village in northeast Limgrave to claim an early Deathroot. Deathroot also drops from other Tibia Mariners and certain bosses across the Lands Between.",
+                          "anchor":  "Tibia Mariner",
+                          "type":  "boss",
+                          "near":  "Summonwater Village Outskirts",
+                          "warn":  ""
+                      },
+                      {
+                          "title":  "Reach the Bestial Sanctum",
+                          "desc":  "Travel to the Bestial Sanctum in Greyoll\u0027s Dragonbarrow, in the far east. Early on it is reached via the teleporter chest in the Fringefolk Hero\u0027s Cave at the Stranded Graveyard.",
+                          "anchor":  "Bestial Sanctum",
+                          "type":  "grace",
+                          "near":  "",
+                          "warn":  "The Fringefolk Hero\u0027s Cave teleporter chest is behind a fog wall that needs 2 Stonesword Keys and flings you deep into high-level Dragonbarrow - a known trap."
+                      },
+                      {
+                          "title":  "Feed the first Deathroot",
+                          "desc":  "Give a Deathroot to Gurranq, the Beast Clergyman, beside the sanctum grace. He rewards the Clawmark Seal and the Beast Eye, which pulses when Deathroot is near.",
+                          "anchor":  "Gurranq, Beast Clergyman",
+                          "type":  "npc",
+                          "near":  "Bestial Sanctum",
+                          "warn":  ""
+                      },
+                      {
+                          "title":  "Second Deathroot",
+                          "desc":  "Return with another Deathroot for the Bestial Sling incantation.",
+                          "anchor":  "Gurranq, Beast Clergyman",
+                          "type":  "npc",
+                          "near":  "Bestial Sanctum",
+                          "warn":  ""
+                      },
+                      {
+                          "title":  "Third Deathroot",
+                          "desc":  "A third Deathroot earns the Beast Claw incantation.",
+                          "anchor":  "Gurranq, Beast Clergyman",
+                          "type":  "npc",
+                          "near":  "Bestial Sanctum",
+                          "warn":  ""
+                      },
+                      {
+                          "title":  "Fourth Deathroot",
+                          "desc":  "A fourth Deathroot grants the Stone of Gurranq incantation.",
+                          "anchor":  "Gurranq, Beast Clergyman",
+                          "type":  "npc",
+                          "near":  "Bestial Sanctum",
+                          "warn":  "After the fourth Deathroot, Gurranq turns hostile the next time you visit (reload the area) - you must fight him."
+                      },
+                      {
+                          "title":  "Pacify Gurranq, then keep feeding",
+                          "desc":  "Lower Gurranq\u0027s health until he relents - do NOT finish him. Once calmed, further Deathroots reward Beast\u0027s Roar and then Gurranq\u0027s Beast Claw.",
+                          "anchor":  "Gurranq, Beast Clergyman",
+                          "type":  "npc",
+                          "near":  "Bestial Sanctum",
+                          "warn":  "Do not kill Gurranq - killing him ends the quest and forfeits the remaining incantations."
                       }
                   ]
     }
