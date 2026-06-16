@@ -1,0 +1,34 @@
+name: Alignment Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-alignment:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Check symbolic alignment
+        run: python3 scripts/align.py check
+
+      - name: Alignment status report (on failure)
+        if: failure()
+        run: |
+          echo "## Alignment Report" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          python3 scripts/align.py status 2>&1 || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"

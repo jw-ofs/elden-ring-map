@@ -1,0 +1,65 @@
+{
+  "root": "1eaa32479d7724a3",
+  "generated": "2026-06-16T03:58:23Z",
+  "status": "aligned",
+  "symbols": {
+    "data_source": {
+      "hash": "ee405827a4f56869",
+      "means": "data_source: branch=main, repo=EthanShoeDev/elden-ring-compass",
+      "properties": {
+        "branch": "main",
+        "repo": "EthanShoeDev/elden-ring-compass"
+      },
+      "docs": {
+        "docs/architecture.md": {
+          "hash": "3853f721f839a78f",
+          "status": "current"
+        }
+      },
+      "interlocks": {}
+    },
+    "deployment": {
+      "hash": "6d51b276a99c37f0",
+      "means": "deployment: branch=main, expects_native_zoom=6, host=github-pages, masters=['M00', 'M01', 'M10'], repo=jw-ofs/elden-ring-map, url=https://jw-ofs.github.io/elden-ring-map/",
+      "properties": {
+        "branch": "main",
+        "expects_native_zoom": 6,
+        "host": "github-pages",
+        "masters": [
+          "M00",
+          "M01",
+          "M10"
+        ],
+        "repo": "jw-ofs/elden-ring-map",
+        "url": "https://jw-ofs.github.io/elden-ring-map/"
+      },
+      "docs": {
+        "docs/deployment.md": {
+          "hash": "49c28fa42cd660cd",
+          "status": "current"
+        }
+      },
+      "interlocks": {
+        "projection.native_zoom == expects_native_zoom": "PASS"
+      }
+    },
+    "projection": {
+      "hash": "f1551a7340973166",
+      "means": "projection: img_size=10496, native_zoom=6, offset_x=-7168, offset_y=16640, tile_size=256",
+      "properties": {
+        "img_size": 10496,
+        "native_zoom": 6,
+        "offset_x": -7168,
+        "offset_y": 16640,
+        "tile_size": 256
+      },
+      "docs": {
+        "docs/architecture.md": {
+          "hash": "3853f721f839a78f",
+          "status": "current"
+        }
+      },
+      "interlocks": {}
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/check-alignment.sh\""
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/require-review.sh\""
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "REVIEW_GATE_GATED_PREFIXES": "index.html,build-markers.ps1,build-quests.ps1,build-itemdata.ps1,server.ps1,scripts/"
+  }
+}

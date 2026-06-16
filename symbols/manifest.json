@@ -1,0 +1,61 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "elden-ring-map",
+    "intent": "Offline-capable interactive Elden Ring map (markers, questlines, browser-local progress), deployed as a static GitHub Pages site."
+  },
+  "symbols": {
+    "projection": {
+      "description": "Master-tile pixel projection. The web app (index.html CONFIG + xy()) AND the PowerShell build scripts (OFFSET_X/OFFSET_Y, native zoom) must use these identical constants. If they drift, every pin misaligns from the tiles. This symbol is the single source of truth for the projection math; change app and build scripts in lock-step.",
+      "docs": ["docs/architecture.md"],
+      "properties": {
+        "offset_x": -7168,
+        "offset_y": 16640,
+        "native_zoom": 6,
+        "tile_size": 256,
+        "img_size": 10496
+      },
+      "property_types": {
+        "offset_x": "int",
+        "offset_y": "int",
+        "native_zoom": "int",
+        "tile_size": "int",
+        "img_size": "int"
+      },
+      "interlocks": {}
+    },
+    "data_source": {
+      "description": "Datamined upstream repo the build scripts pull marker/quest/item data and tiles from. Changing repo or branch means re-validating projection constants and category mappings against the new data.",
+      "docs": ["docs/architecture.md"],
+      "properties": {
+        "repo": "EthanShoeDev/elden-ring-compass",
+        "branch": "main"
+      },
+      "property_types": {
+        "repo": "string",
+        "branch": "string"
+      },
+      "interlocks": {}
+    },
+    "deployment": {
+      "description": "Static hosting target. The deploy is a dumb file server (GitHub Pages), so the committed tiles + generated data must already match the projection the app expects. Tiles are pre-rendered at the projection's native zoom.",
+      "docs": ["docs/deployment.md"],
+      "properties": {
+        "host": "github-pages",
+        "repo": "jw-ofs/elden-ring-map",
+        "branch": "main",
+        "url": "https://jw-ofs.github.io/elden-ring-map/",
+        "expects_native_zoom": 6,
+        "masters": ["M00", "M01", "M10"]
+      },
+      "property_types": {
+        "host": "enum:github-pages|netlify|cloudflare-pages",
+        "branch": "string",
+        "expects_native_zoom": "int"
+      },
+      "interlocks": {
+        "projection.native_zoom": "expects_native_zoom"
+      }
+    }
+  }
+}

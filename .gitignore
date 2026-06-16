@@ -10,6 +10,13 @@ PROJECT_CONTEXT.md
 # unused DLC-underground tiles (no markers; not shown in the UI)
 ctiles/M11/
 
+# machine-local Claude Code overrides (e.g. local Python path for the gate hooks)
+.claude/settings.local.json
+
+# Python bytecode cache from the governance hooks / align.py
+__pycache__/
+*.pyc
+
 *.log
 Thumbs.db
 desktop.ini

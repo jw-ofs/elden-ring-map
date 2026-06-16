@@ -1,0 +1,19 @@
+{
+  "_help": "Registered shared-surface definitions for the combined-scenario review gate. See docs/review-workflow.md and docs/case-study-compound-regression.md. When two or more tasks in Agents/TODO/Active/ declare the same `surface` key in their front-matter, review_gate.py requires the combined review file declared here to exist and pass keyword + line-count validation. Add surfaces after observed multi-task overlap; do not add prophylactically.",
+  "_schema": {
+    "combined-surfaces": "list of objects, each with:",
+    "key": "string — unique surface identifier (referenced by tasks via 'Surface: <key>')",
+    "description": "string — what this surface protects",
+    "review-file": "string — path relative to project root, e.g. 'Agents/Review-reports/example-combined-review.md'",
+    "minimum-lines": "int — minimum non-blank lines required in the combined review (default 40)",
+    "required-keywords": "list[string] — case-insensitive keywords that must appear in the review body"
+  },
+  "_example_entry": {
+    "key": "example-shared-tick",
+    "description": "Functions that share state on the rebalance tick. Combined review required when multiple tasks touch them.",
+    "review-file": "Agents/Review-reports/example-shared-tick-combined-review.md",
+    "minimum-lines": 40,
+    "required-keywords": ["compound", "shared-state", "ordering", "boundary", "simulated"]
+  },
+  "combined-surfaces": []
+}
