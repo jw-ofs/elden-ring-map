@@ -113,7 +113,38 @@
   /* Cluster bubbles themed to the app */
   .marker-cluster{background:rgba(217,164,65,.25)}
   .marker-cluster div{background:rgba(217,164,65,.85);color:#1a1206;font-weight:700;font-family:inherit}
-  @media(max-width:640px){#sidebar{position:absolute;z-index:1100;height:100%}}
+
+  /* Quest tracker */
+  .qpin.done{filter:grayscale(.6) brightness(.8);opacity:.6}
+  .qpin.current{box-shadow:0 0 0 3px rgba(217,164,65,.6),0 0 11px rgba(217,164,65,.55);z-index:9000}
+  .qpin.warn{border-color:#e5a23a}
+  .pop-warn{font-size:12px;color:#e7ad4e;background:rgba(229,162,58,.12);border-left:2px solid #e5a23a;padding:5px 8px;border-radius:0 5px 5px 0;margin-bottom:8px;line-height:1.4}
+  #questPanel{position:absolute;top:12px;right:12px;width:308px;max-height:calc(100% - 24px);z-index:1100;background:var(--panel);border:1px solid var(--line);border-radius:10px;display:none;flex-direction:column;box-shadow:0 8px 28px rgba(0,0,0,.55)}
+  #questPanel.open{display:flex}
+  .qp-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line)}
+  .qp-title{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+  .qp-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+  .qp-x{cursor:pointer;color:var(--muted);font-size:13px;padding:2px 7px;border-radius:5px}
+  .qp-x:hover{color:var(--text);background:var(--panel2)}
+  .qp-prog{padding:10px 14px;border-bottom:1px solid var(--line)}
+  .qp-prog-top{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+  .qp-prog-top b{color:var(--good)}
+  .qp-steps{overflow-y:auto;padding:6px}
+  .qp-steps::-webkit-scrollbar{width:7px}.qp-steps::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+  .qs-row{display:flex;align-items:flex-start;gap:9px;padding:8px;border-radius:7px;cursor:pointer}
+  .qs-row:hover{background:var(--panel2)}
+  .qs-row.cur{background:rgba(217,164,65,.1);box-shadow:inset 0 0 0 1px rgba(217,164,65,.4)}
+  .qs-row.done .qs-t{text-decoration:line-through;color:var(--muted)}
+  .qs-chk{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--good);margin-top:1px}
+  .qs-chk:hover{border-color:var(--good)}
+  .qs-chk.on{border-color:var(--good);background:rgba(95,184,120,.18)}
+  .qs-num{width:18px;height:18px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;margin-top:1px}
+  .qs-body{flex:1;min-width:0}
+  .qs-t{font-size:12.5px;line-height:1.35}
+  .qs-warn{color:#e5a23a}
+  .qs-warntext{font-size:11px;color:#e0a94a;margin-top:3px;line-height:1.35;background:rgba(229,162,58,.1);border-left:2px solid #e5a23a;padding:3px 6px;border-radius:0 4px 4px 0}
+  .qs-layer{font-size:9px;color:var(--muted);background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:2px 5px;white-space:nowrap;align-self:center}
+  @media(max-width:640px){#sidebar{position:absolute;z-index:1100;height:100%}#questPanel{width:auto;left:12px;right:12px;max-height:55%}}
 </style>
 </head>
 <body>
@@ -162,6 +193,7 @@
     <button class="iconbtn" id="sbToggle" title="Toggle sidebar">☰</button>
   </div>
   <div id="coord">px: 0, py: 0</div>
+  <div id="questPanel"></div>
 </div>
 
 <script src="vendor/leaflet/leaflet.js"></script>
@@ -541,16 +573,39 @@ map.on("click", e => {
    (overworld/underground) they belong to.
    ============================================================ */
 const QL = window.QUESTLINES || [];
-const questState = {};
+const questState = {};       // id -> drawn on map
 const questLayers = {};
+const stepMarkers = {};      // "id#n" -> marker
+let panelQuest = null;
 
-function qIcon(color, n, isStart){
-  const bg = isStart ? "#e5484d" : color;     // first step (quest start) = red
-  const sz = isStart ? 28 : 22;
+/* ---- quest progress (localStorage) ---- */
+const QSAVE_KEY = "er-map-quests-v1";
+let qsave = (function(){ try{ return JSON.parse(localStorage.getItem(QSAVE_KEY)) || {shown:{},done:{}}; }catch(e){ return {shown:{},done:{}}; } })();
+qsave.shown = qsave.shown || {}; qsave.done = qsave.done || {};
+function saveQuests(){ try{ localStorage.setItem(QSAVE_KEY, JSON.stringify(qsave)); }catch(e){} }
+function isDone(id,n){ return !!(qsave.done[id] && qsave.done[id][n]); }
+function qProgress(q){ return { t:q.steps.length, d:q.steps.filter(s=>isDone(q.id,s.n)).length }; }
+function currentN(q){ const s = q.steps.find(s=>!isDone(q.id,s.n)); return s ? s.n : 0; }   // first incomplete step
+function baseLabel(m){ return m==='M01'?'Underground':(m==='M10'?'Land of Shadow':'Overworld'); }
+const KIND = { item:"📦 Item", boss:"💀 Boss", npc:"🧙 NPC", grace:"📍 Area" };
+
+function qIcon(color, n, st){
+  const bg = st.done ? "#39414f" : (st.start ? "#e5484d" : color);
+  const sz = st.start ? 28 : 22;
+  const cls = ["qpin"]; if(st.start)cls.push("start"); if(st.done)cls.push("done"); if(st.current)cls.push("current"); if(st.warn)cls.push("warn");
   return L.divIcon({
-    html: `<div class="qpin${isStart?' start':''}" style="background:${bg};width:${sz}px;height:${sz}px"><span>${n}</span></div>`,
+    html: `<div class="${cls.join(' ')}" style="background:${bg};width:${sz}px;height:${sz}px"><span>${st.done?'✓':n}</span></div>`,
     className:"", iconSize:[sz,sz], iconAnchor:[sz/2, sz-2], popupAnchor:[0,-(sz-4)],
   });
+}
+function stepPopup(q, s){
+  const done = isDone(q.id, s.n), start = s.n===1;
+  return `<div class="pop-cat" style="color:${start?'#e5484d':q.color}">${start?'▶ START · ':''}${q.name}</div>`+
+    `<div class="pop-t">Step ${s.n}: ${s.title}</div>`+
+    (s.warn ? `<div class="pop-warn">⚠ ${s.warn}</div>` : "")+
+    (s.desc ? `<div class="pop-d">${s.desc}</div>` : "")+
+    `<div style="font-size:11px;color:var(--muted);margin:6px 0">${KIND[s.kind]||""}</div>`+
+    `<div class="pop-found ${done?'on':''}" data-qd="${q.id}#${s.n}"><span>${done?'✓':'○'}</span><span>${done?'Step complete':'Mark step done'}</span></div>`;
 }
 function renderQuest(q){
   if (questLayers[q.id]) { map.removeLayer(questLayers[q.id]); delete questLayers[q.id]; }
@@ -558,26 +613,87 @@ function renderQuest(q){
   const steps = q.steps.filter(s => s.master === activeBase);
   const lg = L.layerGroup();
   if (steps.length > 1){
-    L.polyline(steps.map(s => xy(s.px, s.py)), { color:q.color, weight:2.5, opacity:.65, dashArray:"5,6" }).addTo(lg);
+    L.polyline(steps.map(s => xy(s.px, s.py)), { color:q.color, weight:2.5, opacity:.6, dashArray:"5,6" }).addTo(lg);
   }
-  const kindLabel = { item:"📦 Item", boss:"💀 Boss", npc:"🧙 NPC", grace:"📍 Area" };
+  const cur = currentN(q);
   steps.forEach(s => {
-    const start = s.n === 1;
-    L.marker(xy(s.px, s.py), { icon: qIcon(q.color, s.n, start), title:`${s.n}. ${s.title}`, zIndexOffset: start?2000:1000 })
-     .bindPopup(`<div class="pop-cat" style="color:${start?'#e5484d':q.color}">${start?'▶ START · ':''}${q.name}</div>`+
-                `<div class="pop-t">Step ${s.n}: ${s.title}</div>`+
-                `<div class="pop-d">${s.desc}</div>`+
-                `<div style="font-size:11px;color:var(--muted);margin-top:6px">${kindLabel[s.kind]||""}</div>`, { minWidth:220 })
-     .addTo(lg);
+    const st = { start:s.n===1, done:isDone(q.id,s.n), current:s.n===cur, warn:!!s.warn };
+    const mk = L.marker(xy(s.px, s.py), { icon: qIcon(q.color, s.n, st), title:`${s.n}. ${s.title}`, zIndexOffset: st.current?3000:(st.start?2000:1000) });
+    mk.bindPopup(() => stepPopup(q, s), { minWidth:230 });
+    mk.on("popupopen", () => bindStepPopup(q, s, mk));
+    mk.addTo(lg);
+    stepMarkers[q.id+'#'+s.n] = mk;
   });
   lg.addTo(map);
   questLayers[q.id] = lg;
 }
+function bindStepPopup(q, s, mk){
+  const el = document.querySelector(`.pop-found[data-qd="${q.id}#${s.n}"]`);
+  if(el) el.onclick = () => { toggleStepDone(q, s.n); mk.setPopupContent(stepPopup(q,s)); bindStepPopup(q,s,mk); };
+}
+function toggleStepDone(q, n){
+  if(isDone(q.id,n)){ delete qsave.done[q.id][n]; } else { (qsave.done[q.id] ||= {})[n] = 1; }
+  saveQuests();
+  renderQuest(q); updateQuestRow(q);
+  if(panelQuest && panelQuest.id===q.id) fillPanel(q);
+}
 function renderActiveQuests(){ QL.forEach(q => { if (questState[q.id]) renderQuest(q); }); }
+
+/* ---- quest detail panel ---- */
+const qPanel = document.getElementById("questPanel");
+function openQuestPanel(q){
+  panelQuest = q;
+  if(!questState[q.id]){ questState[q.id]=true; qsave.shown[q.id]=1; saveQuests(); renderQuest(q); }
+  updateQuestRow(q); fillPanel(q); qPanel.classList.add("open");
+}
+function closeQuestPanel(){ qPanel.classList.remove("open"); panelQuest=null; }
+function fillPanel(q){
+  const {t,d} = qProgress(q), pct = t ? Math.round(d/t*100) : 0, cur = currentN(q);
+  const rows = q.steps.map(s => {
+    const done = isDone(q.id,s.n), isCur = s.n===cur, other = s.master!==activeBase;
+    return `<div class="qs-row ${done?'done':''} ${isCur?'cur':''}" data-n="${s.n}">`+
+      `<div class="qs-chk ${done?'on':''}" data-chk="${s.n}">${done?'✓':''}</div>`+
+      `<div class="qs-num" style="background:${s.n===1?'#e5484d':q.color}">${s.n}</div>`+
+      `<div class="qs-body"><div class="qs-t">${s.title}${s.warn?' <span class="qs-warn">⚠</span>':''}</div>`+
+        (s.warn?`<div class="qs-warntext">${s.warn}</div>`:'')+`</div>`+
+      (other?`<span class="qs-layer">${baseLabel(s.master)}</span>`:'')+`</div>`;
+  }).join("");
+  qPanel.innerHTML =
+    `<div class="qp-head"><div class="qp-title"><span class="qp-dot" style="background:${q.color}"></span>${q.name}</div><div class="qp-x" id="qpX">✕</div></div>`+
+    `<div class="qp-prog"><div class="qp-prog-top"><span>${d} / ${t} steps done</span><b>${pct}%</b></div><div class="dash-bar"><div style="width:${pct}%"></div></div></div>`+
+    `<div class="qp-steps">${rows}</div>`;
+  document.getElementById("qpX").onclick = closeQuestPanel;
+  qPanel.querySelectorAll(".qs-row").forEach(row => {
+    const n = +row.dataset.n, s = q.steps.find(x=>x.n===n);
+    row.querySelector(".qs-chk").onclick = (e) => { e.stopPropagation(); toggleStepDone(q, n); };
+    row.onclick = () => flyToStep(q, s);
+  });
+}
+function flyToStep(q, s){
+  if(s.master!==activeBase) switchBase(s.master);   // jump to the layer the step lives on
+  if(!questState[q.id]){ questState[q.id]=true; renderQuest(q); }
+  map.flyTo(xy(s.px, s.py), Math.max(map.getZoom(), NZ-1), { duration:.6 });
+  const mk = stepMarkers[q.id+'#'+s.n];
+  if(mk) setTimeout(() => mk.openPopup(), 380);
+  fillPanel(q);
+}
+
+/* ---- sidebar quest list ---- */
+function updateQuestRow(q){
+  const row = document.querySelector(`.quest-row[data-q="${q.id}"]`);
+  if(!row) return;
+  row.classList.toggle("off", !questState[q.id]);
+  const {t,d} = qProgress(q);
+  const ct = row.querySelector(".ct"); if(ct) ct.innerHTML = d ? `<b>${d}</b>/${t}` : `${t}`;
+}
 function toggleQuest(id){
+  const q = QL.find(x=>x.id===id);
+  if(questState[id] && !(panelQuest && panelQuest.id===id)){ openQuestPanel(q); return; }   // shown but panel closed -> reopen panel
   questState[id] = !questState[id];
-  document.querySelector(`.quest-row[data-q="${id}"]`).classList.toggle("off", !questState[id]);
-  renderQuest(QL.find(q => q.id === id));
+  if(questState[id]) qsave.shown[id]=1; else delete qsave.shown[id];
+  saveQuests();
+  updateQuestRow(q); renderQuest(q);
+  if(questState[id]) openQuestPanel(q); else if(panelQuest && panelQuest.id===id) closeQuestPanel();
 }
 
 if (QL.length){
@@ -594,6 +710,8 @@ if (QL.length){
     gEl.appendChild(row);
   });
   catsEl.appendChild(gEl);
+  QL.forEach(q => { if(qsave.shown[q.id]) questState[q.id] = true; updateQuestRow(q); });   // restore saved visibility + progress
+  renderActiveQuests();
 }
 
 /* Restore saved filters + shared view last, once everything (incl. quests) is initialized. */

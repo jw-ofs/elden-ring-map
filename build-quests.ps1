@@ -83,7 +83,15 @@ function Nearest($cands,$prev){
   }
   return $arr[0]
 }
-function Norm($s){ return (($s -replace '[^a-zA-Z0-9]','')).ToLower() }
+function Norm($s){
+  # strip diacritics (Jolán -> Jolan) so accented marker names match plain anchors
+  $d = $s.Normalize([Text.NormalizationForm]::FormD)
+  $sb = New-Object System.Text.StringBuilder
+  foreach($ch in $d.ToCharArray()){
+    if([Globalization.CharUnicodeInfo]::GetUnicodeCategory($ch) -ne [Globalization.UnicodeCategory]::NonSpacingMark){ [void]$sb.Append($ch) }
+  }
+  return (($sb.ToString() -replace '[^a-zA-Z0-9]','')).ToLower()
+}
 function Find-Marker($name){
   $c=@($markers | Where-Object { $_.name -ieq $name })
   if($c.Count -eq 0){ $c=@($markers | Where-Object { $_.name -like "*$name*" }) }
@@ -128,7 +136,8 @@ foreach($q in $QL){
     $prev=$r; $n++
     $title=($s.title -replace '\\','\\' -replace '"','\"')
     $desc =($s.desc -replace '\\','\\' -replace '"','\"')
-    [void]$sb.AppendLine("    { n:$n, title:""$title"", desc:""$desc"", kind:""$($s.type)"", master:""$($r.master)"", px:$([math]::Round($r.px,1)), py:$([math]::Round($r.py,1)) },")
+    $warn = if($s.warn){ ($s.warn -replace '\\','\\' -replace '"','\"') } else { "" }
+    [void]$sb.AppendLine("    { n:$n, title:""$title"", desc:""$desc"", warn:""$warn"", kind:""$($s.type)"", master:""$($r.master)"", px:$([math]::Round($r.px,1)), py:$([math]::Round($r.py,1)) },")
   }
   [void]$sb.AppendLine("  ]},")
 }
