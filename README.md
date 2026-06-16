@@ -12,7 +12,7 @@ step-by-step questline tracking, and progress tracking that saves in your browse
 - **~1,860 markers** across graces, bosses, weapons, armor, talismans, spirit ashes, ashes of war,
   sorceries & incantations, golden seeds, sacred/crystal tears, great runes, larval tears,
   memory stones, whetblades, and quest NPCs.
-- **27 questlines** with ordered, location-anchored steps and rewards.
+- **30 questlines** with ordered, location-anchored steps, per-step completion tracking, a checklist panel with click-to-fly, and **missable / point-of-no-return warnings**.
 - **Rich popups** — weapon attack/scaling/requirements, armor negation/poise grids, spell costs, etc.
 - **Marker clustering, search + fly-to, region labels, a completion dashboard, hide-found**, and
   shareable progress (export/import).
