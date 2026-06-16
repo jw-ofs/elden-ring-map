@@ -80,6 +80,13 @@ If ≥2 active tasks declare the same `Surface: <key>` (registered in
 `.claude/hooks/combined-surfaces.json`), a **combined-scenario review** is also required — see
 [`docs/review-workflow.md`](docs/review-workflow.md).
 
+### Agent-driven changes
+
+When a task force will modify gated source, run the `gated-change` workflow — it runs plan → an
+**independent reviewer agent** that writes the committed review the gate expects, so the verification is
+recorded rather than dormant. PreToolUse hooks apply to subagent edits too, so agents are gated exactly
+like the main thread. See [`docs/agent-gated-change.md`](docs/agent-gated-change.md).
+
 Validation runs against the **committed git tree**. Do not bypass the hook (no `--no-verify`). Ad-hoc
 work without an active task doc is not gated; non-source files (`Agents/`, `docs/`, `.claude/`, and the
 generated `*.js`) are always allowed.
