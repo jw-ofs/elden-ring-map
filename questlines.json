@@ -483,9 +483,9 @@
                       {
                           "title":  "Mountaintops Meeting",
                           "desc":  "Find the pair on a great bridge in the Mountaintops of the Giants as Goldmask weighs the Order\u0027s flaws.",
-                          "anchor":  "The Noble Goldmask",
-                          "type":  "npc",
-                          "near":  "Grand Lift of Rold"
+                          "anchor":  "Ancient Snow Valley Ruins",
+                          "type":  "grace",
+                          "near":  "Ancient Snow Valley Ruins"
                       },
                       {
                           "title":  "Mending Rune of Perfect Order",
@@ -769,16 +769,16 @@
                       {
                           "title":  "Speak with Witch-Hunter Jerren at Redmane Castle",
                           "desc":  "Return to the throne room of Redmane Castle, exhaust Witch-Hunter Jerren\u0027s dialogue about hunting Sellen, then rest at a Site of Grace to reset the area.",
-                          "anchor":  "Witch-Hunter Jerren",
+                          "anchor":  "Redmane Castle Plaza",
                           "near":  "Redmane Castle Plaza",
-                          "type":  "npc"
+                          "type":  "grace"
                       },
                       {
                           "title":  "Confront Jerren over Sellen at Witchbane Ruins",
                           "desc":  "Go back to Witchbane Ruins to find Witch-Hunter Jerren standing over Sellen\u0027s broken body and exhaust his dialogue to unlock the next step.",
-                          "anchor":  "Witch-Hunter Jerren",
-                          "near":  "Church of Pilgrimage",
-                          "type":  "npc"
+                          "anchor":  "Fourth Church of Marika",
+                          "near":  "Fourth Church of Marika",
+                          "type":  "grace"
                       },
                       {
                           "title":  "Find Seluvis\u0027s hidden basement at Three Sisters",
@@ -817,9 +817,9 @@
                       {
                           "title":  "Ending A - Claim the Eccentric Set and Crown",
                           "desc":  "After the victory Sellen becomes a School of Graven Mages mass dropping the Witch\u0027s Glintstone Crown beside her, and looting the defeated Jerren\u0027s corpse yields the Eccentric armor set.",
-                          "anchor":  "Witch\u0027s Glintstone Crown",
+                          "anchor":  "Raya Lucaria Grand Library",
                           "near":  "Raya Lucaria Grand Library",
-                          "type":  "item"
+                          "type":  "grace"
                       },
                       {
                           "title":  "Ending B - Side with Jerren and kill Sellen",
@@ -855,8 +855,8 @@
                       {
                           "title":  "Feed Hyetta her first grape at Lake-Facing Cliffs",
                           "desc":  "Find the blind Hyetta near the cliffside and give her the first Shabriri Grape, earning the \u0027As You Wish\u0027 gesture.",
-                          "anchor":  "Finger Maiden Hyetta",
-                          "type":  "npc",
+                          "anchor":  "Lake-Facing Cliffs",
+                          "type":  "grace",
                           "near":  "Lake-Facing Cliffs"
                       },
                       {
@@ -876,8 +876,8 @@
                       {
                           "title":  "Feed Hyetta her third grape near Gate Town Bridge",
                           "desc":  "Give Hyetta the third Shabriri Grape where she waits near Gate Town Bridge, then choose the dialogue telling her the grapes are truly human eyes to advance the quest.",
-                          "anchor":  "Finger Maiden Hyetta",
-                          "type":  "npc",
+                          "anchor":  "Gate Town Bridge",
+                          "type":  "grace",
                           "near":  "Gate Town Bridge"
                       },
                       {
@@ -890,30 +890,30 @@
                       {
                           "title":  "Give Hyetta the Fingerprint Grape at Bellum Church",
                           "desc":  "Bring the Fingerprint Grape to Hyetta at Bellum Church in northeastern Liurnia, after which she thanks you and departs.",
-                          "anchor":  "Finger Maiden Hyetta",
-                          "type":  "npc",
+                          "anchor":  "Bellum Church",
+                          "type":  "grace",
                           "near":  "Bellum Church"
                       },
                       {
                           "title":  "Accept the Three Fingers\u0027 flame",
                           "desc":  "Descend beneath Leyndell to the Frenzied Flame Proscription, exhaust Hyetta\u0027s dialogue, strip off all armor and weapons, then pass through the sealed door and accept the Three Fingers.",
-                          "anchor":  "Lightseeker Hyetta",
-                          "type":  "npc",
+                          "anchor":  "Frenzied Flame Proscription",
+                          "type":  "grace",
                           "near":  "Frenzied Flame Proscription",
                           "warn":  "Accepting the flame locks you into the Frenzied Flame ending; only undoable via Miquella\u0027s Needle (requires beating Malenia).  Â·  Accept it BEFORE the Forge of the Giants cutscene to spare Melina; doing so after changes the burning-Erdtree outcome."
                       },
                       {
                           "title":  "Speak with Hyetta to complete the quest and claim the reward",
                           "desc":  "After accepting the flame, talk to Hyetta again at the Frenzied Flame Proscription, and the Frenzied Flame Seal plus five Frenzyflame Stones appear to complete her questline.",
-                          "anchor":  "Lightseeker Hyetta",
-                          "type":  "npc",
+                          "anchor":  "Frenzied Flame Proscription",
+                          "type":  "grace",
                           "near":  "Frenzied Flame Proscription"
                       },
                       {
                           "title":  "Pick up the Frenzied Flame Seal",
                           "desc":  "Collect the Frenzied Flame Seal that appears on the ground, the unique sacred seal scaling with Faith, Strength, and Dexterity that boosts Frenzied Flame incantations.",
-                          "anchor":  "Frenzied Flame Seal",
-                          "type":  "item",
+                          "anchor":  "Frenzied Flame Proscription",
+                          "type":  "grace",
                           "near":  "Frenzied Flame Proscription"
                       }
                   ],
@@ -1065,9 +1065,9 @@
                       {
                           "title":  "Find Diallos kneeling as the new Potentate",
                           "desc":  "After resetting Jarburg, discover Diallos tending a jar inside a hut at the end of the village as its new Potentate.",
-                          "anchor":  "Knight Diallos",
+                          "anchor":  "Jarburg",
                           "near":  "Jarburg",
-                          "type":  "npc"
+                          "type":  "grace"
                       },
                       {
                           "title":  "Optional: meet Alexander at the Radahn arena",
@@ -1086,9 +1086,9 @@
                       {
                           "title":  "Witness Diallos\u0027s last stand",
                           "desc":  "Return to a ransacked Jarburg and speak with the fatally wounded Diallos amid the smashed jars as he asks whether he protected the village.",
-                          "anchor":  "Knight Diallos",
+                          "anchor":  "Jarburg",
                           "near":  "Jarburg",
-                          "type":  "npc"
+                          "type":  "grace"
                       },
                       {
                           "title":  "Mourn Diallos with Jar-Bairn",
@@ -1224,15 +1224,15 @@
                       {
                           "title":  "Receive the Sitting Sideways gesture",
                           "desc":  "Continue speaking with Roderika until she shares her grief and grants you the Sitting Sideways gesture.",
-                          "anchor":  "Roderika",
-                          "type":  "npc",
+                          "anchor":  "Stormhill Shack",
+                          "type":  "grace",
                           "near":  "Stormhill Shack"
                       },
                       {
                           "title":  "Receive the Spirit Jellyfish Ashes and quest",
                           "desc":  "Speak to Roderika once more so she hands over the Spirit Jellyfish Ashes and asks you to seek the fate of her Chrysalids.",
-                          "anchor":  "Roderika",
-                          "type":  "npc",
+                          "anchor":  "Stormhill Shack",
+                          "type":  "grace",
                           "near":  "Stormhill Shack"
                       },
                       {
@@ -1246,8 +1246,8 @@
                       {
                           "title":  "Deliver the Memento to Roderika",
                           "desc":  "Return to Stormhill Shack and show Roderika the Chrysalids\u0027 Memento, prompting her to lament the Chrysalids\u0027 fate and relocate to the Roundtable Hold.",
-                          "anchor":  "Roderika",
-                          "type":  "npc",
+                          "anchor":  "Stormhill Shack",
+                          "type":  "grace",
                           "near":  "Stormhill Shack",
                           "warn":  "Deliver before she relocates. If she moves to the Hold via a Liurnia grace or beating Godrick first, the Golden Seed is lost for good."
                       },
@@ -1439,9 +1439,9 @@
                       {
                           "title":  "Obtain the Erdsteel Dagger",
                           "desc":  "Receive the Erdsteel Dagger from Kenneth as your reward for retaking the fort.",
-                          "anchor":  "Erdsteel Dagger",
+                          "anchor":  "Mistwood Outskirts",
                           "near":  "Mistwood Outskirts",
-                          "type":  "item"
+                          "type":  "grace"
                       },
                       {
                           "title":  "Find Kenneth occupying Fort Haight",
@@ -1865,9 +1865,9 @@
                       {
                           "title":  "Claim Thiollier\u0027s gear",
                           "desc":  "After the final fight, collect Thiollier\u0027s Hidden Needle and his full armor set of Mask, Garb, Gloves, and Trousers.",
-                          "anchor":  "Thiollier\u0027s Hidden Needle",
-                          "near":  "Enir-Ilim",
-                          "type":  "item"
+                          "anchor":  "Gate of Divinity",
+                          "near":  "Gate of Divinity",
+                          "type":  "grace"
                       }
                   ],
         "notes":  "Thiollier is the mournful servant of St. Trina and a member of Leda\u0027s band. He starts as a poison-wares merchant at Pillar Path Cross (Scadu Altus, east of Castle Ensis), selling Trina\u0027s Lily and St. Trina\u0027s Crystal Ball. CORRECTIONS vs. the draft: (1) Added the missing Moore Black Syrup exchange â€” giving Black Syrup to Thiollier yields Thiollier\u0027s Concoction (used in the Dragon Communion Priestess quest) but FAILS Moore\u0027s questline; do this before he leaves. (2) Added the essential trigger step: Thiollier\u0027s quest only advances after Miquella\u0027s Great Rune breaks (defeat Messmer and Romina, then approach Shadow Keep for the \\\"a great rune has broken\\\" message) â€” return and speak to him again at Pillar Path Cross, reloading if needed. (3) Reordered so buying wares and the Moore/rune triggers precede the Stone Coffin Fissure descent. St. Trina sleeps at the Garden of Deep Purple grace at the end of Stone Coffin Fissure (entrance at the southern tip of Cerulean Coast), reachable after defeating the Putrescent Knight (Thiollier can be summoned for that boss). Telling Thiollier St. Trina\u0027s whereabouts sends him to her side; imbibe her nectar ~4 times until she speaks on the death screen, relay her words, then survive his invasion to earn the St. Trina\u0027s Smile talisman. Burning the Sealing Tree at Church of the Bud (requires Messmer defeated) is the point of no return â€” finish the prior steps first. Afterward speak to the reconciled Thiollier, then summon him for Needle Knight Leda\u0027s band fight and for Radahn, Consort of Miquella, at Enir-Ilim, after which he drops Thiollier\u0027s Hidden Needle plus the Mask, Garb, Gloves, and Trousers. Sources: PowerPyx, Fextralife Wiki, Game8."
@@ -1957,9 +1957,9 @@
                       {
                           "title":  "Collect Cherishing Fingers",
                           "desc":  "Pick up the Cherishing Fingers sorcery from Ymir\u0027s grave in the small graveyard just west of the Cathedral of Manus Metyr after his defeat.",
-                          "anchor":  "Cherishing Fingers",
+                          "anchor":  "Cathedral of Manus Metyr",
                           "near":  "Cathedral of Manus Metyr",
-                          "type":  "item"
+                          "type":  "grace"
                       },
                       {
                           "title":  "Speak to grieving Jolan",
@@ -2072,9 +2072,9 @@
                       {
                           "title":  "Side with Ansbach against Leda",
                           "desc":  "Return to Sir Ansbach\u0027s room at the Storehouse, First Floor and touch the gold summon sign to fight on his side against Needle Knight Leda, earning Ansbach\u0027s Longbow and Leda\u0027s Rune.",
-                          "anchor":  "Needle Knight Leda",
+                          "anchor":  "Storehouse, First Floor",
                           "near":  "Storehouse, First Floor",
-                          "type":  "boss",
+                          "type":  "grace",
                           "warn":  "Touch the GOLD sign only. The red sign (helping Leda) permanently kills Ansbach and ends his quest and later summons."
                       },
                       {
@@ -2207,15 +2207,15 @@
                       {
                           "title":  "Find the screaming Igon",
                           "desc":  "From Castle Ensis head southeast to the Pillar Path Waypoint in eastern Gravesite Plain, where Drake Warrior Igon lies on the ground crying out in pain west of the grace.",
-                          "anchor":  "Drake Warrior Igon",
-                          "type":  "npc",
+                          "anchor":  "Pillar Path Waypoint",
+                          "type":  "grace",
                           "near":  "Pillar Path Waypoint"
                       },
                       {
                           "title":  "Exhaust Igon\u0027s early dialogue",
                           "desc":  "Rest at the grace and talk to Igon repeatedly until he speaks of his vendetta against the dragon Bayle and only repeats lines about the exquisite pain.",
-                          "anchor":  "Drake Warrior Igon",
-                          "type":  "npc",
+                          "anchor":  "Pillar Path Waypoint",
+                          "type":  "grace",
                           "near":  "Pillar Path Waypoint"
                       },
                       {
@@ -2257,9 +2257,9 @@
                       {
                           "title":  "Obtain Thiollier\u0027s Concoction",
                           "desc":  "Progress Thiollier\u0027s questline in the Shadow Keep / Church District area until he gives you Thiollier\u0027s Concoction, and do not drink it yourself.",
-                          "anchor":  "Thiollier",
-                          "type":  "npc",
-                          "near":  "Church District Entrance",
+                          "anchor":  "Pillar Path Cross",
+                          "type":  "grace",
+                          "near":  "Pillar Path Cross",
                           "warn":  "Requires advancing Thiollier\u0027s quest (don\u0027t drink the concoction). It\u0027s needed for the Priestess/Florissax path before Bayle."
                       },
                       {
@@ -2303,8 +2303,8 @@
                       {
                           "title":  "Collect Igon\u0027s gear at the foot of the peak",
                           "desc":  "Travel back to the Foot of the Jagged Peak where Igon has died of his wounds and collect his full equipment set including Igon\u0027s Greatbow and Igon\u0027s Bell Bearing.",
-                          "anchor":  "Drake Warrior Igon",
-                          "type":  "npc",
+                          "anchor":  "Foot of the Jagged Peak",
+                          "type":  "grace",
                           "near":  "Foot of the Jagged Peak"
                       }
                   ],
@@ -2397,9 +2397,9 @@
                       {
                           "title":  "Collect Hornsent\u0027s gear",
                           "desc":  "Loot the Falx sword and the full Hornsent armor set from his remains to complete the questline.",
-                          "anchor":  "Falx",
-                          "near":  "Church of the Bud",
-                          "type":  "item"
+                          "anchor":  "Church of the Bud, Main Entrance",
+                          "near":  "Church of the Bud, Main Entrance",
+                          "type":  "grace"
                       }
                   ],
         "notes":  "Corrected and verified against PowerPyx, Game8, Beebom, and TheGamer. KEY FIXES to the draft: (1) The Grandam exchange was backwards. You do NOT receive Scorpion Stew from Hornsent Grandam to carry to Hornsent. Instead you EQUIP the Divine Beast Head (dropped by Divine Beast Dancing Lion) and give it to Hornsent Grandam in her room beside the Small Private Altar grace in Belurat; she rewards the Watchful Spirit incantation (and later, after Messmer, Scorpion Stew that is meant to be consumed). (2) The Scorpion Stew -\u003e 3x Furnace Visage trade is a SEPARATE, fully optional exchange where you give Scorpion Stew TO Hornsent at Three-Path Cross; it does not gate the quest. These were merged incorrectly in the draft. (3) Added the required intermediate step of progressing to Shadow Keep and resting at Highroad Cross so Hornsent departs and the Leda confrontation triggers. (4) Corrected the Leda fight location: it occurs at the burning boats near the Main Gate Plaza (anchored to Shadow Keep, Main Gate grace), not at the Storehouse First Floor elevator. The reward-collection step was re-anchored to match. Siding with Hornsent (GOLD sign) gives Ash of War: Swift Slash + Leda\u0027s Rune and continues the quest; siding with Leda (RED sign) ends his quest early but still drops his gear. ORDER, the Cross Map / New Cross Map items, the Messmer summon, the throne dialogue, the Church of the Bud invasion (take the first rot-infested staircase in the Ancient Ruins of Rauh), and the final drops (Falx, Caterpillar Mask, Braided Cord Robe, Braided Arm Wraps, Soiled Loincloth) are all confirmed correct. BOSS-NAME NOTE: the real boss is \u0027Messmer the Impaler\u0027 at the Messmer\u0027s Dark Chamber grace, but the allowed boss list only contains the (non-canonical) \u0027Messmer, the Omen King\u0027, which is used as the nearest available entry. If you never summon him for Messmer, he instead appears among Leda\u0027s allies at the final Enir-Ilim confrontation with the same drops. CAUTION: defeating Romina/burning the Sealing Tree advances the endgame and can lock Miquella-follower questlines, so finish Hornsent\u0027s steps beforehand."
@@ -2476,8 +2476,8 @@
                       {
                           "title":  "Duel over Ansbach",
                           "desc":  "If you sided with Leda against Hornsent, choose the red summon sign to help Leda kill Ansbach or the gold sign to defend him so he survives for Enir-Ilim.",
-                          "anchor":  "Pureblood Knight Ansbach",
-                          "type":  "npc",
+                          "anchor":  "Storehouse, First Floor",
+                          "type":  "grace",
                           "near":  "Storehouse, First Floor",
                           "warn":  "Picking the red sign to help Leda kills Ansbach permanently, losing the Obsidian Lamina and Furious Blade of Ansbach. Use the gold sign to save him.  Â·  This duel only appears if you sided with Leda against Hornsent in step 8; otherwise Leda never invades Ansbach and this step is skipped."
                       },
@@ -2504,8 +2504,8 @@
                       {
                           "title":  "Claim Leda\u0027s armor",
                           "desc":  "Collect Leda\u0027s Armor from her corpse to obtain her unique chest piece and conclude the questline.",
-                          "anchor":  "Leda\u0027s Armor",
-                          "type":  "item",
+                          "anchor":  "Cleansing Chamber Anteroom",
+                          "type":  "grace",
                           "near":  "Cleansing Chamber Anteroom"
                       }
                   ]
@@ -2621,8 +2621,8 @@
                       {
                           "title":  "The corpse beneath Stormveil",
                           "desc":  "Drop down beneath Stormveil from the Liftside Chamber grace, defeat the Ulcerated Tree Spirit, then touch the bloodstain before the giant rotting face (Godwyn) to inspect the Black Knife relic.",
-                          "anchor":  "Ulcerated Tree Spirit",
-                          "type":  "boss",
+                          "anchor":  "Liftside Chamber",
+                          "type":  "grace",
                           "near":  "Liftside Chamber",
                           "warn":  "The Ulcerated Tree Spirit here (b18000800) guards the corpse; you must interact with the bloodstain to advance the quest, not just kill the boss."
                       },
