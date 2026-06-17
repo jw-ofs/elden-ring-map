@@ -1122,14 +1122,14 @@
                       {
                           "title":  "Find the talking tree in Limgrave",
                           "desc":  "East of the Birdseye Telescope south of Agheel Lake North, strike the small talking tree to break the spell and free Boc the Seamster, who rewards you with 10 Mushrooms.",
-                          "anchor":  "Boc the Seamster",
-                          "type":  "npc",
+                          "anchor":  "Agheel Lake North",
+                          "type":  "grace",
                           "near":  "Agheel Lake North"
                       },
                       {
                           "title":  "Find Boc injured at Coastal Cave",
                           "desc":  "Travel to the Coastal Cave on Limgrave\u0027s western shore and speak with the wounded Boc lying outside the entrance.",
-                          "anchor":  "Boc the Seamster",
+                          "anchor":  "Demi-Human Boc",
                           "type":  "npc",
                           "near":  "Coastal Cave"
                       },
@@ -1149,15 +1149,15 @@
                       {
                           "title":  "Return the tools to Boc",
                           "desc":  "Give the Sewing Needle and Tailoring Tools back to Boc outside the cave so he becomes your seamster, then rest at a grace to send him onward.",
-                          "anchor":  "Boc the Seamster",
+                          "anchor":  "Demi-Human Boc",
                           "type":  "npc",
                           "near":  "Coastal Cave"
                       },
                       {
                           "title":  "Reunite with Boc in Liurnia",
                           "desc":  "Find Boc at the Lake-Facing Cliffs in Liurnia of the Lakes and speak with him to unlock free garment alterations.",
-                          "anchor":  "Boc the Seamster",
-                          "type":  "npc",
+                          "anchor":  "Lake-Facing Cliffs",
+                          "type":  "grace",
                           "near":  "Lake-Facing Cliffs"
                       },
                       {
