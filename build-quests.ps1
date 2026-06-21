@@ -128,7 +128,7 @@ $sb=New-Object System.Text.StringBuilder
 [void]$sb.AppendLine("   to the actual task location (item pickup / boss arena / NPC / area). */")
 [void]$sb.AppendLine("window.QUESTLINES = [")
 foreach($q in $QL){
-  [void]$sb.AppendLine("  { id:""$($q.id)"", name:""$($q.name)"", color:""$($q.color)"", steps:[")
+  [void]$sb.AppendLine("  { id:""$($q.id)"", name:""$($q.name)"", color:""$($q.color)"", phase:$($q.phase), ord:$($q.ord), steps:[")
   $prev=$null; $n=0
   foreach($s in $q.steps){
     $r=Resolve-Anchor $s.anchor $s.type $prev $s.near

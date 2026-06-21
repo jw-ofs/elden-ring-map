@@ -725,11 +725,16 @@ function toggleQuest(id){
 }
 
 if (QL.length){
+  const PHASES = { 1:"① Limgrave & Roundtable Hold", 2:"② Weeping Peninsula → Stormveil", 3:"③ Liurnia of the Lakes", 4:"④ Caelid → Altus → Volcano Manor", 5:"⑤ Shadow of the Erdtree (DLC)" };
   const gEl = document.createElement("div");
-  const h = document.createElement("div"); h.className="group-h"; h.textContent = "Questlines";
-  gEl.appendChild(h);
-  QL.forEach(q => {
+  let curPhase = null;
+  QL.slice().sort((a,b)=>(a.ord||999)-(b.ord||999)).forEach(q => {   // sidebar follows the recommended completion order, grouped by phase
     questState[q.id] = false;
+    if(q.phase !== curPhase){
+      curPhase = q.phase;
+      const h = document.createElement("div"); h.className="group-h"; h.textContent = PHASES[q.phase] || "Questlines";
+      gEl.appendChild(h);
+    }
     const row = document.createElement("div");
     row.className = "cat quest-row off"; row.dataset.q = q.id;
     row.innerHTML = `<div class="dot" style="background:${q.color}"></div>

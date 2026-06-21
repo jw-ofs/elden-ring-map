@@ -87,7 +87,9 @@
                           "anchor":  "Cathedral of Manus Celes",
                           "type":  "grace"
                       }
-                  ]
+                  ],
+        "phase":  1,
+        "ord":  6
     },
     {
         "id":  "millicent",
@@ -157,7 +159,9 @@
                           "type":  "npc",
                           "near":  "Elphael Inner Wall"
                       }
-                  ]
+                  ],
+        "phase":  4,
+        "ord":  22
     },
     {
         "id":  "volcano",
@@ -211,7 +215,9 @@
                           "anchor":  "Tanith, Volcano Manor Proprietress",
                           "type":  "npc"
                       }
-                  ]
+                  ],
+        "phase":  4,
+        "ord":  23
     },
     {
         "id":  "fia",
@@ -261,7 +267,9 @@
                           "anchor":  "Mending Rune of the Death-Prince",
                           "type":  "item"
                       }
-                  ]
+                  ],
+        "phase":  1,
+        "ord":  3
     },
     {
         "id":  "dungeater",
@@ -311,7 +319,9 @@
                           "anchor":  "Mending Rune of the Fell Curse",
                           "type":  "item"
                       }
-                  ]
+                  ],
+        "phase":  1,
+        "ord":  2
     },
     {
         "id":  "nepheli",
@@ -383,7 +393,9 @@
                           "type":  "npc",
                           "near":  "Godrick the Grafted"
                       }
-                  ]
+                  ],
+        "phase":  2,
+        "ord":  18
     },
     {
         "id":  "alexander",
@@ -429,7 +441,9 @@
                           "type":  "item",
                           "warn":  "Only the Farum Azula duel drops the Shard of Alexander. Killing him at any earlier location gives just the Warrior Jar Shard.  Â·  He only appears at Farum Azula after you defeat the Fire Giant and complete his earlier steps in order."
                       }
-                  ]
+                  ],
+        "phase":  2,
+        "ord":  16
     },
     {
         "id":  "goldmask",
@@ -494,7 +508,9 @@
                           "type":  "grace",
                           "warn":  "Goldmask\u0027s corpse only appears in Leyndell, Capital of Ash after you complete Crumbling Farum Azula (defeat Maliketh). Loot the rune then."
                       }
-                  ]
+                  ],
+        "phase":  1,
+        "ord":  4
     },
     {
         "id":  "yura",
@@ -575,7 +591,9 @@
                           "warn":  "Reach the dying Yura before the Grand Lift of Rold; if he\u0027s possessed first, this Eleonora invasion (Poleblade + Purifying Crystal Tear) is lost."
                       }
                   ],
-        "notes":  "Verified against Fextralife and cross-checked via web search. All locations, chronological order, anchors, and rewards in the draft were accurate; only minor corrections made. Sequence: Yura first appears under an overpass directly northeast of Seaside Ruins near Agheel Lake; he can be summoned as a white sign during the Bloody Finger Nerijus invasion at Murkwater Cave (Nerijus drops Reduvia), after which he relocates directly north of Murkwater Cave under a tunnel-like ruin. He then offers a red co-op summon sign at the Main Academy Gate grace in Liurnia to fight the Bloody Finger Ravenmount Assassin (full reward: Ash of War: Raptor of the Mists, Smithing Stone [5], plus a Rune Arc and Furlcalling Finger Remedy). His quest ends at the Second Church of Marika on the Altus Plateau, where the dying Yura drops the Nagakiba; speaking to him triggers Eleonora, Violet Bloody Finger, whose defeat yields Eleonora\u0027s Poleblade, the Purifying Crystal Tear, and a Furlcalling Finger Remedy. Note: the Liurnia step is at Raya Lucaria Academy\u0027s Main Academy Gate (not a separate bridge grace); the draft\u0027s wording was tightened to reflect the summon sign appears at that grace. Post-quest, Yura\u0027s body is possessed by Shabriri (\"Imposter Yura\") at the Zamor Ruins in the Mountaintops of the Giants, dropping the Ronin set and Iron Kasa if killed, but that is an epilogue beyond the core questline. Sources: https://eldenring.wiki.fextralife.com/Bloody+Finger+Hunter+Yura and https://eldenring.wiki.fextralife.com/Eleonora,+Violet+Bloody+Finger"
+        "notes":  "Verified against Fextralife and cross-checked via web search. All locations, chronological order, anchors, and rewards in the draft were accurate; only minor corrections made. Sequence: Yura first appears under an overpass directly northeast of Seaside Ruins near Agheel Lake; he can be summoned as a white sign during the Bloody Finger Nerijus invasion at Murkwater Cave (Nerijus drops Reduvia), after which he relocates directly north of Murkwater Cave under a tunnel-like ruin. He then offers a red co-op summon sign at the Main Academy Gate grace in Liurnia to fight the Bloody Finger Ravenmount Assassin (full reward: Ash of War: Raptor of the Mists, Smithing Stone [5], plus a Rune Arc and Furlcalling Finger Remedy). His quest ends at the Second Church of Marika on the Altus Plateau, where the dying Yura drops the Nagakiba; speaking to him triggers Eleonora, Violet Bloody Finger, whose defeat yields Eleonora\u0027s Poleblade, the Purifying Crystal Tear, and a Furlcalling Finger Remedy. Note: the Liurnia step is at Raya Lucaria Academy\u0027s Main Academy Gate (not a separate bridge grace); the draft\u0027s wording was tightened to reflect the summon sign appears at that grace. Post-quest, Yura\u0027s body is possessed by Shabriri (\"Imposter Yura\") at the Zamor Ruins in the Mountaintops of the Giants, dropping the Ronin set and Iron Kasa if killed, but that is an epilogue beyond the core questline. Sources: https://eldenring.wiki.fextralife.com/Bloody+Finger+Hunter+Yura and https://eldenring.wiki.fextralife.com/Eleonora,+Violet+Bloody+Finger",
+        "phase":  1,
+        "ord":  7
     },
     {
         "id":  "patches",
@@ -697,7 +715,9 @@
                           "type":  "grace"
                       }
                   ],
-        "notes":  "Corrections from the draft: (1) The gesture sequence was fixed. Sparing/accepting his surrender in the Murkwater boss fight teaches GROVEL FOR MERCY (the draft wrongly attributed this to a separate \u0027forgive\u0027 step). CALM DOWN is taught when you return to him after the Mistwood chest trap. The draft\u0027s two separate \u0027spare\u0027 then \u0027forgive\u0027 steps were merged to match the actual flow. (2) Optional EXTREME REPENTANCE comes from aggroing/attacking Patches and letting him drop you to ~1/4 HP (most easily at the final Murkwater encounter); PATCHES\u0027 CROUCH is the final-fight reward. (3) Tragoth\u0027s invasion red sign is in the Ruin-Strewn Precipice inside Magma Wyrm Makar\u0027s boss room (rest at that grace first) â€” step 11 was re-anchored to the Ruin-Strewn Precipice grace since Great-Horned Tragoth is not a valid standalone anchor. Key gate: sparing Patches at the Murkwater boss fight; killing him there ends the quest and drops Patches\u0027 Bell Bearing for the Twin Maiden Husks. Time-sensitive: claim the Magma Whip Candlestick from Patches before he leaves Volcano Manor (he departs after Rykard/the God-Devouring Serpent is slain), or it is lost. Tragoth drops the Bull-Goat set; the Magma Whip Candlestick is Patches\u0027 separate reward for the contract. Do NOT attack Patches at the Shaded Castle. Verified against Fextralife and Game8 (June 2026)."
+        "notes":  "Corrections from the draft: (1) The gesture sequence was fixed. Sparing/accepting his surrender in the Murkwater boss fight teaches GROVEL FOR MERCY (the draft wrongly attributed this to a separate \u0027forgive\u0027 step). CALM DOWN is taught when you return to him after the Mistwood chest trap. The draft\u0027s two separate \u0027spare\u0027 then \u0027forgive\u0027 steps were merged to match the actual flow. (2) Optional EXTREME REPENTANCE comes from aggroing/attacking Patches and letting him drop you to ~1/4 HP (most easily at the final Murkwater encounter); PATCHES\u0027 CROUCH is the final-fight reward. (3) Tragoth\u0027s invasion red sign is in the Ruin-Strewn Precipice inside Magma Wyrm Makar\u0027s boss room (rest at that grace first) â€” step 11 was re-anchored to the Ruin-Strewn Precipice grace since Great-Horned Tragoth is not a valid standalone anchor. Key gate: sparing Patches at the Murkwater boss fight; killing him there ends the quest and drops Patches\u0027 Bell Bearing for the Twin Maiden Husks. Time-sensitive: claim the Magma Whip Candlestick from Patches before he leaves Volcano Manor (he departs after Rykard/the God-Devouring Serpent is slain), or it is lost. Tragoth drops the Bull-Goat set; the Magma Whip Candlestick is Patches\u0027 separate reward for the contract. Do NOT attack Patches at the Shaded Castle. Verified against Fextralife and Game8 (June 2026).",
+        "phase":  1,
+        "ord":  9
     },
     {
         "id":  "sellen",
@@ -830,7 +850,9 @@
                           "warn":  "Siding with Jerren (red sign) permanently locks Lusat\u0027s Set, Azur\u0027s Set, Glintstone Kris and Shard Spiral until NG+. Pick the gold sign to keep them."
                       }
                   ],
-        "notes":  "Corrected and verified against Fextralife, GameRant, GamesRadar, GameSpot, and the Fandom wiki. Key fixes to the draft: (1) Added the previously MISSING required step where you must speak to Witch-Hunter Jerren in the Redmane Castle throne room, rest to reset the area, then return to Witchbane Ruins to find Jerren over Sellen\u0027s body and exhaust his dialogue â€” this gates progression to the Three Sisters transplant. (2) Sellen\u0027s key is given when you REPORT Azur (used to drop the magic barrier at Sellia Hideaway), not handed at the start. (3) Added the Rune Arc to the Ending B (kill Sellen) reward list, which the draft omitted. (4) Clarified Ending A: Sellen transforms into a School of Graven Mages mass that drops the Witch\u0027s Glintstone Crown on the floor beside her, and the Eccentric Set is looted from Jerren\u0027s corpse. The Witch\u0027s Glintstone Crown is confirmed obtainable in BOTH endings. Unchanged and verified correct: Azur (Hermit Village area, Mt. Gelmir) grants Comet Azur; Lusat (deep in Sellia Hideaway behind illusory wall + sealed door) grants Stars of Ruin; defeating Starscourge Radahn triggers her relocation; transplant occurs in Seluvis\u0027s hidden cellar at the Three Sisters via the illusory floor; Rennala must be defeated to access the Grand Library finale; Ending A rewards Glintstone Kris + Shard Spiral. Sources: eldenring.wiki.fextralife.com/Sorceress+Sellen, gamerant.com, gamesradar.com, gamespot.com, eldenring.fandom.com."
+        "notes":  "Corrected and verified against Fextralife, GameRant, GamesRadar, GameSpot, and the Fandom wiki. Key fixes to the draft: (1) Added the previously MISSING required step where you must speak to Witch-Hunter Jerren in the Redmane Castle throne room, rest to reset the area, then return to Witchbane Ruins to find Jerren over Sellen\u0027s body and exhaust his dialogue â€” this gates progression to the Three Sisters transplant. (2) Sellen\u0027s key is given when you REPORT Azur (used to drop the magic barrier at Sellia Hideaway), not handed at the start. (3) Added the Rune Arc to the Ending B (kill Sellen) reward list, which the draft omitted. (4) Clarified Ending A: Sellen transforms into a School of Graven Mages mass that drops the Witch\u0027s Glintstone Crown on the floor beside her, and the Eccentric Set is looted from Jerren\u0027s corpse. The Witch\u0027s Glintstone Crown is confirmed obtainable in BOTH endings. Unchanged and verified correct: Azur (Hermit Village area, Mt. Gelmir) grants Comet Azur; Lusat (deep in Sellia Hideaway behind illusory wall + sealed door) grants Stars of Ruin; defeating Starscourge Radahn triggers her relocation; transplant occurs in Seluvis\u0027s hidden cellar at the Three Sisters via the illusory floor; Rennala must be defeated to access the Grand Library finale; Ending A rewards Glintstone Kris + Shard Spiral. Sources: eldenring.wiki.fextralife.com/Sorceress+Sellen, gamerant.com, gamesradar.com, gamespot.com, eldenring.fandom.com.",
+        "phase":  1,
+        "ord":  8
     },
     {
         "id":  "hyetta",
@@ -917,7 +939,9 @@
                           "near":  "Frenzied Flame Proscription"
                       }
                   ],
-        "notes":  "Prerequisite: progress Irina of Morne\u0027s and Castellan Edgar\u0027s questlines so that Edgar witnesses Irina\u0027s corpse on the Weeping Peninsula; do NOT kill Irina, or Hyetta will not spawn. Also note the first Shabriri Grape sits in the basement beneath Godrick\u0027s throne room, which is only accessible after beating Godrick the Grafted. Feed her three Shabriri Grapes in order at Lake-Facing Cliffs, Purified Ruins, and Gate Town Bridge; the second grape is in the hidden lower level of Purified Ruins behind breakable wooden planks. At the third feeding (Gate Town Bridge) you MUST choose the dialogue that the grapes are human eyes, then reload the area for her to move to Bellum Church. The Fingerprint Grape comes from Festering Fingerprint Vyke, who invades near the Church of Inhibition; give it to her at Bellum Church. Final reward (Frenzied Flame Seal + 5 Frenzyflame Stones) only appears after accepting the Three Fingers at the Frenzied Flame Proscription beneath Leyndell\u0027s Subterranean Shunning-Grounds and speaking to Hyetta there. WARNING: accepting the Three Fingers locks you onto the Lord of Frenzied Flame ending unless cured later via Miquella\u0027s Needle. Verified against Fextralife (eldenring.wiki.fextralife.com/Hyetta) and Game8; draft corrections: prerequisite now reflects Edgar\u0027s corpse-witness trigger (not Irina\u0027s quest alone), second grape source corrected from a chest to the hidden staircase behind breakable planks, and the duplicate final-reward steps consolidated."
+        "notes":  "Prerequisite: progress Irina of Morne\u0027s and Castellan Edgar\u0027s questlines so that Edgar witnesses Irina\u0027s corpse on the Weeping Peninsula; do NOT kill Irina, or Hyetta will not spawn. Also note the first Shabriri Grape sits in the basement beneath Godrick\u0027s throne room, which is only accessible after beating Godrick the Grafted. Feed her three Shabriri Grapes in order at Lake-Facing Cliffs, Purified Ruins, and Gate Town Bridge; the second grape is in the hidden lower level of Purified Ruins behind breakable wooden planks. At the third feeding (Gate Town Bridge) you MUST choose the dialogue that the grapes are human eyes, then reload the area for her to move to Bellum Church. The Fingerprint Grape comes from Festering Fingerprint Vyke, who invades near the Church of Inhibition; give it to her at Bellum Church. Final reward (Frenzied Flame Seal + 5 Frenzyflame Stones) only appears after accepting the Three Fingers at the Frenzied Flame Proscription beneath Leyndell\u0027s Subterranean Shunning-Grounds and speaking to Hyetta there. WARNING: accepting the Three Fingers locks you onto the Lord of Frenzied Flame ending unless cured later via Miquella\u0027s Needle. Verified against Fextralife (eldenring.wiki.fextralife.com/Hyetta) and Game8; draft corrections: prerequisite now reflects Edgar\u0027s corpse-witness trigger (not Irina\u0027s quest alone), second grape source corrected from a chest to the hidden staircase behind breakable planks, and the duplicate final-reward steps consolidated.",
+        "phase":  2,
+        "ord":  14
     },
     {
         "id":  "latenna",
@@ -993,7 +1017,9 @@
                           "near":  "Apostate Derelict"
                       }
                   ],
-        "notes":  "Verified against Fextralife, Fandom, and Game8; the draft was largely correct with only minor wording fixes. Albus is found in the Village of the Albinaurics (western Liurnia) by walking UP the path from the grace, past the Depraved Perfumer, disguised as a large pot you must strike to reveal; he gives the Haligtree Secret Medallion (Right). The Lakeside Crystal Cave boss is a generic \"Bloodhound Knight\" (drops the Cerulean Amber Medallion) â€” this is NOT the canonical-list \"Bloodhound Knight Darriwil\" (who is at the Forlorn Hound Evergaol), so this step is correctly anchored to the cave grace rather than a boss. Defeating it opens the path to the Slumbering Wolf\u0027s Shack where Latenna sits with her wolf Lobo; show the Right medallion to recruit her as the Latenna the Albinauric spirit summon. She references the medallion\u0027s other (Left) half, which is found in a chest past Commander Niall at Castle Sol in the Mountaintops of the Giants; obtaining BOTH halves is required to reach the Consecrated Snowfield, but the Left medallion is NOT part of Latenna\u0027s quest and is intentionally omitted as a step. The quest concludes at the Apostate Derelict, northwest of the Consecrated Snowfield, by summoning her beside the giant Albinauric woman; the reward is a Somber Ancient Dragon Smithing Stone (upgrades a somber weapon to +9). NOTE: contrary to one secondary source\u0027s warning, recruiting Latenna and obtaining the Left medallion do not conflict â€” her death warning is not supported by the primary wikis and was excluded. Sources: Fextralife (https://eldenring.wiki.fextralife.com/Latenna), Fandom (https://eldenring.fandom.com/wiki/Latenna_the_Albinauric), Game8 (https://game8.co/games/Elden-Ring/archives/369889)."
+        "notes":  "Verified against Fextralife, Fandom, and Game8; the draft was largely correct with only minor wording fixes. Albus is found in the Village of the Albinaurics (western Liurnia) by walking UP the path from the grace, past the Depraved Perfumer, disguised as a large pot you must strike to reveal; he gives the Haligtree Secret Medallion (Right). The Lakeside Crystal Cave boss is a generic \"Bloodhound Knight\" (drops the Cerulean Amber Medallion) â€” this is NOT the canonical-list \"Bloodhound Knight Darriwil\" (who is at the Forlorn Hound Evergaol), so this step is correctly anchored to the cave grace rather than a boss. Defeating it opens the path to the Slumbering Wolf\u0027s Shack where Latenna sits with her wolf Lobo; show the Right medallion to recruit her as the Latenna the Albinauric spirit summon. She references the medallion\u0027s other (Left) half, which is found in a chest past Commander Niall at Castle Sol in the Mountaintops of the Giants; obtaining BOTH halves is required to reach the Consecrated Snowfield, but the Left medallion is NOT part of Latenna\u0027s quest and is intentionally omitted as a step. The quest concludes at the Apostate Derelict, northwest of the Consecrated Snowfield, by summoning her beside the giant Albinauric woman; the reward is a Somber Ancient Dragon Smithing Stone (upgrades a somber weapon to +9). NOTE: contrary to one secondary source\u0027s warning, recruiting Latenna and obtaining the Left medallion do not conflict â€” her death warning is not supported by the primary wikis and was excluded. Sources: Fextralife (https://eldenring.wiki.fextralife.com/Latenna), Fandom (https://eldenring.fandom.com/wiki/Latenna_the_Albinauric), Game8 (https://game8.co/games/Elden-Ring/archives/369889).",
+        "phase":  3,
+        "ord":  21
     },
     {
         "id":  "diallos",
@@ -1112,7 +1138,9 @@
                           "type":  "item",
                           "warn":  "Requires completing Alexander\u0027s full quest into Crumbling Farum Azula. Miss Alexander\u0027s questline and you forfeit the Companion Jar talisman."
                       }
-                  ]
+                  ],
+        "phase":  1,
+        "ord":  1
     },
     {
         "id":  "boc",
@@ -1206,7 +1234,9 @@
                           "warn":  "Do NOT give Boc the Larval Tear he asks for - it kills him permanently. Only the \u0027You\u0027re Beautiful\u0027 Prattling Pate saves him."
                       }
                   ],
-        "notes":  "Corrections made: (1) First encounter is NOT deep in Mistwood â€” the talking tree is east of the Birdseye Telescope south of Agheel Lake North in Limgrave (near Murkwater Bridge); re-anchored to Boc with near hint Agheel Lake North, and added the 10 Mushrooms reward. (2) Fixed the Gold Sewing Needle\u0027s role: it is GIVEN to Boc to advance his quest (he covets the royal-crested needle), not a player tool for reinforcing armor â€” the old description was factually wrong. (3) Fixed the Prattling Pate location: it is in Hermit Village on Mt. Gelmir (near the Craftsman\u0027s Shack grace), not \"Hermit\u0027s Shack.\" Order verified correct: Tree -\u003e Coastal Cave -\u003e Lake-Facing Cliffs -\u003e East Raya Lucaria Gate -\u003e Altus Highway Junction -\u003e East Capital Rampart; the Demi-Human Chiefs are a duo. Tragic alternative: if you give Boc a Larval Tear instead, he travels to Rennala\u0027s chamber at the Academy of Raya Lucaria, is reborn as a human, and dies after the next rest; if you do nothing he relocates and dies. The \"You\u0027re Beautiful\" branch is the only way to save him. Boc relocates each time you rest after exhausting his dialogue, gated by main-game progression. Neither final choice grants an item reward; it is purely a moral choice over Boc\u0027s fate."
+        "notes":  "Corrections made: (1) First encounter is NOT deep in Mistwood â€” the talking tree is east of the Birdseye Telescope south of Agheel Lake North in Limgrave (near Murkwater Bridge); re-anchored to Boc with near hint Agheel Lake North, and added the 10 Mushrooms reward. (2) Fixed the Gold Sewing Needle\u0027s role: it is GIVEN to Boc to advance his quest (he covets the royal-crested needle), not a player tool for reinforcing armor â€” the old description was factually wrong. (3) Fixed the Prattling Pate location: it is in Hermit Village on Mt. Gelmir (near the Craftsman\u0027s Shack grace), not \"Hermit\u0027s Shack.\" Order verified correct: Tree -\u003e Coastal Cave -\u003e Lake-Facing Cliffs -\u003e East Raya Lucaria Gate -\u003e Altus Highway Junction -\u003e East Capital Rampart; the Demi-Human Chiefs are a duo. Tragic alternative: if you give Boc a Larval Tear instead, he travels to Rennala\u0027s chamber at the Academy of Raya Lucaria, is reborn as a human, and dies after the next rest; if you do nothing he relocates and dies. The \"You\u0027re Beautiful\" branch is the only way to save him. Boc relocates each time you rest after exhausting his dialogue, gated by main-game progression. Neither final choice grants an item reward; it is purely a moral choice over Boc\u0027s fate.",
+        "phase":  1,
+        "ord":  11
     },
     {
         "id":  "roderika",
@@ -1293,7 +1323,9 @@
                           "type":  "npc",
                           "near":  "Table of Lost Grace"
                       }
-                  ]
+                  ],
+        "phase":  2,
+        "ord":  15
     },
     {
         "id":  "dquest",
@@ -1409,7 +1441,9 @@
                           "type":  "item"
                       }
                   ],
-        "notes":  "Verified against Fextralife Elden Ring Wiki (D, Hunter of the Dead; D\u0027s Twin Brother; Twinned Set/Armor) and supporting guides. Corrections from draft: (1) The Nokron brother (Devin / \"D, Beholder of Death\") is found east of the Great Waterfall Basin grace, against the railing just outside the Valiant Gargoyle arena in the Siofra Aqueduct â€” the draft\u0027s \"Aqueduct-Facing Cliffs\" is a real but wrong grace (that one sits near the Nokron entry, not the gargoyle arena), so steps 12-13 now use \"Great Waterfall Basin.\" (2) The Inner Order gesture is taught simply by interacting with Devin at his initial location, not by giving the armor â€” wording clarified. (3) Added that the confrontation over Fia\u0027s body in Deeproot Depths requires having defeated Lichdragon Fortissax AND obtaining the Mending Rune of the Death-Prince (Fia\u0027s quest completion gate). Confirmed accurate: D first found east of Stormhill Shack (nearest graces Saintsbridge / Summonwater); Tibia Mariner is the Summonwater boss; D reappears at the SW entrance of Summonwater before moving to Roundtable; Deathroot -\u003e Gurranq order; Weathered Dagger from Fia then given to D; D\u0027s body and loot (full Twinned Set helm/armor/gauntlets/greaves PLUS D\u0027s Bell Bearing) appear in the room behind Hewg after Fia\u0027s trigger and a reload. Branch note: the Twinned Set must be UNALTERED in inventory or Devin refuses it; giving it lets you summon Devin for the Valiant Gargoyles fight and ultimately yields the Inseparable Sword (Holy greatsword) after Fia\u0027s quest resolves. Sources: https://eldenring.wiki.fextralife.com/D,+Hunter+of+the+Dead ; https://eldenring.wiki.fextralife.com/D\u0027s+Twin+Brother ; https://eldenring.wiki.fextralife.com/Twinned+Set"
+        "notes":  "Verified against Fextralife Elden Ring Wiki (D, Hunter of the Dead; D\u0027s Twin Brother; Twinned Set/Armor) and supporting guides. Corrections from draft: (1) The Nokron brother (Devin / \"D, Beholder of Death\") is found east of the Great Waterfall Basin grace, against the railing just outside the Valiant Gargoyle arena in the Siofra Aqueduct â€” the draft\u0027s \"Aqueduct-Facing Cliffs\" is a real but wrong grace (that one sits near the Nokron entry, not the gargoyle arena), so steps 12-13 now use \"Great Waterfall Basin.\" (2) The Inner Order gesture is taught simply by interacting with Devin at his initial location, not by giving the armor â€” wording clarified. (3) Added that the confrontation over Fia\u0027s body in Deeproot Depths requires having defeated Lichdragon Fortissax AND obtaining the Mending Rune of the Death-Prince (Fia\u0027s quest completion gate). Confirmed accurate: D first found east of Stormhill Shack (nearest graces Saintsbridge / Summonwater); Tibia Mariner is the Summonwater boss; D reappears at the SW entrance of Summonwater before moving to Roundtable; Deathroot -\u003e Gurranq order; Weathered Dagger from Fia then given to D; D\u0027s body and loot (full Twinned Set helm/armor/gauntlets/greaves PLUS D\u0027s Bell Bearing) appear in the room behind Hewg after Fia\u0027s trigger and a reload. Branch note: the Twinned Set must be UNALTERED in inventory or Devin refuses it; giving it lets you summon Devin for the Valiant Gargoyles fight and ultimately yields the Inseparable Sword (Holy greatsword) after Fia\u0027s quest resolves. Sources: https://eldenring.wiki.fextralife.com/D,+Hunter+of+the+Dead ; https://eldenring.wiki.fextralife.com/D\u0027s+Twin+Brother ; https://eldenring.wiki.fextralife.com/Twinned+Set",
+        "phase":  1,
+        "ord":  12
     },
     {
         "id":  "kenneth",
@@ -1477,7 +1511,9 @@
                           "type":  "npc"
                       }
                   ],
-        "notes":  "Verified against Fextralife and Game8 wikis. Kenneth first appears atop a ruined archway in northeastern Limgrave, directly northeast of the Mistwood Outskirts grace (Fextralife also references the nearby Third Church of Marika grace). Clearing Fort Haight (killing the Godrick/Lordsworn Knight on the ramparts) yields the Ash of War: Bloody Slash, and reporting back to Kenneth yields the Erdsteel Dagger. His quest then locks to Nepheli Loux: you must give her the Stormhawk King and must NOT give her Seluvis\u0027s Potion (which turns her into a puppet). After defeating Morgott and resting at the Godrick the Grafted grace in Stormveil Castle (post-patch 1.03 behavior), Kenneth and Nepheli convene in the throne room and Kenneth names Nepheli the ruler of Limgrave. Note: Kenneth promises but never actually performs the knighting ceremony; naming Nepheli ruler is the questline\u0027s true conclusion. Per Fextralife, Kenneth is technically optional for Nepheli to reach the throne, but speaking to him there is what completes HIS questline. Corrections from draft: removed the inaccurate claim that Gatekeeper Gostoc joins the throne-room gathering (only Kenneth and Nepheli are involved in Kenneth\u0027s conclusion)."
+        "notes":  "Verified against Fextralife and Game8 wikis. Kenneth first appears atop a ruined archway in northeastern Limgrave, directly northeast of the Mistwood Outskirts grace (Fextralife also references the nearby Third Church of Marika grace). Clearing Fort Haight (killing the Godrick/Lordsworn Knight on the ramparts) yields the Ash of War: Bloody Slash, and reporting back to Kenneth yields the Erdsteel Dagger. His quest then locks to Nepheli Loux: you must give her the Stormhawk King and must NOT give her Seluvis\u0027s Potion (which turns her into a puppet). After defeating Morgott and resting at the Godrick the Grafted grace in Stormveil Castle (post-patch 1.03 behavior), Kenneth and Nepheli convene in the throne room and Kenneth names Nepheli the ruler of Limgrave. Note: Kenneth promises but never actually performs the knighting ceremony; naming Nepheli ruler is the questline\u0027s true conclusion. Per Fextralife, Kenneth is technically optional for Nepheli to reach the throne, but speaking to him there is what completes HIS questline. Corrections from draft: removed the inaccurate claim that Gatekeeper Gostoc joins the throne-room gathering (only Kenneth and Nepheli are involved in Kenneth\u0027s conclusion).",
+        "phase":  1,
+        "ord":  10
     },
     {
         "id":  "rya",
@@ -1588,7 +1624,9 @@
                           "warn":  "Reward only drops if you spoke to Zorayas in her dungeon room pre-Rykard. Defeating Rykard beforehand forfeits Daedicar\u0027s Woe and her Letter."
                       }
                   ],
-        "notes":  "Verified against Fextralife (eldenring.wiki.fextralife.com/Rya), Eldenpedia (eldenring.wiki.gg/wiki/Rya_the_Scout), and TheGamer. Key corrections to the draft: (1) Rya does NOT reveal her serpent form immediately on entering the manor â€” she first gives an assassination contract, and only after you defeat Old Knight Istvan (Stormhill Shack) and reload does she appear as Zorayas in the locked room ACROSS the corridor from the drawing room (not \"in the drawing room\" itself). I added the missing assassination-contract step and the correct reveal location. (2) The Serpent\u0027s Amnion is delivered in that same locked room near the Volcano Manor Site of Grace, not \"above the Temple of Eiglay grace\" â€” corrected the near hint. (3) Reward confirmed as Daedicar\u0027s Woe in all three outcomes, plus Zorayas\u0027s Letter only if you neither kill her nor use the tonic; granted after Rykard\u0027s defeat. The Count Ymir / Cathedral of Manus Metyr / Finger Ruins content is a SEPARATE Shadow of the Erdtree questline (Ymir and Jolan) and is correctly excluded. Tonic of Forgetfulness is given by Tanith. Necklace costs 1,000 runes from Blackguard Big Boggart at Boilprawn Shack."
+        "notes":  "Verified against Fextralife (eldenring.wiki.fextralife.com/Rya), Eldenpedia (eldenring.wiki.gg/wiki/Rya_the_Scout), and TheGamer. Key corrections to the draft: (1) Rya does NOT reveal her serpent form immediately on entering the manor â€” she first gives an assassination contract, and only after you defeat Old Knight Istvan (Stormhill Shack) and reload does she appear as Zorayas in the locked room ACROSS the corridor from the drawing room (not \"in the drawing room\" itself). I added the missing assassination-contract step and the correct reveal location. (2) The Serpent\u0027s Amnion is delivered in that same locked room near the Volcano Manor Site of Grace, not \"above the Temple of Eiglay grace\" â€” corrected the near hint. (3) Reward confirmed as Daedicar\u0027s Woe in all three outcomes, plus Zorayas\u0027s Letter only if you neither kill her nor use the tonic; granted after Rykard\u0027s defeat. The Count Ymir / Cathedral of Manus Metyr / Finger Ruins content is a SEPARATE Shadow of the Erdtree questline (Ymir and Jolan) and is correctly excluded. Tonic of Forgetfulness is given by Tanith. Necklace costs 1,000 runes from Blackguard Big Boggart at Boilprawn Shack.",
+        "phase":  3,
+        "ord":  20
     },
     {
         "id":  "seluvis",
@@ -1719,7 +1757,9 @@
                           "warn":  "Pidia only dies and drops the Nepheli Loux Puppet if you turned Nepheli into a puppet in step 5; otherwise this reward is unobtainable."
                       }
                   ],
-        "notes":  "Seluvis is tied into Ranni the Witch\u0027s questline; meeting him requires defeating Royal Knight Loretta in Caria Manor and reaching the Three Sisters, then joining Ranni at Ranni\u0027s Rise. WARNING: attacking Seluvis, or feeding the Amber Draught to Ranni, locks out Ranni\u0027s questline unless absolved with a Celestial Dew at the Church of Vows. The free puppet is your choice of the Finger Maiden Therolina Puppet or the Jarwight Puppet; additional puppets are bought with Starlight Shards. Giving Seluvis\u0027s Potion to Nepheli turns her into a puppet (you can instead give it to Gideon to discard harmlessly, or to the Dung Eater). Seluvis dies once you give Ranni the Fingerslayer Blade; Pidia dies at the same trigger, dropping Pidia\u0027s Bell Bearing plus the Nepheli Loux Puppet (if Nepheli drank the potion) or the Dolores the Sleeping Arrow Puppet (if she did not). Seluvis\u0027s corpse yields the Preceptor\u0027s armor set and Seluvis\u0027s Bell Bearing, and his puppet shop stays open via his body."
+        "notes":  "Seluvis is tied into Ranni the Witch\u0027s questline; meeting him requires defeating Royal Knight Loretta in Caria Manor and reaching the Three Sisters, then joining Ranni at Ranni\u0027s Rise. WARNING: attacking Seluvis, or feeding the Amber Draught to Ranni, locks out Ranni\u0027s questline unless absolved with a Celestial Dew at the Church of Vows. The free puppet is your choice of the Finger Maiden Therolina Puppet or the Jarwight Puppet; additional puppets are bought with Starlight Shards. Giving Seluvis\u0027s Potion to Nepheli turns her into a puppet (you can instead give it to Gideon to discard harmlessly, or to the Dung Eater). Seluvis dies once you give Ranni the Fingerslayer Blade; Pidia dies at the same trigger, dropping Pidia\u0027s Bell Bearing plus the Nepheli Loux Puppet (if Nepheli drank the potion) or the Dolores the Sleeping Arrow Puppet (if she did not). Seluvis\u0027s corpse yields the Preceptor\u0027s armor set and Seluvis\u0027s Bell Bearing, and his puppet shop stays open via his body.",
+        "phase":  3,
+        "ord":  19
     },
     {
         "id":  "thiollier",
@@ -1870,7 +1910,9 @@
                           "type":  "grace"
                       }
                   ],
-        "notes":  "Thiollier is the mournful servant of St. Trina and a member of Leda\u0027s band. He starts as a poison-wares merchant at Pillar Path Cross (Scadu Altus, east of Castle Ensis), selling Trina\u0027s Lily and St. Trina\u0027s Crystal Ball. CORRECTIONS vs. the draft: (1) Added the missing Moore Black Syrup exchange â€” giving Black Syrup to Thiollier yields Thiollier\u0027s Concoction (used in the Dragon Communion Priestess quest) but FAILS Moore\u0027s questline; do this before he leaves. (2) Added the essential trigger step: Thiollier\u0027s quest only advances after Miquella\u0027s Great Rune breaks (defeat Messmer and Romina, then approach Shadow Keep for the \\\"a great rune has broken\\\" message) â€” return and speak to him again at Pillar Path Cross, reloading if needed. (3) Reordered so buying wares and the Moore/rune triggers precede the Stone Coffin Fissure descent. St. Trina sleeps at the Garden of Deep Purple grace at the end of Stone Coffin Fissure (entrance at the southern tip of Cerulean Coast), reachable after defeating the Putrescent Knight (Thiollier can be summoned for that boss). Telling Thiollier St. Trina\u0027s whereabouts sends him to her side; imbibe her nectar ~4 times until she speaks on the death screen, relay her words, then survive his invasion to earn the St. Trina\u0027s Smile talisman. Burning the Sealing Tree at Church of the Bud (requires Messmer defeated) is the point of no return â€” finish the prior steps first. Afterward speak to the reconciled Thiollier, then summon him for Needle Knight Leda\u0027s band fight and for Radahn, Consort of Miquella, at Enir-Ilim, after which he drops Thiollier\u0027s Hidden Needle plus the Mask, Garb, Gloves, and Trousers. Sources: PowerPyx, Fextralife Wiki, Game8."
+        "notes":  "Thiollier is the mournful servant of St. Trina and a member of Leda\u0027s band. He starts as a poison-wares merchant at Pillar Path Cross (Scadu Altus, east of Castle Ensis), selling Trina\u0027s Lily and St. Trina\u0027s Crystal Ball. CORRECTIONS vs. the draft: (1) Added the missing Moore Black Syrup exchange â€” giving Black Syrup to Thiollier yields Thiollier\u0027s Concoction (used in the Dragon Communion Priestess quest) but FAILS Moore\u0027s questline; do this before he leaves. (2) Added the essential trigger step: Thiollier\u0027s quest only advances after Miquella\u0027s Great Rune breaks (defeat Messmer and Romina, then approach Shadow Keep for the \\\"a great rune has broken\\\" message) â€” return and speak to him again at Pillar Path Cross, reloading if needed. (3) Reordered so buying wares and the Moore/rune triggers precede the Stone Coffin Fissure descent. St. Trina sleeps at the Garden of Deep Purple grace at the end of Stone Coffin Fissure (entrance at the southern tip of Cerulean Coast), reachable after defeating the Putrescent Knight (Thiollier can be summoned for that boss). Telling Thiollier St. Trina\u0027s whereabouts sends him to her side; imbibe her nectar ~4 times until she speaks on the death screen, relay her words, then survive his invasion to earn the St. Trina\u0027s Smile talisman. Burning the Sealing Tree at Church of the Bud (requires Messmer defeated) is the point of no return â€” finish the prior steps first. Afterward speak to the reconciled Thiollier, then summon him for Needle Knight Leda\u0027s band fight and for Radahn, Consort of Miquella, at Enir-Ilim, after which he drops Thiollier\u0027s Hidden Needle plus the Mask, Garb, Gloves, and Trousers. Sources: PowerPyx, Fextralife Wiki, Game8.",
+        "phase":  5,
+        "ord":  29
     },
     {
         "id":  "ymir",
@@ -1983,7 +2025,9 @@
                           "warn":  "Mutually exclusive: Iris of Occultation = Sword of Night (kills Jolan); Iris of Grace = Jolan spirit ashes. You get only one per playthrough.  Â·  Giving Iris of Occultation kills Jolan, permanently locking out her spirit ashes and the upgraded Jolan \u0026 Anna ashes. Pick Iris of Grace to keep that path."
                       }
                   ],
-        "notes":  "Corrections from draft (verified vs Fextralife, GameRant, Beebom, VULKK): (1) Added missing essential step â€” the invader Swordhand of Night Anna (Jolan\u0027s sister) attacks in the Finger Ruins of Miyr and drops the Claws of Night before the horn/Metyr. (2) Fixed Dheo access: it is reached via Scaduview from the Storeroom, Back Section in Shadow Keep, requiring the O Mother gesture at the altar â€” not simply \"Scaduview behind Shadow Keep.\" (3) Removed the inaccurate \"rest until nighttime\" requirement for the throne; the Miyr passage opens by resting at the grace and examining the throne after obtaining the third Ruins Map. (4) Trimmed the redundant standalone \"exhaust dialogue / Greater Will\" step into the first-meeting and report steps, since exhausting dialogue happens at the first meeting. Verified reward order: first meeting gives Hole-Laden Necklace + first Ruins Map; Rhia bell = Crimson Seed Talisman +1, then Ymir gives Beloved Stardust + second map; Dheo bell = Cerulean Seed Talisman +1, then Ymir gives third map; Metyr drops Remembrance of the Mother of Fingers (trade via Finger Reader Enia at Roundtable Hold for Staff of the Great Beyond or Gazing Finger); hostile Count Ymir, Mother of Fingers drops Maternal Staff, High Priest set, and Ymir\u0027s Bell Bearing; Cherishing Fingers sorcery lies at Ymir\u0027s grave in the graveyard west of the cathedral. Jolan remains a non-hostile NPC the whole quest (she is not fought). Her finale is mutually exclusive: Iris of Occultation gives the Sword of Night and ends her quest, while Iris of Grace gives the Swordhand of Night Jolan spirit ash, which can later be reunited with Anna\u0027s puppet at the top of Rabbath\u0027s Rise for the combined Jolan and Anna spirit ashes."
+        "notes":  "Corrections from draft (verified vs Fextralife, GameRant, Beebom, VULKK): (1) Added missing essential step â€” the invader Swordhand of Night Anna (Jolan\u0027s sister) attacks in the Finger Ruins of Miyr and drops the Claws of Night before the horn/Metyr. (2) Fixed Dheo access: it is reached via Scaduview from the Storeroom, Back Section in Shadow Keep, requiring the O Mother gesture at the altar â€” not simply \"Scaduview behind Shadow Keep.\" (3) Removed the inaccurate \"rest until nighttime\" requirement for the throne; the Miyr passage opens by resting at the grace and examining the throne after obtaining the third Ruins Map. (4) Trimmed the redundant standalone \"exhaust dialogue / Greater Will\" step into the first-meeting and report steps, since exhausting dialogue happens at the first meeting. Verified reward order: first meeting gives Hole-Laden Necklace + first Ruins Map; Rhia bell = Crimson Seed Talisman +1, then Ymir gives Beloved Stardust + second map; Dheo bell = Cerulean Seed Talisman +1, then Ymir gives third map; Metyr drops Remembrance of the Mother of Fingers (trade via Finger Reader Enia at Roundtable Hold for Staff of the Great Beyond or Gazing Finger); hostile Count Ymir, Mother of Fingers drops Maternal Staff, High Priest set, and Ymir\u0027s Bell Bearing; Cherishing Fingers sorcery lies at Ymir\u0027s grave in the graveyard west of the cathedral. Jolan remains a non-hostile NPC the whole quest (she is not fought). Her finale is mutually exclusive: Iris of Occultation gives the Sword of Night and ends her quest, while Iris of Grace gives the Swordhand of Night Jolan spirit ash, which can later be reunited with Anna\u0027s puppet at the top of Rabbath\u0027s Rise for the combined Jolan and Anna spirit ashes.",
+        "phase":  5,
+        "ord":  30
     },
     {
         "id":  "ansbach",
@@ -2114,7 +2158,9 @@
                           "type":  "item"
                       }
                   ],
-        "notes":  "Pureblood Knight Ansbach, former Pureblood Knight Captain of House Mohg, comes to the Land of Shadow to learn Miquella\u0027s plans for Mohg\u0027s body. Verified against PowerPyx, Game8, and Fextralife. CORRECTIONS from draft: (1) The key item is named \"Letter for Freyja\" (not \"Letter to Freyja\"). (2) Order fixed - you must meet/exhaust Redmane Freyja at Storehouse Seventh Floor BEFORE involving Ansbach; you then tell Ansbach about Freyja AND give the Secret Rite Scroll in the same visit, then rest and speak again to receive the Letter for Freyja. Giving the scroll without having learned of Freyja\u0027s decision can lock you out of the letter. (3) Added the explicit \"Meet Freyja first\" step and the \"defeat Rellana / advance to Scadu Altus\" trigger that actually relocates Ansbach from Main Gate Cross to the Storehouse (the \"great rune has broken\" message is not what moves him; reaching Bonny Village or Shadow Keep does). Gating: steps 1-12 (through siding with Ansbach against Leda at the Storehouse) must be completed before burning the Sealing Tree at Church of the Bud, the point of no return; the rest occurs in Enir-Ilim. Rewards: delivering the Letter for Freyja yields the Golden Lion Shield; the Storehouse invasion drops Ansbach\u0027s Longbow regardless of side, and siding with Ansbach (gold sign) additionally gives Leda\u0027s Rune. His death after the final battle drops Ansbach\u0027s Set (Wise Man\u0027s Mask, Ansbach\u0027s Attire/Manchettes/Boots), the Obsidian Lamina scythe, and the Furious Blade of Ansbach incantation. Sources: powerpyx.com, game8.co, eldenring.wiki.fextralife.com."
+        "notes":  "Pureblood Knight Ansbach, former Pureblood Knight Captain of House Mohg, comes to the Land of Shadow to learn Miquella\u0027s plans for Mohg\u0027s body. Verified against PowerPyx, Game8, and Fextralife. CORRECTIONS from draft: (1) The key item is named \"Letter for Freyja\" (not \"Letter to Freyja\"). (2) Order fixed - you must meet/exhaust Redmane Freyja at Storehouse Seventh Floor BEFORE involving Ansbach; you then tell Ansbach about Freyja AND give the Secret Rite Scroll in the same visit, then rest and speak again to receive the Letter for Freyja. Giving the scroll without having learned of Freyja\u0027s decision can lock you out of the letter. (3) Added the explicit \"Meet Freyja first\" step and the \"defeat Rellana / advance to Scadu Altus\" trigger that actually relocates Ansbach from Main Gate Cross to the Storehouse (the \"great rune has broken\" message is not what moves him; reaching Bonny Village or Shadow Keep does). Gating: steps 1-12 (through siding with Ansbach against Leda at the Storehouse) must be completed before burning the Sealing Tree at Church of the Bud, the point of no return; the rest occurs in Enir-Ilim. Rewards: delivering the Letter for Freyja yields the Golden Lion Shield; the Storehouse invasion drops Ansbach\u0027s Longbow regardless of side, and siding with Ansbach (gold sign) additionally gives Leda\u0027s Rune. His death after the final battle drops Ansbach\u0027s Set (Wise Man\u0027s Mask, Ansbach\u0027s Attire/Manchettes/Boots), the Obsidian Lamina scythe, and the Furious Blade of Ansbach incantation. Sources: powerpyx.com, game8.co, eldenring.wiki.fextralife.com.",
+        "phase":  5,
+        "ord":  28
     },
     {
         "id":  "moore",
@@ -2197,7 +2243,9 @@
                           "type":  "item",
                           "near":  "Church of the Crusade"
                       }
-                  ]
+                  ],
+        "phase":  5,
+        "ord":  25
     },
     {
         "id":  "igon",
@@ -2308,7 +2356,9 @@
                           "near":  "Foot of the Jagged Peak"
                       }
                   ],
-        "notes":  "Verified against PowerPyx, Fextralife (Igon, Dragonbolt of Florissax, Ancient Dragon Senessax), and Fandom/Sportskeeda. Corrections vs. draft: (1) Step 1 anchor changed from the grace \"Pillar Path Waypoint\" to the NPC \"Drake Warrior Igon\" to match type npc; the grace is now the near hint. (2) Item-type steps now anchor to the actual item names \"Igon\u0027s Furled Finger\" and \"Dragonbolt of Florissax\" instead of the literal placeholder \"Item\". (3) Removed the standalone \"Dragon\u0027s Pit Terminus\" unlock being conflated with the Ancient Dragon-Man fight â€” clarified the boss is fought after dropping down the abyss to unlock that grace. Geographic order confirmed: Dragon\u0027s Pit Terminus -\u003e (right path) Grand Altar of Dragon Communion -\u003e (bridge) Foot of the Jagged Peak -\u003e Senessax on the climb -\u003e Bayle at the summit. Igon first appears at Pillar Path Waypoint, screaming. Igon\u0027s Furled Finger is given at the Foot of the Jagged Peak (eastern canyon, red smoke) after defeating the two drakes, letting you summon him for Bayle. Devour draconic essence grants the Ancient Dragon\u0027s Blessing damage reduction. The Dragonbolt of Florissax is an OPTIONAL branch: complete Thiollier\u0027s questline for Thiollier\u0027s Concoction, give it to the Dragon Communion Priestess at NIGHT while she prays to make her sleep, wait ~2 days and exhaust her Florissax dialogue BEFORE killing Bayle, then claim Dragonbolt of Florissax from her after Bayle dies; this locks you out of her usual rewards (Priestess Heart and Flowerstone Gravel). Igon\u0027s gold summon sign is just inside the fog wall in Bayle\u0027s arena. After Bayle is slain Igon dies of his wounds at the Foot of the Jagged Peak, leaving his armor set, Igon\u0027s Greatbow, and Igon\u0027s Bell Bearing (sells Igon\u0027s Harpoons at the Twin Maiden Husks)."
+        "notes":  "Verified against PowerPyx, Fextralife (Igon, Dragonbolt of Florissax, Ancient Dragon Senessax), and Fandom/Sportskeeda. Corrections vs. draft: (1) Step 1 anchor changed from the grace \"Pillar Path Waypoint\" to the NPC \"Drake Warrior Igon\" to match type npc; the grace is now the near hint. (2) Item-type steps now anchor to the actual item names \"Igon\u0027s Furled Finger\" and \"Dragonbolt of Florissax\" instead of the literal placeholder \"Item\". (3) Removed the standalone \"Dragon\u0027s Pit Terminus\" unlock being conflated with the Ancient Dragon-Man fight â€” clarified the boss is fought after dropping down the abyss to unlock that grace. Geographic order confirmed: Dragon\u0027s Pit Terminus -\u003e (right path) Grand Altar of Dragon Communion -\u003e (bridge) Foot of the Jagged Peak -\u003e Senessax on the climb -\u003e Bayle at the summit. Igon first appears at Pillar Path Waypoint, screaming. Igon\u0027s Furled Finger is given at the Foot of the Jagged Peak (eastern canyon, red smoke) after defeating the two drakes, letting you summon him for Bayle. Devour draconic essence grants the Ancient Dragon\u0027s Blessing damage reduction. The Dragonbolt of Florissax is an OPTIONAL branch: complete Thiollier\u0027s questline for Thiollier\u0027s Concoction, give it to the Dragon Communion Priestess at NIGHT while she prays to make her sleep, wait ~2 days and exhaust her Florissax dialogue BEFORE killing Bayle, then claim Dragonbolt of Florissax from her after Bayle dies; this locks you out of her usual rewards (Priestess Heart and Flowerstone Gravel). Igon\u0027s gold summon sign is just inside the fog wall in Bayle\u0027s arena. After Bayle is slain Igon dies of his wounds at the Foot of the Jagged Peak, leaving his armor set, Igon\u0027s Greatbow, and Igon\u0027s Bell Bearing (sells Igon\u0027s Harpoons at the Twin Maiden Husks).",
+        "phase":  5,
+        "ord":  27
     },
     {
         "id":  "hornsent",
@@ -2402,7 +2452,9 @@
                           "type":  "grace"
                       }
                   ],
-        "notes":  "Corrected and verified against PowerPyx, Game8, Beebom, and TheGamer. KEY FIXES to the draft: (1) The Grandam exchange was backwards. You do NOT receive Scorpion Stew from Hornsent Grandam to carry to Hornsent. Instead you EQUIP the Divine Beast Head (dropped by Divine Beast Dancing Lion) and give it to Hornsent Grandam in her room beside the Small Private Altar grace in Belurat; she rewards the Watchful Spirit incantation (and later, after Messmer, Scorpion Stew that is meant to be consumed). (2) The Scorpion Stew -\u003e 3x Furnace Visage trade is a SEPARATE, fully optional exchange where you give Scorpion Stew TO Hornsent at Three-Path Cross; it does not gate the quest. These were merged incorrectly in the draft. (3) Added the required intermediate step of progressing to Shadow Keep and resting at Highroad Cross so Hornsent departs and the Leda confrontation triggers. (4) Corrected the Leda fight location: it occurs at the burning boats near the Main Gate Plaza (anchored to Shadow Keep, Main Gate grace), not at the Storehouse First Floor elevator. The reward-collection step was re-anchored to match. Siding with Hornsent (GOLD sign) gives Ash of War: Swift Slash + Leda\u0027s Rune and continues the quest; siding with Leda (RED sign) ends his quest early but still drops his gear. ORDER, the Cross Map / New Cross Map items, the Messmer summon, the throne dialogue, the Church of the Bud invasion (take the first rot-infested staircase in the Ancient Ruins of Rauh), and the final drops (Falx, Caterpillar Mask, Braided Cord Robe, Braided Arm Wraps, Soiled Loincloth) are all confirmed correct. BOSS-NAME NOTE: the real boss is \u0027Messmer the Impaler\u0027 at the Messmer\u0027s Dark Chamber grace, but the allowed boss list only contains the (non-canonical) \u0027Messmer, the Omen King\u0027, which is used as the nearest available entry. If you never summon him for Messmer, he instead appears among Leda\u0027s allies at the final Enir-Ilim confrontation with the same drops. CAUTION: defeating Romina/burning the Sealing Tree advances the endgame and can lock Miquella-follower questlines, so finish Hornsent\u0027s steps beforehand."
+        "notes":  "Corrected and verified against PowerPyx, Game8, Beebom, and TheGamer. KEY FIXES to the draft: (1) The Grandam exchange was backwards. You do NOT receive Scorpion Stew from Hornsent Grandam to carry to Hornsent. Instead you EQUIP the Divine Beast Head (dropped by Divine Beast Dancing Lion) and give it to Hornsent Grandam in her room beside the Small Private Altar grace in Belurat; she rewards the Watchful Spirit incantation (and later, after Messmer, Scorpion Stew that is meant to be consumed). (2) The Scorpion Stew -\u003e 3x Furnace Visage trade is a SEPARATE, fully optional exchange where you give Scorpion Stew TO Hornsent at Three-Path Cross; it does not gate the quest. These were merged incorrectly in the draft. (3) Added the required intermediate step of progressing to Shadow Keep and resting at Highroad Cross so Hornsent departs and the Leda confrontation triggers. (4) Corrected the Leda fight location: it occurs at the burning boats near the Main Gate Plaza (anchored to Shadow Keep, Main Gate grace), not at the Storehouse First Floor elevator. The reward-collection step was re-anchored to match. Siding with Hornsent (GOLD sign) gives Ash of War: Swift Slash + Leda\u0027s Rune and continues the quest; siding with Leda (RED sign) ends his quest early but still drops his gear. ORDER, the Cross Map / New Cross Map items, the Messmer summon, the throne dialogue, the Church of the Bud invasion (take the first rot-infested staircase in the Ancient Ruins of Rauh), and the final drops (Falx, Caterpillar Mask, Braided Cord Robe, Braided Arm Wraps, Soiled Loincloth) are all confirmed correct. BOSS-NAME NOTE: the real boss is \u0027Messmer the Impaler\u0027 at the Messmer\u0027s Dark Chamber grace, but the allowed boss list only contains the (non-canonical) \u0027Messmer, the Omen King\u0027, which is used as the nearest available entry. If you never summon him for Messmer, he instead appears among Leda\u0027s allies at the final Enir-Ilim confrontation with the same drops. CAUTION: defeating Romina/burning the Sealing Tree advances the endgame and can lock Miquella-follower questlines, so finish Hornsent\u0027s steps beforehand.",
+        "phase":  5,
+        "ord":  26
     },
     {
         "id":  "leda",
@@ -2508,7 +2560,9 @@
                           "type":  "grace",
                           "near":  "Cleansing Chamber Anteroom"
                       }
-                  ]
+                  ],
+        "phase":  5,
+        "ord":  24
     },
     {
         "id":  "varre",
@@ -2595,7 +2649,9 @@
                           "near":  "Cocoon of the Empyrean",
                           "warn":  ""
                       }
-                  ]
+                  ],
+        "phase":  1,
+        "ord":  13
     },
     {
         "id":  "rogier",
@@ -2682,7 +2738,9 @@
                           "near":  "Roundtable Hold",
                           "warn":  ""
                       }
-                  ]
+                  ],
+        "phase":  2,
+        "ord":  17
     },
     {
         "id":  "dragoncommunion",
@@ -2769,7 +2827,9 @@
                           "near":  "",
                           "warn":  "Only available if you gave her the Concoction before killing Bayle. If you skipped the Concoction, you instead receive the Priestess Heart and Flowerstone Gavel here."
                       }
-                  ]
+                  ],
+        "phase":  5,
+        "ord":  31
     },
     {
         "id":  "gurranq",
@@ -2832,6 +2892,8 @@
                           "near":  "Bestial Sanctum",
                           "warn":  "Do not kill Gurranq - killing him ends the quest and forfeits the remaining incantations."
                       }
-                  ]
+                  ],
+        "phase":  1,
+        "ord":  5
     }
 ]
