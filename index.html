@@ -135,6 +135,8 @@
   .qp-tools{display:flex;align-items:center;gap:5px;flex-shrink:0}
   .qp-fs{cursor:pointer;color:var(--muted);font-size:12px;font-weight:700;line-height:1;padding:3px 7px;border-radius:5px;border:1px solid var(--line);user-select:none}
   .qp-fs:hover{color:var(--text);background:var(--panel2);border-color:var(--accent)}
+  .qp-resize{position:absolute;left:-3px;top:0;bottom:0;width:8px;cursor:ew-resize;z-index:5;border-radius:8px}
+  .qp-resize:hover,.qp-resize:active{background:linear-gradient(90deg,rgba(217,164,65,.55),transparent)}
   .qp-prog{padding:10px 14px;border-bottom:1px solid var(--line)}
   .qp-prog-top{display:flex;justify-content:space-between;font-size:calc(11.5px*var(--qfs));color:var(--muted);margin-bottom:5px}
   .qp-prog-top b{color:var(--good)}
@@ -162,7 +164,8 @@
   .qs-layer{font-size:9px;color:var(--muted);background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:2px 5px;white-space:nowrap;align-self:center}
   @media(max-width:640px){
     #sidebar{position:absolute;z-index:1100;height:100%}
-    #questPanel{width:auto;left:12px;right:12px;max-height:60%}
+    #questPanel{width:auto!important;left:12px;right:12px;max-height:60%}
+    .qp-resize{display:none}
     #togglebar{left:auto;right:10px;z-index:1200}
     #app.sb-collapsed #togglebar{left:10px;right:auto}
     #coord{display:none}
@@ -680,10 +683,13 @@ function renderActiveQuests(){ QL.forEach(q => { if (questState[q.id]) renderQue
 const qPanel = document.getElementById("questPanel");
 let qFont = parseFloat(localStorage.getItem("er-qfs")) || 1.15;
 function setQuestFont(v){ qFont = Math.min(1.8, Math.max(0.8, Math.round(v*20)/20)); localStorage.setItem("er-qfs", qFont); qPanel.style.setProperty("--qfs", qFont); }
+let qpW = parseInt(localStorage.getItem("er-qpw")) || 0;
 function openQuestPanel(q){
   panelQuest = q;
   if(!questState[q.id]){ questState[q.id]=true; qsave.shown[q.id]=1; saveQuests(); renderQuest(q); }
-  qPanel.style.setProperty("--qfs", qFont); updateQuestRow(q); fillPanel(q); qPanel.classList.add("open");
+  qPanel.style.setProperty("--qfs", qFont);
+  qPanel.style.width = (!window.matchMedia("(max-width:640px)").matches && qpW) ? qpW+"px" : "";
+  updateQuestRow(q); fillPanel(q); qPanel.classList.add("open");
   if (window.matchMedia("(max-width:640px)").matches) document.getElementById("app").classList.add("sb-collapsed");  // give the panel + map room on phones
 }
 function closeQuestPanel(){ qPanel.classList.remove("open"); panelQuest=null; }
@@ -701,7 +707,7 @@ function fillPanel(q){
       (other?`<span class="qs-layer">${baseLabel(s.master)}</span>`:'')+`</div>`;
   }).join("");
   qPanel.innerHTML =
-    `<div class="qp-head"><div class="qp-title"><span class="qp-dot" style="background:${q.color}"></span>${q.name}</div><div class="qp-tools"><div class="qp-fs" id="qpFsDn" title="Smaller text">A−</div><div class="qp-fs" id="qpFsUp" title="Larger text">A+</div><div class="qp-x" id="qpX">✕</div></div></div>`+
+    `<div class="qp-resize" id="qpResize"></div><div class="qp-head"><div class="qp-title"><span class="qp-dot" style="background:${q.color}"></span>${q.name}</div><div class="qp-tools"><div class="qp-fs" id="qpFsDn" title="Smaller text">A−</div><div class="qp-fs" id="qpFsUp" title="Larger text">A+</div><div class="qp-x" id="qpX">✕</div></div></div>`+
     `<div class="qp-prog"><div class="qp-prog-top"><span>${d} / ${t} steps done</span><b>${pct}%</b></div><div class="dash-bar"><div style="width:${pct}%"></div></div></div>`+
     `<div class="qp-steps">`+
       (q.overview?`<div class="qp-notes"><div class="qp-notes-h">Overview</div>${q.overview}${q.prereq?`<div class="qp-prereq">⚑ ${q.prereq}</div>`:''}</div>`:'')+
@@ -709,6 +715,15 @@ function fillPanel(q){
   document.getElementById("qpX").onclick = closeQuestPanel;
   document.getElementById("qpFsUp").onclick = e => { e.stopPropagation(); setQuestFont(qFont+0.1); };
   document.getElementById("qpFsDn").onclick = e => { e.stopPropagation(); setQuestFont(qFont-0.1); };
+  const qpr = document.getElementById("qpResize");
+  if(qpr) qpr.onmousedown = e => {
+    e.preventDefault();
+    const startX = e.clientX, startW = qPanel.offsetWidth;
+    document.body.style.userSelect = "none";
+    const mv = ev => { qPanel.style.width = Math.min(640, Math.max(260, startW + (startX - ev.clientX))) + "px"; };
+    const up = () => { document.removeEventListener("mousemove",mv); document.removeEventListener("mouseup",up); document.body.style.userSelect=""; qpW = qPanel.offsetWidth; localStorage.setItem("er-qpw", qpW); };
+    document.addEventListener("mousemove",mv); document.addEventListener("mouseup",up);
+  };
   qPanel.querySelectorAll(".qs-row").forEach(row => {
     const n = +row.dataset.n, s = q.steps.find(x=>x.n===n);
     row.querySelector(".qs-chk").onclick = (e) => { e.stopPropagation(); toggleStepDone(q, n); };
