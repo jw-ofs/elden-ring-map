@@ -128,7 +128,9 @@ $sb=New-Object System.Text.StringBuilder
 [void]$sb.AppendLine("   to the actual task location (item pickup / boss arena / NPC / area). */")
 [void]$sb.AppendLine("window.QUESTLINES = [")
 foreach($q in $QL){
-  [void]$sb.AppendLine("  { id:""$($q.id)"", name:""$($q.name)"", color:""$($q.color)"", phase:$($q.phase), ord:$($q.ord), steps:[")
+  $qov  = if($q.overview){ ($q.overview -replace '\\','\\' -replace '"','\"' -replace "\r?\n"," ") } else { "" }
+  $qpre = if($q.prereq){   ($q.prereq   -replace '\\','\\' -replace '"','\"' -replace "\r?\n"," ") } else { "" }
+  [void]$sb.AppendLine("  { id:""$($q.id)"", name:""$($q.name)"", color:""$($q.color)"", phase:$($q.phase), ord:$($q.ord), overview:""$qov"", prereq:""$qpre"", steps:[")
   $prev=$null; $n=0
   foreach($s in $q.steps){
     $r=Resolve-Anchor $s.anchor $s.type $prev $s.near
@@ -137,7 +139,8 @@ foreach($q in $QL){
     $title=($s.title -replace '\\','\\' -replace '"','\"')
     $desc =($s.desc -replace '\\','\\' -replace '"','\"')
     $warn = if($s.warn){ ($s.warn -replace '\\','\\' -replace '"','\"') } else { "" }
-    [void]$sb.AppendLine("    { n:$n, title:""$title"", desc:""$desc"", warn:""$warn"", kind:""$($s.type)"", master:""$($r.master)"", px:$([math]::Round($r.px,1)), py:$([math]::Round($r.py,1)) },")
+    $reward = if($s.reward){ ($s.reward -replace '\\','\\' -replace '"','\"' -replace "\r?\n"," ") } else { "" }
+    [void]$sb.AppendLine("    { n:$n, title:""$title"", desc:""$desc"", warn:""$warn"", reward:""$reward"", kind:""$($s.type)"", master:""$($r.master)"", px:$([math]::Round($r.px,1)), py:$([math]::Round($r.py,1)) },")
   }
   [void]$sb.AppendLine("  ]},")
 }

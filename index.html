@@ -153,6 +153,9 @@
   .qs-row.done .qs-desc{opacity:.65}
   .qp-notes{margin:2px 4px 8px;padding:9px 11px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;font-size:11.5px;color:var(--muted);line-height:1.55}
   .qp-notes-h{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--accent);margin-bottom:4px}
+  .qp-prereq{margin-top:7px;padding:5px 8px;font-size:11px;color:#e0a94a;background:rgba(229,162,58,.1);border-left:2px solid #e5a23a;border-radius:0 4px 4px 0;line-height:1.45}
+  .qs-reward{font-size:11px;color:#9fd0a0;margin-top:3px;line-height:1.35}
+  .qs-row.done .qs-reward{opacity:.6}
   .qs-layer{font-size:9px;color:var(--muted);background:var(--panel2);border:1px solid var(--line);border-radius:4px;padding:2px 5px;white-space:nowrap;align-self:center}
   @media(max-width:640px){
     #sidebar{position:absolute;z-index:1100;height:100%}
@@ -688,13 +691,16 @@ function fillPanel(q){
       `<div class="qs-num" style="background:${s.n===1?'#e5484d':q.color}">${s.n}</div>`+
       `<div class="qs-body"><div class="qs-t">${s.title}${s.warn?' <span class="qs-warn">⚠</span>':''}</div>`+
         (s.desc?`<div class="qs-desc">${s.desc}</div>`:'')+
+        (s.reward?`<div class="qs-reward">🎁 ${s.reward}</div>`:'')+
         (s.warn?`<div class="qs-warntext">${s.warn}</div>`:'')+`</div>`+
       (other?`<span class="qs-layer">${baseLabel(s.master)}</span>`:'')+`</div>`;
   }).join("");
   qPanel.innerHTML =
     `<div class="qp-head"><div class="qp-title"><span class="qp-dot" style="background:${q.color}"></span>${q.name}</div><div class="qp-x" id="qpX">✕</div></div>`+
     `<div class="qp-prog"><div class="qp-prog-top"><span>${d} / ${t} steps done</span><b>${pct}%</b></div><div class="dash-bar"><div style="width:${pct}%"></div></div></div>`+
-    `<div class="qp-steps">${rows}</div>`;
+    `<div class="qp-steps">`+
+      (q.overview?`<div class="qp-notes"><div class="qp-notes-h">Overview</div>${q.overview}${q.prereq?`<div class="qp-prereq">⚑ ${q.prereq}</div>`:''}</div>`:'')+
+      `${rows}</div>`;
   document.getElementById("qpX").onclick = closeQuestPanel;
   qPanel.querySelectorAll(".qs-row").forEach(row => {
     const n = +row.dataset.n, s = q.steps.find(x=>x.n===n);
