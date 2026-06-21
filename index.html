@@ -684,6 +684,7 @@ const qPanel = document.getElementById("questPanel");
 let qFont = parseFloat(localStorage.getItem("er-qfs")) || 1.15;
 function setQuestFont(v){ qFont = Math.min(1.8, Math.max(0.8, Math.round(v*20)/20)); localStorage.setItem("er-qfs", qFont); qPanel.style.setProperty("--qfs", qFont); }
 let qpW = parseInt(localStorage.getItem("er-qpw")) || 0;
+let _lastPanelId = null;
 function openQuestPanel(q){
   panelQuest = q;
   if(!questState[q.id]){ questState[q.id]=true; qsave.shown[q.id]=1; saveQuests(); renderQuest(q); }
@@ -694,6 +695,9 @@ function openQuestPanel(q){
 }
 function closeQuestPanel(){ qPanel.classList.remove("open"); panelQuest=null; }
 function fillPanel(q){
+  const _stPrev = qPanel.querySelector(".qp-steps");
+  const _scrollTop = (_lastPanelId === q.id && _stPrev) ? _stPrev.scrollTop : 0;   // keep scroll on same-quest re-render; reset for a new quest
+  _lastPanelId = q.id;
   const {t,d} = qProgress(q), pct = t ? Math.round(d/t*100) : 0, cur = currentN(q);
   const rows = q.steps.map(s => {
     const done = isDone(q.id,s.n), isCur = s.n===cur, other = s.master!==activeBase;
@@ -729,6 +733,7 @@ function fillPanel(q){
     row.querySelector(".qs-chk").onclick = (e) => { e.stopPropagation(); toggleStepDone(q, n); };
     row.onclick = () => flyToStep(q, s);
   });
+  const _stNew = qPanel.querySelector(".qp-steps"); if(_stNew) _stNew.scrollTop = _scrollTop;
 }
 function flyToStep(q, s){
   if(s.master!==activeBase) switchBase(s.master);   // jump to the layer the step lives on
